@@ -33,34 +33,13 @@ build in that environment is `2.5.1+cu124`; CPU inference is also supported.
 
 ## Install the retained weights
 
-The ten exact model artifacts are bundled as losslessly compressed Zstandard
-parts under `weights/`, tracked with **Git LFS**. Install Git LFS before cloning
-on a new machine, then fetch and restore the models:
+Git contains code, tests, configurations, hashes, split identities and historical
+reports. The approximately 35 GB of binary artifacts are kept in a separate,
+ignored directory. A Git push alone does **not** distribute these weights.
+No public artifact download URL is currently configured.
 
-```bash
-git lfs install
-git lfs pull
-.venv/bin/python fec1.py unpack-artifacts
-```
-
-Restoration checks every compressed part and verifies the SHA-256 of every
-restored file against [`repro/artifacts.json`](repro/artifacts.json). It writes
-ordinary original `.joblib` and `.pt` files to the ignored
-`artifacts/incumbent/` directory. Use `--models /another/fresh/directory` to
-restore elsewhere; existing installations are never overwritten.
-
-Compression changes storage and transfer size only. Unpack once before
-inference: the model code, predictions, loading behavior and RAM requirements
-then match the original files. Allow 36.9 GB for the restored models in addition
-to the compressed bundle. The pinned `zstandard` dependency is in requirements.
-
-This existing checkout has a verified Git LFS helper installed locally in its
-Git metadata, so its ordinary `git push` uploads the compressed objects. That
-installation does not change global Git configuration. Other machines should
-install [Git LFS](https://git-lfs.com/) normally. Sufficient GitHub LFS storage
-and bandwidth are required; no model files are uploaded by the packaging job.
-
-As an alternative, import the retained originals from an existing starter checkout:
+From the existing starter checkout, import the exact ten files listed in
+[`repro/artifacts.json`](repro/artifacts.json):
 
 ```bash
 .venv/bin/python fec1.py import-artifacts --source /path/to/fusion-equilibrium-challenge-starter --copy
@@ -72,8 +51,10 @@ Those symlinks depend on the retained source checkout. Use `--copy` for an
 independent installation. Import checks all hashes before writing files;
 verification reads every artifact and can take several minutes.
 
-See [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) for packaging and the training
-recipe. Obtain the official DIII-D parquet inputs separately.
+For another machine, transfer `artifacts/incumbent/` with symlinks dereferenced,
+preserving its paths, then run `verify-artifacts`. See
+[`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) for artifact packaging and the
+training recipe. Obtain the official DIII-D parquet inputs separately.
 
 ## Generate predictions
 

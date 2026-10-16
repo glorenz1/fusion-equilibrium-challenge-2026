@@ -10,8 +10,7 @@ A separately retained neural scalar predictor supplies q95 and betaN.
 Before ensembling, apply each member's saved shape, coordinate and scalar
 strengths. Renormalize the calibrated shape. Average the five calibrated fields
 and scalars with equal weight 0.2 in the original fold order. Scalar strengths
-are [1,1]; shape strength is 0.75 for folds 0–3 and 1.0 for fold 4.
-Coordinate strengths differ by fold.
+are [1,1] and shape strength is 0.75; coordinate strengths differ by fold.
 The exact values and epochs are in `repro/artifacts.json`.
 
 All-frame deployment preserves four interleaved stride-4 sequences. Compute
@@ -20,54 +19,17 @@ Computing context across consecutive all-frame samples changes this model.
 Public preprocessing reads an explicit projection of permitted input columns
 and calls `preprocess_row(..., include_targets=False)`.
 
-## Compressed weights and Git LFS
+## Distributing weights separately
 
 The ten files total 36.9 GB (34.4 GiB). Each tree carrier is about
 7.3 GB; each neural checkpoint is about 30 MB and includes its scalar predictor.
 The carriers contain three 96-tree forests per fold. The field forest stores
 64-output prediction vectors at every tree node; these dense arrays account
 for most of the size. Neural checkpoints total only 152 MB across five folds.
-Use the original manifest hashes as artifact identities. No credentials, prediction
+Use the manifest hashes as artifact identities. No credentials, prediction
 upload tokens, private leaderboard labels or raw challenge data belong in Git.
 
-`weights/manifest.json` maps each original artifact to its ordered `.zst` parts.
-Each part represents at most 1 GiB of original bytes, keeping individual LFS
-objects below [GitHub's per-file limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage).
-The parts are regular Zstandard frames, with compressed-file hashes and the
-original full-file hashes preserved in the manifests.
-
-```bash
-git lfs pull
-.venv/bin/python fec1.py verify-compressed
-.venv/bin/python fec1.py unpack-artifacts
-```
-
-The unpacker checks the compressed hashes, restores the original byte streams
-into a temporary directory, checks all ten original hashes, then publishes the
-installation. It refuses missing LFS objects, corrupt chunks, changed model
-identities and existing destination directories. No pickle deserialization,
-refitting, float conversion, pruning or quantization occurs during restoration.
-
-The compressed weights can be copied directly between machines; Git LFS is
-needed only for GitHub transfer. The Python unpacker works with copied parts
-without invoking Git LFS or an external compression executable.
-
-To rebuild the bundle from the retained originals into a fresh directory:
-
-```bash
-.venv/bin/python fec1.py pack-artifacts --destination outputs/repacked-weights --workers 5 --level 6
-```
-
-`scripts/compress_artifacts.sbatch` runs the same command with source checks,
-unit tests and a pinned reviewed commit on an allocated node. Compression is
-parallel across artifacts, with bounded buffers. Originals are never changed.
-
-Only deserialize trusted artifacts. The inference entry point still verifies
-every original SHA-256 hash before `torch.load` or `joblib.load`.
-
-## Alternative archive transfer
-
-For a separate archive after importing or linking the retained artifacts:
+Create a portable archive after importing or linking the retained artifacts:
 
 ```bash
 tar -czhf artifacts/fec1-incumbent.tar.gz -C artifacts incumbent
@@ -84,6 +46,9 @@ mkdir -p artifacts
 tar -xzf /path/to/fec1-incumbent.tar.gz -C artifacts
 .venv/bin/python fec1.py verify-artifacts
 ```
+
+Only deserialize trusted artifacts. The inference entry point verifies their
+SHA-256 hashes before `torch.load` or `joblib.load`.
 
 ## Historical training recipe
 

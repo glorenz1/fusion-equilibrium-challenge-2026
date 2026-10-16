@@ -101,16 +101,6 @@ def main():
     load.add_argument("--source", type=Path, required=True, help="retained starter checkout or exported artifact store")
     load.add_argument("--models", type=Path, default=ROOT / "artifacts/incumbent")
     load.add_argument("--copy", action="store_true", help="make independent copies instead of local symlinks")
-    pack = commands.add_parser("pack-artifacts", help="create lossless Zstandard parts from the retained originals")
-    pack.add_argument("--models", type=Path, default=ROOT / "artifacts/incumbent")
-    pack.add_argument("--destination", type=Path, required=True)
-    pack.add_argument("--workers", type=int, default=5)
-    pack.add_argument("--level", type=int, choices=range(1, 23), default=6)
-    unpack = commands.add_parser("unpack-artifacts", help="restore the bundled weights without any model changes")
-    unpack.add_argument("--source", type=Path, default=ROOT / "weights")
-    unpack.add_argument("--models", type=Path, default=ROOT / "artifacts/incumbent")
-    compressed = commands.add_parser("verify-compressed")
-    compressed.add_argument("--source", type=Path, default=ROOT / "weights")
     infer = commands.add_parser("predict")
     infer.add_argument("--inputs", type=Path, required=True)
     infer.add_argument("--output", type=Path, required=True)
@@ -131,19 +121,6 @@ def main():
         print(json.dumps({"passed": True, "artifacts": 10}))
     elif args.command == "import-artifacts":
         import_artifacts(args.source, args.models, copy=args.copy)
-    elif args.command == "pack-artifacts":
-        from artifact_storage import pack_artifacts
-        result = pack_artifacts(args.models, args.destination, manifest()["artifacts"],
-                                workers=args.workers, level=args.level)
-        print(json.dumps({k: v for k, v in result.items() if k != "artifacts"}))
-    elif args.command == "unpack-artifacts":
-        from artifact_storage import unpack_artifacts
-        print(json.dumps(unpack_artifacts(args.source, args.models, manifest()["artifacts"])))
-    elif args.command == "verify-compressed":
-        from artifact_storage import verify_package
-        result = verify_package(args.source, manifest()["artifacts"])
-        print(json.dumps(dict(passed=True, artifacts=len(result["artifacts"]),
-                              compressed_bytes=result["compressed_bytes"])))
     elif args.command == "predict":
         if args.workers < 1 or args.batch_size < 1 or args.max_shots < 0:
             parser.error("workers/batch-size must be positive and max-shots nonnegative")
