@@ -21,23 +21,29 @@ and calls `preprocess_row(..., include_targets=False)`.
 
 ## Distributing weights separately
 
-The ten files have a total size of about 35 GB. Each tree carrier is about
+The ten files total 36.9 GB (34.4 GiB). Each tree carrier is about
 7.3 GB; each neural checkpoint is about 30 MB and includes its scalar predictor.
+The carriers contain three 96-tree forests per fold. The field forest stores
+64-output prediction vectors at every tree node; these dense arrays account
+for most of the size. Neural checkpoints total only 152 MB across five folds.
 Use the manifest hashes as artifact identities. No credentials, prediction
 upload tokens, private leaderboard labels or raw challenge data belong in Git.
 
 Create a portable archive after importing or linking the retained artifacts:
 
 ```bash
-tar -chf fec1-incumbent.tar -C artifacts incumbent
+tar -czhf artifacts/fec1-incumbent.tar.gz -C artifacts incumbent
 ```
 
-`-h` dereferences local symlinks. Transfer the archive through your chosen
-artifact store, alongside `repro/artifacts.json`. On a new checkout:
+`-h` dereferences local symlinks and `-z` compresses the original bytes without
+changing predictions. Compression takes time and does not reduce the memory
+needed to load the models. The archive stays in the ignored artifact directory.
+Transfer it through your chosen artifact store, alongside `repro/artifacts.json`.
+On a new checkout:
 
 ```bash
 mkdir -p artifacts
-tar -xf /path/to/fec1-incumbent.tar -C artifacts
+tar -xzf /path/to/fec1-incumbent.tar.gz -C artifacts
 .venv/bin/python fec1.py verify-artifacts
 ```
 

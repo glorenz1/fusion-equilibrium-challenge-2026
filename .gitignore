@@ -227,3 +227,6 @@ __marimo__/
 /my_experiments/candidates/
 /my_experiments/artifacts/
 /my_experiments/neuralgs_real_d3d_full_frame_cache/*.npz
+
+# Preserve the small, reviewed validation stdout with the reproduction evidence.
+!/repro/validation/*.log

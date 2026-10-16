@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=fec1-reproduce
 #SBATCH --account=acf-utk0011
-#SBATCH --partition=campus
-#SBATCH --qos=campus
+#SBATCH --partition=short
+#SBATCH --qos=short
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --time=00:30:00
+#SBATCH --time=00:15:00
 #SBATCH --output=logs/%x-%j.out
 set -euo pipefail
 cd "${SLURM_SUBMIT_DIR:?}"

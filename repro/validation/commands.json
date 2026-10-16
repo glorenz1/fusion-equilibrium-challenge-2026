@@ -1,0 +1,17 @@
+{
+  "working_directory": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026",
+  "environment": {
+    "FEC1_PYTHON": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+    "FEC1_REVIEWED_COMMIT": "a14ed8004e7adbbca04b82b7d66df1ded9c7f12b",
+    "FEC1_INPUTS": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/data/diii_d_public_test",
+    "FEC1_REFERENCE": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/my_experiments/submissions/dct24_more_public_20260929/diii_d_public_test.npz",
+    "FEC1_MAX_SHOTS": "1 (default)"
+  },
+  "scheduler_adjustments": [
+    "scontrol update JobId=6417455 TimeLimit=00:15:00",
+    "scontrol update JobId=6417455 MinMemoryNode=24576 NumCPUs=4",
+    "scontrol update JobId=6417455 Partition=short QOS=short MinMemoryNode=32768 NumCPUs=4"
+  ],
+  "note": "Only scheduling resources changed while pending. Effective defaults are now recorded in scripts/replay.sbatch. No model or evaluator changes during execution.",
+  "submit": "sbatch --parsable --export=ALL,FEC1_PYTHON=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python,FEC1_REVIEWED_COMMIT=a14ed8004e7adbbca04b82b7d66df1ded9c7f12b,FEC1_INPUTS=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/data/diii_d_public_test,FEC1_REFERENCE=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/my_experiments/submissions/dct24_more_public_20260929/diii_d_public_test.npz scripts/replay.sbatch"
+}

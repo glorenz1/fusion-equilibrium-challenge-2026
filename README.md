@@ -86,3 +86,6 @@ All five members participate even in a one-shot replay. Numerical arrays are
 compared, since ZIP timestamps and compression are not reproducible identifiers.
 
 See [`docs/VALIDATION.md`](docs/VALIDATION.md) for executed checks and limits.
+The allocated CPU replay passed all 31 tests and matched all five ensemble
+members' combined predictions on the first public shot (240 frames), with
+maximum absolute difference `9.54e-7` from the retained submission.
