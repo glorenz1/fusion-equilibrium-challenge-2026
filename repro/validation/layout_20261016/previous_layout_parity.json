@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "arrays": 3,
+  "max_absolute_error": 5.960464477539063e-08,
+  "atol": 2e-06,
+  "rtol": 2e-05
+}

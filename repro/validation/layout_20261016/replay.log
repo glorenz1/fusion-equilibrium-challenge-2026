@@ -1,0 +1,12 @@
+{"passed": true, "files": 47}
+...............................................                          [100%]
+47 passed in 84.80s (0:01:24)
+{"stage": "prepare", "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet", "frames": 240}
+{"stage": "predict", "fold": 0, "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet"}
+{"stage": "predict", "fold": 1, "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet"}
+{"stage": "predict", "fold": 2, "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet"}
+{"stage": "predict", "fold": 3, "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet"}
+{"stage": "predict", "fold": 4, "shots": 1, "total": 1, "last": "d3d_shot_0047b7837b.parquet"}
+{"stage": "complete", "archive": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/replay-6417606/diii_d_public_test.npz", "shots": 1, "frames": 240, "bytes": 3662660}
+{"passed": true, "arrays": 3, "max_absolute_error": 9.5367431640625e-07, "atol": 2e-06, "rtol": 2e-05}
+{"passed": true, "files": 47}

@@ -20,6 +20,30 @@ compares the arrays against the retained public submission. Its postflight
 checks source identity and Git cleanliness again. Logs and arrays are ignored
 by Git; permanent evidence is retained under `repro/validation/`.
 
+## Reorganized package replay
+
+Slurm job **6417606** completed with exit code **0:0** in **5:30** on CPU node
+`clr1450`, using the same four-CPU, 32 GiB allocation. Peak RSS was
+12,053,044 KiB. The reviewed code commit was
+`14f612115db6971664ff629c0eff8595f48aa4e2`.
+
+All 47 protected source files matched before and after execution, the Git tree
+was clean at both checks, all ten artifact hashes passed, and all **47 tests**
+passed in 84.80 seconds. All five retained members predicted all 240 frames of
+`d3d_shot_0047b7837b.parquet`. psirz, q95 and betaN passed numerical comparison
+against the retained public archive, with maximum absolute error
+**9.5367431640625e-07**. This covers one of 874 public shots. A separate syntax-tree
+audit confirms that 67 retained mathematical definitions match their originals,
+excluding relocation-only imports, documentation and a renamed configuration
+annotation.
+
+A direct comparison with the earlier layout replay also passed (maximum
+absolute error 5.96e-08 across the different CPU nodes).
+
+Permanent launch details, runtime, raw log, comparison results and decisions
+are in `repro/validation/layout_20261016/`. The earlier layout's evidence below
+remains intact. Neither replay trains a new model or recomputes the public score.
+
 ## Executed allocated-node replay
 
 Slurm job **6417455** completed successfully with exit code **0:0** in **4:59**

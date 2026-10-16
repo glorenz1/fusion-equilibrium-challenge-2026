@@ -1,0 +1,14 @@
+{
+  "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+  "host": "clr1450",
+  "cuda": "12.4",
+  "commit": "14f612115db6971664ff629c0eff8595f48aa4e2",
+  "packages": {
+    "torch": "2.5.1",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "pandas": "3.0.4",
+    "pyarrow": "24.0.0"
+  }
+}

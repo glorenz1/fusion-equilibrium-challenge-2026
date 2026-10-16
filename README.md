@@ -69,8 +69,8 @@ training recipe. Obtain the official DIII-D parquet inputs separately.
 
 ## Generate predictions
 
-Run from anywhere; paths are explicit and the code does not import the parent
-starter repository:
+Run from the repository root. Input/output paths are explicit, and the code
+does not import the parent starter repository:
 
 ```bash
 .venv/bin/python -m fec1 predict \
@@ -97,9 +97,9 @@ All five members participate even in a one-shot replay. Numerical arrays are
 compared, since ZIP timestamps and compression are not reproducible identifiers.
 
 See [`docs/VALIDATION.md`](docs/VALIDATION.md) for executed checks and limits.
-The historical CPU replay matched the ensemble on the first public shot
-(240 frames), with maximum absolute difference `9.54e-7` from the retained
-submission. See the validation document for the subsequent package-layout check.
+The reorganized package passed 47 tests and an allocated CPU replay of all
+five ensemble members on the first public shot (240 frames). Its maximum
+absolute difference from the retained submission was `9.54e-7`.
 
 ## Repository layout
 

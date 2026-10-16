@@ -1,0 +1,12 @@
+{
+  "working_directory": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026",
+  "environment": {
+    "FEC1_PYTHON": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+    "FEC1_REVIEWED_COMMIT": "14f612115db6971664ff629c0eff8595f48aa4e2",
+    "FEC1_INPUTS": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/data/diii_d_public_test",
+    "FEC1_REFERENCE": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/my_experiments/submissions/dct24_more_public_20260929/diii_d_public_test.npz",
+    "FEC1_MAX_SHOTS": "1 (default)"
+  },
+  "note": "No model, evaluator, source or scheduler changes during execution. Allocated node verifies a clean reviewed commit before and after inference.",
+  "submit": "sbatch --parsable --export=ALL,FEC1_PYTHON=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python,FEC1_REVIEWED_COMMIT=14f612115db6971664ff629c0eff8595f48aa4e2,FEC1_INPUTS=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/data/diii_d_public_test,FEC1_REFERENCE=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/my_experiments/submissions/dct24_more_public_20260929/diii_d_public_test.npz scripts/replay.sbatch"
+}
