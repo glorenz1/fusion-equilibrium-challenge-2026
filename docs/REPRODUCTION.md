@@ -44,7 +44,7 @@ directly, preserving its paths and dereferencing symlinks. On a new checkout:
 ```bash
 mkdir -p artifacts
 tar -xf /path/to/fec1-incumbent.tar -C artifacts
-.venv/bin/python fec1.py verify-artifacts
+.venv/bin/python -m fec1 verify-artifacts
 ```
 
 Only deserialize trusted artifacts. The inference entry point verifies their
@@ -57,67 +57,80 @@ bytes. A new training run is not promised to reproduce those bytes or the
 displayed public score: the old environment was not fully locked, GPU kernels
 can differ, and the public scorer's hidden labels are unavailable.
 
-This checkout includes the original training implementation and all immutable
-shot identities. `my_experiments/causal_hybrid_encoder_v2_dataset/manifest.json`
-contains the original ordered shot/split assignments, projected to the two
-fields consumed by `_split_records`: 5,677 train, 689 development, 675 frozen
-audit. `repro/splits/foldN.json` preserves the actual expanded-training,
-64-shot selection and untouched outer-shot roles plus each row digest.
-Historical reports and arguments are under `repro/history/`.
+This checkout retains the required training implementation and immutable shot
+identities. `repro/splits/shots.json` contains the original ordered shot/split
+assignments and source frame counts: 5,677 train, 689 development, 675 frozen
+audit. `repro/splits/foldN.json` preserves the expanded-training, 64-shot
+selection and untouched outer-shot roles plus each row digest. Historical
+reports and arguments are under `repro/history/`.
 
-The complete pipeline, in dependency order, is:
+Run the commands below from the repository root in a fresh installation.
+Obtain the official labelled parquet files separately, under `data/diii_d_train/`,
+with their original filenames. Install the runtime requirements first. The
+original training allocation requested 96 GiB RAM and a V100S GPU; the carrier
+fits also need substantial RAM and disk space. No retained weights are required
+for these rebuild stages.
 
-1. Prepare every released DIII-D training frame with `train_neuralgs.py prepare
-   --input-dir data/diii_d_train --output-dir
-   my_experiments/neuralgs_real_d3d_full_frame_cache --frames-per-shot 0
-   --workers 16 --uncompressed`. The frozen configuration is committed beside
-   that cache location. Data must retain the original input filenames.
-2. Run `scripts/prepare_pca.py --output
-   my_experiments/artifacts/fec1_full_frame_pca64_extra_trees.joblib` to create
-   the initial train-only PCA cache, then
-   `my_experiments/generate_fec1_train_oof_base.py --folds 5 --workers 8
-   --train-stride 4 --estimators 96 --min-samples-leaf 4 --max-features 0.7
-   --output my_experiments/artifacts/fec1_train_stride4_oof_base.npz`.
-   The helper preserves the original PCA sampling, ordering, seeds and fit
-   arguments while omitting the old unrelated full-frame tree fit and its
-   post-fit dependency on development part files. The source-row builders
-   consume only this initial PCA; nested deployment carriers refit their own
-   PCA and trees. No deployed prediction depends on the omitted models.
-3. Materialize spatial inputs with `prepare_fec1_topology_native_inputs.py`,
-   normalized targets with `prepare_fec1_score_aligned_targets.py`, exact
-   topology with `extract_fec1_train_exact_topology.py --all-train-stride 4`,
-   and contour radii with `extract_fec1_exact_contour_radius.py --angles 64
-   --contour-points 128`. `scripts/prepare_training.sh` supplies the exact paths.
-4. Fit five nested bases with `prepare_fec1_structured_crossfit.py --fold N
-   --output my_experiments/candidates/fec1_structured_crossfit_v1/base_foldN`.
-   Defaults: five outer folds, three inner folds, seed 260905, PCA64,
-   96 trees. Inner predictions are out-of-shot for every correction-training
-   row; outer shots are excluded from every corresponding fit.
-5. Fit the original DCT scalar-reference model for each nested base with
-   `train_fec1_structured_correction.py --decoder dct --epochs 36 --batch-size
-   128 --geometry-weight 0.003 --device cuda`, using that base and output
-   `my_experiments/candidates/fec1_structured_crossfit_v1/dct_foldN`.
-   Its default encoder is pooled and its default geometry loss is legacy.
-   These scalar-reference weights are frozen for the final field fits.
-6. `prepare_fec1_dct24_more_train_20260929.py --fold N --seed 260905
-   --selection-shots 64 --output
-   my_experiments/candidates/fec1_dct24_more_train_20260929/data_foldN`
-   moves formerly unused inner selection shots into fitting, preserves
-   out-of-sample base predictions, and writes `scalar_reference.pt`.
-7. Run the final fit with the arguments recorded in each
-   `repro/history/foldN/result.json`. `scripts/train_fold.sh N` expresses this
-   historical command. This fits a fresh spatial-attention DCT24 field model
-   for up to 36 epochs, symmetric geometry loss weight .003, warmup 4,
-   exact scoring every 6 epochs, patience 3, batch 128, seed 260905+N.
-   The scalar predictor remains fixed. Epochs 36/30/30/36/36 were selected.
-8. Alias `base_foldN` to `data_foldN` and `dct_foldN` to `train_foldN`, then
-   run `evaluate_fec1_structured_crossfit.py --root ROOT --output ROOT/evaluation
-   --folds 5 --families dct --device cuda --batch-size 128 --score-workers 4`.
-   This pools exactly one outer-fold prediction per training row, freezes the
-   ensemble and evaluates development separately. It must not be treated as
-   a new promotion gate or tuned using held labels. The archived OOF result
-   is S .990843, R2_psi .999156, R2_qb .989019, D_LCFS .012771,
-   consistency .971159.
+1. `bash scripts/prepare_training.sh` prepares all frames, a train-only initial
+   PCA, stride-4 OOF source rows, spatial inputs, normalized targets, exact
+   topology and contour radii. Generated caches go under `data/cache/` and
+   intermediate arrays under `artifacts/training/`. Its PCA helper preserves
+   sampling, ordering, seeds and PCA arguments while omitting the unrelated
+   historical full-frame forest and its dependency on development part files.
+   The nested deployment carriers refit their own PCA and trees.
+2. For each fold, fit the nested carrier, its pooled scalar-reference model,
+   and the final spatial-attention field model, in that order:
+
+   ```bash
+   export FEC1_PYTHON="$PWD/.venv/bin/python"
+   for fold in 0 1 2 3 4; do
+     "$FEC1_PYTHON" -m fec1.training.carriers --fold "$fold" \
+       --output "artifacts/training/base_fold$fold"
+     "$FEC1_PYTHON" -m fec1.training.fit \
+       --data "artifacts/training/base_fold$fold" \
+       --output "artifacts/training/scalar_fold$fold" \
+       --decoder dct --epochs 36 --batch-size 128 \
+       --geometry-weight 0.003 --device cuda
+     "$FEC1_PYTHON" -m fec1.training.expanded --fold "$fold" \
+       --seed 260905 --selection-shots 64 \
+       --output "artifacts/training/data_fold$fold"
+     bash scripts/train_fold.sh "$fold"
+     ln -s "train_fold$fold" "artifacts/training/dct_fold$fold"
+   done
+   ```
+
+   Carrier defaults are five outer folds, three inner folds, seed 260905,
+   PCA64 and 96 trees. Every correction-training row has an out-of-shot base
+   prediction. The first neural fit uses the default pooled encoder and legacy
+   geometry loss; its scalar predictor is frozen for the final field fit.
+   Expanded training retains 64 selection shots and preserves outer identities.
+   `train_fold.sh` records the historical final fit: width 384, spatial attention,
+   DCT24, symmetric geometry weight .003, warmup 4, exact scoring every 6 epochs,
+   patience 3, batch 128, seed 260905 plus fold. Historical selected epochs were
+   36/30/30/36/36; a fresh fit must report its actual selections.
+3. Pool each outer-fold prediction once and evaluate development separately:
+
+   ```bash
+   .venv/bin/python -m fec1.evaluation --root artifacts/training \
+     --output artifacts/evaluation --folds 5 --device cuda \
+     --batch-size 128 --score-workers 4
+   ```
+
+   The DCT ensemble and equal weights are fixed before opening development
+   targets. This historical evaluation must not be treated as a new promotion
+   gate or tuned using held labels. The archived OOF result is S .990843,
+   R2_psi .999156, R2_qb .989019, D_LCFS .012771, consistency .971159.
+4. Generate public predictions from the **newly trained** artifacts:
+
+   ```bash
+   .venv/bin/python -m fec1.inference --inputs /path/to/diii_d_public_test \
+     --selected-root artifacts/training --base-root artifacts/training \
+     --output outputs/retrained-public --device cuda --workers 8 --batch-size 128
+   ```
+
+   This lower-level command accepts newly trained artifacts. The `python -m fec1
+   predict` facade instead verifies the retained incumbent's exact artifact
+   hashes and is intended for replay of that model.
 
 These commands are historical documentation, not a newly launched fit.
 Later continuation methods and rejected experiments are not included as

@@ -6,9 +6,11 @@ score is **0.990843 on 5,677 training shots**. These scores use different
 populations. Public hidden labels are unavailable; the public score is a
 historical reference, not a score recomputed by this repository.
 
-The implementation is copied byte-for-byte from incumbent source snapshot
-`625e6f3c0e67b70f7f9c28526e8e3972b7457b9f`. It includes preprocessing, tree
-carriers, neural architecture, calibration, training and exact scoring code.
+The implementation is derived from incumbent source snapshot
+`625e6f3c0e67b70f7f9c28526e8e3972b7457b9f` and organized in the `fec1`
+package. It includes preprocessing, tree carriers, neural architecture,
+calibration, training and exact scoring code. The original source hashes and
+symbol-level migration record are retained under `repro/`.
 The selected fold epochs are **36 / 30 / 30 / 36 / 36**. This is the DIII-D
 model; the unrelated MAST prediction archive included in the original upload
 is outside this reproduction.
@@ -21,8 +23,8 @@ data and output arrays. The original fits requested 96 GiB and a V100S GPU.
 
 ```bash
 python3.11 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python fec1.py verify-source
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python -m fec1 verify-source
 .venv/bin/python -m pytest -q
 ```
 
@@ -51,8 +53,8 @@ From the existing starter checkout, import the exact ten files listed in
 [`repro/artifacts.json`](repro/artifacts.json):
 
 ```bash
-.venv/bin/python fec1.py import-artifacts --source /path/to/fusion-equilibrium-challenge-starter --copy
-.venv/bin/python fec1.py verify-artifacts
+.venv/bin/python -m fec1 import-artifacts --source /path/to/fusion-equilibrium-challenge-starter --copy
+.venv/bin/python -m fec1 verify-artifacts
 ```
 
 Omit `--copy` to create local symlinks and avoid duplicating the large files.
@@ -71,7 +73,7 @@ Run from anywhere; paths are explicit and the code does not import the parent
 starter repository:
 
 ```bash
-.venv/bin/python fec1.py predict \
+.venv/bin/python -m fec1 predict \
   --inputs /path/to/diii_d_public_test \
   --output outputs/public-replay --device cuda --workers 8 --batch-size 128
 ```
@@ -84,7 +86,7 @@ sorted parquet filenames. Use a fresh output directory for every run.
 For a bounded replay, add `--max-shots 1`. Compare with the retained submission:
 
 ```bash
-.venv/bin/python fec1.py compare \
+.venv/bin/python -m fec1 compare \
   outputs/public-replay/diii_d_public_test.npz \
   /path/to/original/diii_d_public_test.npz --report outputs/parity.json
 ```
@@ -95,6 +97,15 @@ All five members participate even in a one-shot replay. Numerical arrays are
 compared, since ZIP timestamps and compression are not reproducible identifiers.
 
 See [`docs/VALIDATION.md`](docs/VALIDATION.md) for executed checks and limits.
-The allocated CPU replay passed all 31 tests and matched all five ensemble
-members' combined predictions on the first public shot (240 frames), with
-maximum absolute difference `9.54e-7` from the retained submission.
+The historical CPU replay matched the ensemble on the first public shot
+(240 frames), with maximum absolute difference `9.54e-7` from the retained
+submission. See the validation document for the subsequent package-layout check.
+
+## Repository layout
+
+`fec1/` contains the model and its required data, training, inference and scoring
+code. `config/` holds preprocessing settings; `scripts/` holds launch recipes;
+`tests/` holds checks; and `repro/` holds provenance, fixed splits and historical
+evidence. Generated data, weights and outputs are ignored. There is no runtime
+dependency on `my_experiments`, NeuralGS or the parent checkout. See
+[`docs/LAYOUT.md`](docs/LAYOUT.md) for the migration details.

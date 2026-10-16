@@ -1,0 +1,292 @@
+{
+  "baseline_commit": "fe4dacbf11b32b75741be92672ab5b4b7060ef26",
+  "source_commit": "625e6f3c0e67b70f7f9c28526e8e3972b7457b9f",
+  "derivations": [
+    {
+      "path": "fec1/data/repairs.py",
+      "source": "src/measurement/data_fixes.py",
+      "symbols": [
+        "fix_d3d_ip_times",
+        "align_mast_thomson_core"
+      ],
+      "source_sha256": "e0657e0bde943eea4326a7b024e075e1628a142c559a3979e05d492aa8d74f6a"
+    },
+    {
+      "path": "fec1/data/magnetics.py",
+      "source": "neuralgs/geometry.py",
+      "symbols": [
+        "render_magnetic_inputs dependency closure"
+      ],
+      "source_sha256": "9db67dc88338f7b8a6376023de3e23509105eec32972db7c0a32af8a44c1513d"
+    },
+    {
+      "path": "fec1/data/records.py",
+      "source": "neuralgs/data.py",
+      "symbols": [
+        "preprocess_row",
+        "save_prepared_shot",
+        "evenly_spaced_frame_indices dependency closure"
+      ],
+      "source_sha256": "8c4429e4fe71b95dc0905523a555309625969fa3bcea51bc9e654b5d52003832"
+    },
+    {
+      "path": "fec1/data/projection.py",
+      "source": "my_experiments/causal/cache_causal_hybrid_encoder_inputs.py",
+      "symbols": [
+        "safe_input_columns dependency closure"
+      ],
+      "source_sha256": "a908471485ccde7baaea5ccd592d5d68a5ffe2fed3c76e438a6babddb214aa82"
+    },
+    {
+      "path": "fec1/data/features.py",
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "symbols": [
+        "_coordinates",
+        "_centered_context",
+        "_features",
+        "_read",
+        "_pca_sample",
+        "_split_records",
+        "_trees",
+        "_r2",
+        "build_scalar_features from neuralgs/scalar_ridge.py"
+      ],
+      "source_sha256": "1b649d79d4ed1a3b76ca7618d692728a97dec9d1792086df84c9ded02660e3d5"
+    },
+    {
+      "path": "fec1/data/cache.py",
+      "source": "neuralgs/training.py",
+      "symbols": [
+        "sha256_file",
+        "sha256_names",
+        "_prepare_one_shot",
+        "prepare_local_shards"
+      ],
+      "source_sha256": "a7d43f7b52f1eeaffb038898e0baf8eb09aff15c673e785d2d982621e9cb11d4"
+    },
+    {
+      "path": "fec1/basis.py",
+      "source": "my_experiments/fec1_score_aligned_temporal.py",
+      "symbols": [
+        "dct_residual_basis"
+      ],
+      "source_sha256": "73a85cd4bdfc2fc94c761a85ed3faf6921c7fac25f64ba8e84e290cd7b417d25"
+    },
+    {
+      "path": "fec1/model.py",
+      "source": "my_experiments/fec1_structured_correction.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "b332cf31fd1e9aa468d0da788bf7884250b7bf11354dd4ef2e3377783762233c"
+    },
+    {
+      "path": "fec1/losses/symmetric.py",
+      "source": "my_experiments/fec1_symmetric_geometry.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "f462ad21f6600c9bb327c4f2ad7e0c6915e575f45c9dc9db82e97683cbd36f1e"
+    },
+    {
+      "path": "fec1/losses/geometry.py",
+      "source": "my_experiments/fec1_direct_geometry.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "1acaea0105577cfed6086962f43092218e1abfa7e6d04d496c55c400b3a537a4"
+    },
+    {
+      "path": "fec1/losses/normalization.py",
+      "source": "my_experiments/fec1_conv_autoencoder.py",
+      "symbols": [
+        "teacher_normalized_flux"
+      ],
+      "source_sha256": "fe7dab1d949aa6d6d11de6bf0c1dafd87e3765d48ceae337ae7e7aac1816570f"
+    },
+    {
+      "path": "fec1/training/alignment.py",
+      "source": "my_experiments/train_fec1_score_aligned_temporal.py",
+      "symbols": [
+        "_align_topology",
+        "_align_contours"
+      ],
+      "source_sha256": "92eefcfc3e8e5beeac03f1d892f9ea7545571ab0eb68040bb72d2817814e0066"
+    },
+    {
+      "path": "fec1/carrier.py",
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "symbols": [
+        "partitions",
+        "diagnostic_context",
+        "row_digest",
+        "predict_base",
+        "fit_base"
+      ],
+      "source_sha256": "b8298c4e58acfd0d97c2f94da53a925621a187f9b7e7039421fb7c8fea17045d"
+    },
+    {
+      "path": "fec1/training/carriers.py",
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "symbols": [
+        "main"
+      ],
+      "source_sha256": "b8298c4e58acfd0d97c2f94da53a925621a187f9b7e7039421fb7c8fea17045d"
+    },
+    {
+      "path": "fec1/training/source_rows.py",
+      "source": "my_experiments/generate_fec1_train_oof_base.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "9f5c16e992b449557376098ff2d0688e289dded93e6cb42bdc99dcb782607ba1"
+    },
+    {
+      "path": "fec1/training/inputs.py",
+      "source": "my_experiments/prepare_inputs.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "3d17638365272c3d23f7a19f0b9fb46bb54383456810a088c73e7163cdd57def"
+    },
+    {
+      "path": "fec1/training/targets.py",
+      "source": "my_experiments/prepare_fec1_score_aligned_targets.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "ac074c8a3246fc96e25270093152d2a3244b7ef3bd06eb68b31c4a5d89ccab79"
+    },
+    {
+      "path": "fec1/training/topology.py",
+      "source": "my_experiments/extract_fec1_train_exact_topology.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "32032567db2a8653f4d4c4eb49cadf44e892e1220a417a212e52329326612ae7"
+    },
+    {
+      "path": "fec1/training/contours.py",
+      "source": "my_experiments/extract_fec1_exact_contour_radius.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "5e2ebd85187c0785d46abaddf959080747d038e26d3666afb5a3140e3ea4576a"
+    },
+    {
+      "path": "fec1/training/expanded.py",
+      "source": "my_experiments/prepare_fec1_dct24_more_train_20260929.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "05569f687ae4ba06860e3fdd1662a482bccbc54ebeaddb99aea246a72ddc3656"
+    },
+    {
+      "path": "fec1/scoring/topology.py",
+      "source": "my_experiments/topology/d3d_topology_features.py",
+      "symbols": [
+        "scorer_mask",
+        "derive_flux_topology"
+      ],
+      "source_sha256": "92b16dfb243a9fdd4d77e2c95ae7157fe9ce9059168422f905b336a7f35ef4d1"
+    },
+    {
+      "path": "fec1/scoring/vendor/common.py",
+      "source": "fusion_scoring/common.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "4c9618aa8bc42bc5e4f9cfb64d20d1e0644c7cfa28f06b7271d94041fbb4ff56"
+    },
+    {
+      "path": "fec1/scoring/vendor/contour.py",
+      "source": "fusion_scoring/contour.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "20bebb7546cd665c1993bbb47c653f697f39c31414175126e551756f05001efc"
+    },
+    {
+      "path": "fec1/scoring/vendor/derive.py",
+      "source": "fusion_scoring/derive.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "0484e6331634ada3ff7990d0fef3207021d13b3723ba2e20ab362ccabb36cab0"
+    },
+    {
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "source": "fusion_scoring/lcfs.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "71130f63962f0ec4e34c86470b9292b53730578fae28666399ef02fcbeeb0cb8"
+    },
+    {
+      "path": "fec1/scoring/vendor/metrics.py",
+      "source": "fusion_scoring/metrics.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "45a473915e292655200dbe566206301c42481bb709c3698476602775efbd2754"
+    },
+    {
+      "path": "fec1/scoring/vendor/o_point.py",
+      "source": "fusion_scoring/o_point.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "531f8dc24f54e7cd1516fa365fd412e4421d1c086d170682c00ba964304315e4"
+    },
+    {
+      "path": "fec1/scoring/reference.py",
+      "source": "fec1.scoring.reference.py",
+      "symbols": [
+        "build_reference",
+        "psi_residuals",
+        "score_shot dependency closure"
+      ],
+      "source_sha256": "80a1898f2e45a9dd90d2ef3caffd5917d08ff77d666fe78730584ea25a3a052a"
+    },
+    {
+      "path": "fec1/scoring/archive.py",
+      "source": "my_experiments/score_fec1_prediction_archive.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "fbd3b09dff6da29253e20dcb8fa6a8280fb5870759af209397063318b1198584"
+    },
+    {
+      "path": "fec1/evaluation.py",
+      "source": "my_experiments/evaluate_fec1_structured_crossfit.py",
+      "symbols": [
+        "pooled_score",
+        "predict_development"
+      ],
+      "source_sha256": "855a30833a469d5c0b842df02489967ae028ec732737da62c09d513a13c3e9b7"
+    },
+    {
+      "path": "fec1/inference.py",
+      "source": "my_experiments/export_fec1_dct24_public.py",
+      "symbols": [
+        "module"
+      ],
+      "source_sha256": "0652e6f5907b9362cc6a5f45dede4e80728e95c8676b23453ca51a897cd9b010"
+    },
+    {
+      "path": "fec1/training/fit.py",
+      "source": "my_experiments/train_fec1_structured_correction.py",
+      "symbols": [
+        "trainer with unused scorer_implicit mode removed; legacy/symmetric math retained"
+      ],
+      "source_sha256": "52a7de2d0b80c04dc426e01bfc18198d2f61b4348f44449ebbaedc99ad9deb8b"
+    }
+  ],
+  "notes": [
+    "Model and scalar state-dict keys are unchanged.",
+    "Only the three preprocessing settings actually read are exposed.",
+    "Irrelevant solver, encoder, oracle, baseline comparison and scorer_implicit training branches removed.",
+    "Shot identities/order retained; source_frame_count restored from original manifest for topology preparation.",
+    "Legacy file hashes and original validation reports are retained."
+  ]
+}

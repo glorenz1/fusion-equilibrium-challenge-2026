@@ -6,8 +6,8 @@ cd "$(dirname "$0")/.."
 fold="${1:?fold 0 through 4 is required}"
 case "$fold" in 0|1|2|3|4) ;; *) exit 2 ;; esac
 py="${FEC1_PYTHON:-.venv/bin/python}"
-root=my_experiments/candidates/fec1_dct24_more_train_20260929
-"$py" my_experiments/train_fec1_structured_correction.py \
+root=artifacts/training
+"$py" -m fec1.training.fit \
   --data "$root/data_fold${fold}" --output "$root/train_fold${fold}" \
   --decoder dct --epochs 36 --batch-size 128 --width 384 --channels 24 \
   --geometry-weight 0.003 --loss-version symmetric --geometry-components both \

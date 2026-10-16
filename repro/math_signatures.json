@@ -1,0 +1,407 @@
+{
+  "method": "Python AST with imports/docstrings ignored and preprocessing type annotation normalized; every signature matched the pre-reorganization implementation.",
+  "checks": [
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "within_shot_neighbors",
+      "canonical_sha256": "a4c6f18bb926761c1ed81ea5552571f8ac9a28e496c570a0704dc3e6f134b9b1"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "calibrated_prediction",
+      "canonical_sha256": "34a95e8658f76bfacfdb0956af60a1f16593989c32b9dae2ec6ac2ec8c6d0b2b"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "calibrated_prediction_torch",
+      "canonical_sha256": "18794787802c3f7c4f5a53e63beb02b82b5003178d0025f7f05dbc178f3dc5db"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "coordinates",
+      "canonical_sha256": "a6bd97ba82128bee32956437f0019074b13d4ffd9353495ef0a0b667710f0d2b"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "mlp",
+      "canonical_sha256": "345c4280fa52fcb6bb30d594716717a77dd20704d2b033b949b8bee7d1f1bc21"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "StructuredCorrection",
+      "canonical_sha256": "b2ee1fb538399dc60d6757f5edd71ccc22056b893972fd3b81517f45b3d88f4c"
+    },
+    {
+      "source": "my_experiments/fec1_structured_correction.py",
+      "path": "fec1/model.py",
+      "symbol": "FrozenScalarPredictor",
+      "canonical_sha256": "f46da8e403838b70a935fa6ebe3177cadbc0d448b90ab91f716f2b55877b3ce5"
+    },
+    {
+      "source": "my_experiments/fec1_score_aligned_temporal.py",
+      "path": "fec1/basis.py",
+      "symbol": "dct_residual_basis",
+      "canonical_sha256": "d98566ccadd5379dcef13f2d6428121b41719b3ea22f395a36cc9b136b5d6e86"
+    },
+    {
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "path": "fec1/carrier.py",
+      "symbol": "partitions",
+      "canonical_sha256": "53b49e46c0b277fc28020d7322b0deeb2af9dbdb5b153f856b60c1252ed0826f"
+    },
+    {
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "path": "fec1/carrier.py",
+      "symbol": "diagnostic_context",
+      "canonical_sha256": "477435a9e8249feaa8b27970fac72f4e10ded647a8f18f042486b42f7b9518c1"
+    },
+    {
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "path": "fec1/carrier.py",
+      "symbol": "row_digest",
+      "canonical_sha256": "80241fc7cccf766d7d8a08e0dfcecbc05066405be8cc6a0e89e272b97caf535b"
+    },
+    {
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "path": "fec1/carrier.py",
+      "symbol": "predict_base",
+      "canonical_sha256": "ad5d87ce7d39fd8999a5cd9d412c6e4331f2e02aa0d641c5ff37009ac2f20a0b"
+    },
+    {
+      "source": "my_experiments/prepare_fec1_structured_crossfit.py",
+      "path": "fec1/carrier.py",
+      "symbol": "fit_base",
+      "canonical_sha256": "1021743358f9c3fd9644cd793fff5f35e4060e23e34bba0566904b67371e2531"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_coordinates",
+      "canonical_sha256": "8223f70821daf392302af56d2ee4d0ac73093655a5907acadf9618d2bdeb879f"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_centered_context",
+      "canonical_sha256": "9445b729ce4b1dbd9588c8ed258270585c1ce6e83fa4e786e1973d47c81eb05d"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_features",
+      "canonical_sha256": "6cd8268932d3e53a0f014afe06edcfab3428f23764b0a16409d9818d09122c05"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_read",
+      "canonical_sha256": "1702b3fbfd7efabda8ae7262d01f883722747221b40c65e476b76c34087305a5"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_pca_sample",
+      "canonical_sha256": "9a6ce2302ac9a638116c8240459cae629ae461373673c119eae7f9660fb236b2"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_split_records",
+      "canonical_sha256": "5d5c353792320a7b38f1219aff1c2f8678c498f40bd00e766d5598374f5cc0c2"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_trees",
+      "canonical_sha256": "dcd6b40124e3d6c4a7f177818da3460ac6c9af5af1823bfc4af87f8b6d16792e"
+    },
+    {
+      "source": "my_experiments/fit_fec1_full_frame_pca.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_r2",
+      "canonical_sha256": "4430513d708656f8b69ffeafb9be37e987721a66d73b23be7e72b05d5b139f68"
+    },
+    {
+      "source": "neuralgs/scalar_ridge.py",
+      "path": "fec1/data/features.py",
+      "symbol": "_masked_token_features",
+      "canonical_sha256": "0251d1f64badc3a30e5e142c255c8f4ae877c2948f2101676ad566964eb056ec"
+    },
+    {
+      "source": "neuralgs/scalar_ridge.py",
+      "path": "fec1/data/features.py",
+      "symbol": "build_scalar_features",
+      "canonical_sha256": "632443e52787a93440a3cfb2acd8c0b4c978f8c55e7bdfd6d435c96e50ace93d"
+    },
+    {
+      "source": "neuralgs/data.py",
+      "path": "fec1/data/records.py",
+      "symbol": "preprocess_row",
+      "canonical_sha256": "5519156e807a993932733e318e5bba4438886e5d49e2be33f0669062502cfe2b"
+    },
+    {
+      "source": "neuralgs/data.py",
+      "path": "fec1/data/records.py",
+      "symbol": "build_thomson_tokens",
+      "canonical_sha256": "093293d017993c9457ec1118da75d842166942b4cf5e055dd8cde2da23e7611f"
+    },
+    {
+      "source": "neuralgs/data.py",
+      "path": "fec1/data/records.py",
+      "symbol": "target_normalized_flux",
+      "canonical_sha256": "791535e32c5897edd4d21016449b05c6b4f392966ee42c1cf7bb17ec8b9c2fbd"
+    },
+    {
+      "source": "neuralgs/data.py",
+      "path": "fec1/data/records.py",
+      "symbol": "save_prepared_shot",
+      "canonical_sha256": "037ec232149bc07a2e170c283b2e02ffc9ce0a1259a19b53199754ad822bf11e"
+    },
+    {
+      "source": "neuralgs/geometry.py",
+      "path": "fec1/data/magnetics.py",
+      "symbol": "render_magnetic_inputs",
+      "canonical_sha256": "b1135d67a999d7dd20f315535999e9881006242e5373741460659e13faa7b852"
+    },
+    {
+      "source": "neuralgs/geometry.py",
+      "path": "fec1/data/magnetics.py",
+      "symbol": "signal_at_efit",
+      "canonical_sha256": "3e1e75d7d88ce776df69fe3090efbf0f9f9c7bee2e8092831a206b4e672fd114"
+    },
+    {
+      "source": "neuralgs/geometry.py",
+      "path": "fec1/data/magnetics.py",
+      "symbol": "coil_basis",
+      "canonical_sha256": "76df442f0fa17b7f7134c7f8edad28350ede526b3a7e206f822b885f8c6fd677"
+    },
+    {
+      "source": "neuralgs/geometry.py",
+      "path": "fec1/data/magnetics.py",
+      "symbol": "loop_psi_per_ampere",
+      "canonical_sha256": "11bcd12b4ea81ecbad1b41e128d3f63b9b23dbb688c20e2d4058b1b26b56a829"
+    },
+    {
+      "source": "my_experiments/fec1_conv_autoencoder.py",
+      "path": "fec1/losses/normalization.py",
+      "symbol": "teacher_normalized_flux",
+      "canonical_sha256": "d6cac5cd3ad8fa42e9296d24695a961389f88d25d04615aa8e8e9e1890b2e33d"
+    },
+    {
+      "source": "my_experiments/fec1_symmetric_geometry.py",
+      "path": "fec1/losses/symmetric.py",
+      "symbol": "extract_geometry",
+      "canonical_sha256": "afb068d3a3c9ddbdfcc498ef8219114a53c3bb9947deb832a160bc7f0adeb823"
+    },
+    {
+      "source": "my_experiments/fec1_symmetric_geometry.py",
+      "path": "fec1/losses/symmetric.py",
+      "symbol": "symmetric_geometry_losses",
+      "canonical_sha256": "88f972a12f82139c5bca24476c4b1057c5a790fc6e10d7121e83362ae22e420d"
+    },
+    {
+      "source": "my_experiments/fec1_symmetric_geometry.py",
+      "path": "fec1/losses/symmetric.py",
+      "symbol": "geometry_objective",
+      "canonical_sha256": "b1c927b5c725e8422c3f72efb29fceac4732050e5f16fe7575789ead8684848c"
+    },
+    {
+      "source": "local_score.py",
+      "path": "fec1/scoring/reference.py",
+      "symbol": "build_reference",
+      "canonical_sha256": "60b2d08dc41c28d1db2750e3614abdd43bd06c79fad4b2bd7a64df14ee5b6d12"
+    },
+    {
+      "source": "local_score.py",
+      "path": "fec1/scoring/reference.py",
+      "symbol": "psi_residuals",
+      "canonical_sha256": "18844ed7be039ccf723ce42a07fad8ac2f21cea0ecf54ec4480195b4e1bfe85d"
+    },
+    {
+      "source": "local_score.py",
+      "path": "fec1/scoring/reference.py",
+      "symbol": "score_shot",
+      "canonical_sha256": "ef8499b7f869d66cc05762d00c98a711766bdbb7134ecb3498902f5f3e95cbad"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "_in_mask",
+      "canonical_sha256": "894f993e8c3a1a5d1b4034888a69cba42c268e046b7d80b3ac6da4b881debaa2"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "_best_contour_at",
+      "canonical_sha256": "13bbfe98e87c07efc72966cb67f0fcb7fda5ce1a02e14e45f1a806c9eaa03911"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "_extract_one_sign",
+      "canonical_sha256": "ab6bde3eb896b266a75e7d876a83a496228c88f3d6b4a02ece5c5789d7587668"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "extract_lcfs_with_sign",
+      "canonical_sha256": "79f0b74bdbf248f5f72cb1e12d773464692a175bc06f8b59b68927a1c4e917da"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "extract_lcfs",
+      "canonical_sha256": "55a6d5a854b6485f6ee058c0e657b5dbed098019a0b988304834000dbcac738d"
+    },
+    {
+      "source": "fusion_scoring/lcfs.py",
+      "path": "fec1/scoring/vendor/lcfs.py",
+      "symbol": "major_radius",
+      "canonical_sha256": "28572483faa69ea117a2f49bb396589ec50185f9cb2caa3e021ad88f2046d586"
+    },
+    {
+      "source": "fusion_scoring/metrics.py",
+      "path": "fec1/scoring/vendor/metrics.py",
+      "symbol": "ss_tot",
+      "canonical_sha256": "e6e625e78237445aeae9a72acb78065f1b60288ee49780a4169496273c30cd8a"
+    },
+    {
+      "source": "fusion_scoring/metrics.py",
+      "path": "fec1/scoring/vendor/metrics.py",
+      "symbol": "Accum",
+      "canonical_sha256": "9268bcc3a96f071108439d7dd1dc7e2e069ba2e8d497dcf990a43b62e2586ebf"
+    },
+    {
+      "source": "fusion_scoring/metrics.py",
+      "path": "fec1/scoring/vendor/metrics.py",
+      "symbol": "finalize_machine",
+      "canonical_sha256": "d6631ed516ce44a19c029c72650b2ce156072e8181820fe092b2a177943b2871"
+    },
+    {
+      "source": "fusion_scoring/metrics.py",
+      "path": "fec1/scoring/vendor/metrics.py",
+      "symbol": "g_ratio",
+      "canonical_sha256": "60e6ede1dda89710e9e01ed0e6cf3139d9083830f5804c212d8a676ec2b302a7"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_clamp_to_nan",
+      "canonical_sha256": "36e4a1baa218ed67e1a563ec9cca767516e4affbc675078f571f300b733ee851"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_phi",
+      "canonical_sha256": "c279ac73cf65685239cfb5ae7525d37217063b80e2e6a449574d18cd9bd6e0f2"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "magnetic_axis",
+      "canonical_sha256": "a5256646dbae382a53444ae87f0fa75796b4761151bd784cea17de3487484317"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_shape_from_contour",
+      "canonical_sha256": "3a4c4aad703b4dbdf06cb92c24eb7c89c55861b4a151b312bb4750795d1b0a5b"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_points_in_polygon",
+      "canonical_sha256": "c819126055f12270de94eee5761511dc849c8ab352cb7ab6e3322f5e60472478"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_poloidal_field",
+      "canonical_sha256": "e247a1e25e53a7ba004f70fffbd5e0311028e3f709235fa0163503bc2a2fe79d"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "_bilinear",
+      "canonical_sha256": "7599997e345155d6171d9ca22e330966afa10fc37ed8ea3b7ca00154dc91f62d"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "internal_inductance",
+      "canonical_sha256": "e2785b502dc90fd807c6e4f9e033f7d2079189504bd743155e8b4ae543339880"
+    },
+    {
+      "source": "fusion_scoring/derive.py",
+      "path": "fec1/scoring/vendor/derive.py",
+      "symbol": "derive_frame",
+      "canonical_sha256": "943bca70594c52387377cd8cbdbd3420634eedfcbf9706c13e81a827eeda111a"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "find_contours",
+      "canonical_sha256": "126e68e8e7bbfcd492a0b154caf92ecae4d0d3f326a4221c9671e9985139dcd0"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "grid_to_physical",
+      "canonical_sha256": "fbfae5aca27ed044f300e7c3d260933c4274a54a679556dacd5d57b07795f013"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "is_closed",
+      "canonical_sha256": "0537cdc9e3d04e21b8d8df02c72d19702e0d1a3963cee56466c074faa8c4eede"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "encloses_point",
+      "canonical_sha256": "a7fcf854f78d108d814ba740d6c95ee3de867a853b9a46b2da7aade410b1d2e6"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "resample_closed",
+      "canonical_sha256": "c49a3fb9f5ac572d3e5d01098b4921cce64ba9b2220d43225ca892b707f10c3a"
+    },
+    {
+      "source": "fusion_scoring/contour.py",
+      "path": "fec1/scoring/vendor/contour.py",
+      "symbol": "symmetric_hausdorff",
+      "canonical_sha256": "b178446fb05e95fd757730980966fa96bbe7dea32c9b20f3641ccf2aec617dce"
+    },
+    {
+      "source": "fusion_scoring/o_point.py",
+      "path": "fec1/scoring/vendor/o_point.py",
+      "symbol": "_erode",
+      "canonical_sha256": "ada60ed795b6520dbca0ee09fae7cc70df7a44b65a087730af4755bc50e85cca"
+    },
+    {
+      "source": "fusion_scoring/o_point.py",
+      "path": "fec1/scoring/vendor/o_point.py",
+      "symbol": "local_maxima",
+      "canonical_sha256": "49f5729f7484440c68e05dae9f99da7a72b0d9d38000f2fb2180ef8aaa338877"
+    },
+    {
+      "source": "fusion_scoring/o_point.py",
+      "path": "fec1/scoring/vendor/o_point.py",
+      "symbol": "_subpixel",
+      "canonical_sha256": "1f06a9c68312520d40a7f2f2d9a8142ef8f22c55ab4b6abbaee22b06ead3e753"
+    },
+    {
+      "source": "fusion_scoring/o_point.py",
+      "path": "fec1/scoring/vendor/o_point.py",
+      "symbol": "find_o_point",
+      "canonical_sha256": "295150c217d769e89f2b3d6e4212b80681d5edb469d38f46c3b77067bb7cfadd"
+    }
+  ]
+}

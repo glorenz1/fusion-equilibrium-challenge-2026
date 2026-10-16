@@ -1,6 +1,10 @@
 # Reproduction validation
 
-The CPU suite passes **31 tests** in the existing Python 3.11 environment.
+The reorganized package passes **47 tests** in the existing Python 3.11
+environment. The original source layout passed 31 tests in the historical replay
+below. The current suite also checks package isolation, documented module entry
+points, retained mathematical definitions, source frame counts and a synthetic
+perfect-prediction replay through the exact scorer.
 It covers the frozen source checksums, all-member provenance and calibration,
 whole-shot role isolation, complete OOF shot coverage, base-fit label isolation,
 zero initialization, missing tokens, calibration, scalar freezing, finite

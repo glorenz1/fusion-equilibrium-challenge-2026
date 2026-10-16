@@ -18,7 +18,7 @@ cd "${SLURM_SUBMIT_DIR:?}"
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 test "$(git rev-parse HEAD)" = "$FEC1_REVIEWED_COMMIT"
 test -z "$(git status --porcelain)"
-"$FEC1_PYTHON" fec1.py verify-source
+"$FEC1_PYTHON" -m fec1 verify-source
 run="outputs/replay-${SLURM_JOB_ID:?}"
 mkdir -p "$run"
 "$FEC1_PYTHON" - "$run/environment.json" <<'PY'
@@ -32,10 +32,10 @@ Path(sys.argv[1]).write_text(json.dumps(dict(
 ),indent=2)+'\n')
 PY
 "$FEC1_PYTHON" -m pytest -q
-"$FEC1_PYTHON" fec1.py predict --inputs "$FEC1_INPUTS" --output "$run" \
+"$FEC1_PYTHON" -m fec1 predict --inputs "$FEC1_INPUTS" --output "$run" \
   --device cpu --workers 4 --batch-size 128 --max-shots "${FEC1_MAX_SHOTS:-1}"
-"$FEC1_PYTHON" fec1.py compare "$run/diii_d_public_test.npz" "$FEC1_REFERENCE" \
+"$FEC1_PYTHON" -m fec1 compare "$run/diii_d_public_test.npz" "$FEC1_REFERENCE" \
   --report "$run/parity.json"
-"$FEC1_PYTHON" fec1.py verify-source
+"$FEC1_PYTHON" -m fec1 verify-source
 test "$(git rev-parse HEAD)" = "$FEC1_REVIEWED_COMMIT"
 test -z "$(git status --porcelain)"

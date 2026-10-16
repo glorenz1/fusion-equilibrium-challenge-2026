@@ -1,0 +1,14 @@
+{
+  "data_policy": "real_diii_d_only",
+  "source_machines": [
+    "DIII-D"
+  ],
+  "mast_data_used": false,
+  "synthetic_data_used": false,
+  "raw_input_filenames_sha256": "f49604b6e136aa79d41a5d43046904db6c345a1c441c2c0f8ce868f0e6f6ded3",
+  "config": {
+    "grid_size": 65,
+    "max_tokens": 192,
+    "token_features": 5
+  }
+}
