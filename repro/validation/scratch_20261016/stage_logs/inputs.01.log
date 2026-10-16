@@ -1,0 +1,40 @@
+materialized 1/20 shots
+materialized 20/20 shots
+{
+  "oof": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_rows.npz",
+  "cache_dir": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/cache",
+  "output_dir": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs",
+  "shots": 20,
+  "rows": 40,
+  "train_stride": 4,
+  "token_count": 0,
+  "token_mean": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "token_scale": [
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06,
+    1e-06
+  ],
+  "arrays": {
+    "target_field": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs/target_field.npy",
+    "vacuum_field": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs/vacuum_field.npy",
+    "token_values": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs/token_values.npy",
+    "token_coords": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs/token_coords.npy",
+    "token_mask": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs/token_mask.npy"
+  },
+  "data_policy": "synthetic_smoke_only",
+  "development_used": false,
+  "frozen_audit_used": false,
+  "elapsed_seconds": 0.1200489029288292
+}

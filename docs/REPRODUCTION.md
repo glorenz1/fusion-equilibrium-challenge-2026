@@ -97,6 +97,8 @@ its bounded comparison accepts only the first N shots starting at zero.
 exact split hash, environment, commands, logs and stage outcomes. Separate run
 directories are independent; the workflow uses no global generated cache.
 Only one preparation/training/evaluation process can hold a run's lock.
+For long stages, inspect the log path printed by the CLI, for example
+`tail -f RUN/logs/field-0.01.log`.
 
 Use `--resume` on prepare/train/evaluate after interruption. Completed stages
 are skipped if their outputs exist. Before retrying a failed stage, partial

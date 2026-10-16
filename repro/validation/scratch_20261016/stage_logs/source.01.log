@@ -1,0 +1,93 @@
+loading train-only PCA from /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_pca.joblib
+encoding 20 train shots at stride 4
+encoded rows=40 features=232 components=4
+fold 1/5: fit_shots=16 fit_rows=32 held_shots=4 held_rows=8
+{"fold": 0, "fit_shots": 16, "fit_rows": 32, "held_shots": 4, "held_rows": 8, "shape_coefficient_r2": 0.935578479298314, "coordinate_r2": 0.9999892735594643, "q95_r2": 0.9588339143582757, "betaN_r2": 0.9590999765520041}
+fold 2/5: fit_shots=16 fit_rows=32 held_shots=4 held_rows=8
+{"fold": 1, "fit_shots": 16, "fit_rows": 32, "held_shots": 4, "held_rows": 8, "shape_coefficient_r2": 0.969449722878567, "coordinate_r2": 0.9999822531903767, "q95_r2": 0.9022686027694496, "betaN_r2": 0.8982795207183512}
+fold 3/5: fit_shots=16 fit_rows=32 held_shots=4 held_rows=8
+{"fold": 2, "fit_shots": 16, "fit_rows": 32, "held_shots": 4, "held_rows": 8, "shape_coefficient_r2": 0.892632370026253, "coordinate_r2": 0.9999849411151045, "q95_r2": 0.9228573349972432, "betaN_r2": 0.9232202462575393}
+fold 4/5: fit_shots=16 fit_rows=32 held_shots=4 held_rows=8
+{"fold": 3, "fit_shots": 16, "fit_rows": 32, "held_shots": 4, "held_rows": 8, "shape_coefficient_r2": 0.9092374341772766, "coordinate_r2": 0.9999860292284461, "q95_r2": 0.8957235380274026, "betaN_r2": 0.9001395252224788}
+fold 5/5: fit_shots=16 fit_rows=32 held_shots=4 held_rows=8
+{"fold": 4, "fit_shots": 16, "fit_rows": 32, "held_shots": 4, "held_rows": 8, "shape_coefficient_r2": 0.9486720763841856, "coordinate_r2": 0.9999853270816883, "q95_r2": 0.9066005900257523, "betaN_r2": 0.9091667643136936}
+{
+  "output": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_rows.npz",
+  "base_artifact": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_pca.joblib",
+  "data_policy": "synthetic_smoke_only",
+  "train_shots": 20,
+  "train_rows": 40,
+  "train_stride": 4,
+  "feature_width": 232,
+  "pca_components": 4,
+  "folds": 5,
+  "estimators": 4,
+  "min_samples_leaf": 4,
+  "max_features": 0.7,
+  "oof_shape_coefficient_r2": 0.9261499401713583,
+  "oof_coordinate_r2": 0.9999855665911773,
+  "oof_q95_r2": 0.9385143609309318,
+  "oof_betaN_r2": 0.9389835258876211,
+  "fold_reports": [
+    {
+      "fold": 0,
+      "fit_shots": 16,
+      "fit_rows": 32,
+      "held_shots": 4,
+      "held_rows": 8,
+      "shape_coefficient_r2": 0.935578479298314,
+      "coordinate_r2": 0.9999892735594643,
+      "q95_r2": 0.9588339143582757,
+      "betaN_r2": 0.9590999765520041
+    },
+    {
+      "fold": 1,
+      "fit_shots": 16,
+      "fit_rows": 32,
+      "held_shots": 4,
+      "held_rows": 8,
+      "shape_coefficient_r2": 0.969449722878567,
+      "coordinate_r2": 0.9999822531903767,
+      "q95_r2": 0.9022686027694496,
+      "betaN_r2": 0.8982795207183512
+    },
+    {
+      "fold": 2,
+      "fit_shots": 16,
+      "fit_rows": 32,
+      "held_shots": 4,
+      "held_rows": 8,
+      "shape_coefficient_r2": 0.892632370026253,
+      "coordinate_r2": 0.9999849411151045,
+      "q95_r2": 0.9228573349972432,
+      "betaN_r2": 0.9232202462575393
+    },
+    {
+      "fold": 3,
+      "fit_shots": 16,
+      "fit_rows": 32,
+      "held_shots": 4,
+      "held_rows": 8,
+      "shape_coefficient_r2": 0.9092374341772766,
+      "coordinate_r2": 0.9999860292284461,
+      "q95_r2": 0.8957235380274026,
+      "betaN_r2": 0.9001395252224788
+    },
+    {
+      "fold": 4,
+      "fit_shots": 16,
+      "fit_rows": 32,
+      "held_shots": 4,
+      "held_rows": 8,
+      "shape_coefficient_r2": 0.9486720763841856,
+      "coordinate_r2": 0.9999853270816883,
+      "q95_r2": 0.9066005900257523,
+      "betaN_r2": 0.9091667643136936
+    }
+  ],
+  "same_shot_targets_used": false,
+  "global_pca_fit": "immutable_train_split_only",
+  "development_used": false,
+  "frozen_audit_used": false,
+  "elapsed_seconds": 1.462938773445785
+}

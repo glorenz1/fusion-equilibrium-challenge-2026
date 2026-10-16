@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "profile": "synthetic_smoke",
+  "source_sha256": "2df2de5d7f1743da3ef093a200490c84af0fea29681f46f7e13e2e8f9b7a0ab7",
+  "ensemble_weights": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "artifacts": [
+    {
+      "path": "base_fold0/base.joblib",
+      "bytes": 105610,
+      "sha256": "c63eec5478f6aa629d88cd01da1bbc3136273bcea8ee74c2f6617c7ce2648c13"
+    },
+    {
+      "path": "base_fold1/base.joblib",
+      "bytes": 105290,
+      "sha256": "4a009205ad2f5290b1fa40dbb766939b25a34c2b6bb1579dda6523c84e181daf"
+    },
+    {
+      "path": "base_fold2/base.joblib",
+      "bytes": 105322,
+      "sha256": "44719d9f2a48c98ae83da14ed863620419cf5fb0824a7b5daae8723dc47dedd6"
+    },
+    {
+      "path": "base_fold3/base.joblib",
+      "bytes": 105962,
+      "sha256": "e4f4292cfd5e853badf850cb72ae83f0e88769b75ea3090901591f6670ab5cc7"
+    },
+    {
+      "path": "base_fold4/base.joblib",
+      "bytes": 105578,
+      "sha256": "6308b7541b461a4f9776806928578c11c099b7206903d73dfb206fad8afc9371"
+    },
+    {
+      "path": "dct_fold0/checkpoint.pt",
+      "bytes": 20624630,
+      "sha256": "9d20fff0621f22868cda1cf5bfffe0551ff113f40e28735dfddea7044b2f648f"
+    },
+    {
+      "path": "dct_fold1/checkpoint.pt",
+      "bytes": 20624630,
+      "sha256": "6c14cb4289a16df8e17134f5d53a22866d44381616eff3e52ee20d837d231fc0"
+    },
+    {
+      "path": "dct_fold2/checkpoint.pt",
+      "bytes": 20624630,
+      "sha256": "8f51d0948167b88f35978989e8e3e1d5841d62bdf493eddac0a9155d4645f6df"
+    },
+    {
+      "path": "dct_fold3/checkpoint.pt",
+      "bytes": 20624630,
+      "sha256": "7b99c23aae57d3b63201e3272664e45dbcf96f3b40f91c0e20f2b754d3022b31"
+    },
+    {
+      "path": "dct_fold4/checkpoint.pt",
+      "bytes": 20624630,
+      "sha256": "dfd2399baa0e09d1f34a4ca741bd0ae3dbb2c01d7646a12d7dea15665b94f6fe"
+    }
+  ],
+  "environment": {
+    "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+    "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.5.1",
+      "scipy": "1.17.1",
+      "pandas": "3.0.4",
+      "pyarrow": "24.0.0",
+      "scikit-learn": "1.9.0",
+      "scikit-image": "0.26.0"
+    }
+  }
+}

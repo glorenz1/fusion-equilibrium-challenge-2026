@@ -1,0 +1,12 @@
+{
+  "repo_id": "Sophelio/fusion-equilibrium-challenge",
+  "revision": "1e280905b85f2a6fdde7e06fca8cf3a1edf447cb",
+  "training_identities_matched": 7041,
+  "download_url": "https://huggingface.co/datasets/Sophelio/fusion-equilibrium-challenge/resolve/1e280905b85f2a6fdde7e06fca8cf3a1edf447cb/data/diii_d_public_test/d3d_shot_0047b7837b.parquet",
+  "bytes": 11217584,
+  "sha256": "24e3ddbb5b751266c1dfea7fe2300892fda35c220ebb5b47d904ced85304dac3",
+  "elapsed_seconds": 1.39,
+  "checksum_verified": true,
+  "split": "public_inputs_only",
+  "labels_read": false
+}

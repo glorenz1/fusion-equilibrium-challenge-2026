@@ -1,0 +1,20 @@
+exact contour radius 1/20 shots
+exact contour radius 20/20 shots
+{
+  "reference": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/topology.npz",
+  "reference_sha256": "95ebfb8d8e8ed4a70202bde4042715296cd562233f439a3f4c9cc81501784a7b",
+  "output": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/contours.npz",
+  "shots": 20,
+  "frames": 40,
+  "angles": 16,
+  "radius_only": false,
+  "contour_points": 16,
+  "finite_fraction": 1.0,
+  "reconstruction_distance_m": {
+    "mean": 0.19027265906333923,
+    "median": 0.19025889039039612,
+    "p95": 0.1946946084499359,
+    "max": 0.19570356607437134
+  },
+  "frozen_audit_used": false
+}

@@ -1,0 +1,5 @@
+{"stage": "base_fit", "outer_fold": 2, "inner": 0, "fit_shots": 9, "predict_shots": 5}
+{"stage": "base_fit", "outer_fold": 2, "inner": 1, "fit_shots": 9, "predict_shots": 5}
+{"stage": "base_fit", "outer_fold": 2, "inner": 2, "fit_shots": 10, "predict_shots": 4}
+{"stage": "base_fit", "outer_fold": 2, "inner": 3, "fit_shots": 14, "predict_shots": 6}
+{"status": "complete", "fold": 2, "folds": 5, "seed": 260905, "rows": 40, "shots": 20, "row_digest": "4ace9e246afb83a9d0c069b0e3e71b0bd46b168c98c8264c757fce825b53eea8", "nested_shot_crossfit": true, "shared_target_pca_used": false, "development_used": false, "frozen_audit_used": false, "data_policy": "synthetic_smoke_only", "smoke_only": true, "elapsed_seconds": 0.20419129449874163}

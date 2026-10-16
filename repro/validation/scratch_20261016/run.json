@@ -1,0 +1,1298 @@
+{
+  "schema_version": 1,
+  "profile": "synthetic_smoke",
+  "parameters": {
+    "folds": 5,
+    "inner_folds": 3,
+    "components": 4,
+    "pca_frames": 128,
+    "estimators": 4,
+    "epochs": 1,
+    "batch_size": 128,
+    "width": 32,
+    "channels": 8,
+    "selection_shots": 1,
+    "train_stride": 4,
+    "exact_every": 1,
+    "geometry_warmup": 0,
+    "angles": 16,
+    "contour_points": 16
+  },
+  "raw_data": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run-synthetic-data",
+  "raw_files": [
+    {
+      "path": "d3d_shot_0000000000.parquet",
+      "bytes": 361849,
+      "sha256": "fb3a6ba22eba9ff561cf7f11a0ee06f31da1983ce0cfb1d2484499d22ee7b3f7"
+    },
+    {
+      "path": "d3d_shot_0000000001.parquet",
+      "bytes": 361703,
+      "sha256": "927ea7c78db4d68371b55dac9e3c1897c602ec48a1176dcfdaaf78c708c2f992"
+    },
+    {
+      "path": "d3d_shot_0000000002.parquet",
+      "bytes": 361754,
+      "sha256": "cf23cabe2b69d4542ffe2b6e06246ae6342c3cb3dc680914f598d4d9ff2242c4"
+    },
+    {
+      "path": "d3d_shot_0000000003.parquet",
+      "bytes": 361859,
+      "sha256": "0db3814e0b8656e1e0d6f9594b75afba7219a60d6d161f4e32770d3f8a0db45b"
+    },
+    {
+      "path": "d3d_shot_0000000004.parquet",
+      "bytes": 361803,
+      "sha256": "6339118a12699b403f0beb3b920ebe2adc0f8bf4e6fe2f412e31abbafe74335f"
+    },
+    {
+      "path": "d3d_shot_0000000005.parquet",
+      "bytes": 361966,
+      "sha256": "b09ed05c4875dc068a9b880be278da724b0254a157040dac5c7f9707db4d564d"
+    },
+    {
+      "path": "d3d_shot_0000000006.parquet",
+      "bytes": 361650,
+      "sha256": "174a90d29f32c48e361cc305354fc8619027385e4841b2b214a10db6d1a51389"
+    },
+    {
+      "path": "d3d_shot_0000000007.parquet",
+      "bytes": 361800,
+      "sha256": "e17cdeff92faf9b428f0a51a137a7a2f54714028c1afcf59c286b0764ba7c962"
+    },
+    {
+      "path": "d3d_shot_0000000008.parquet",
+      "bytes": 361746,
+      "sha256": "2c041f6030932219d9111a36f834b030b067e2591bc6dac76952ef8c0edc2bf6"
+    },
+    {
+      "path": "d3d_shot_0000000009.parquet",
+      "bytes": 361577,
+      "sha256": "d088bb6c0f2f448253a011195f80b601d3f728a7fa1f5ed07ac6011b2cb361fe"
+    },
+    {
+      "path": "d3d_shot_000000000a.parquet",
+      "bytes": 361700,
+      "sha256": "7ee4a0b23b59a3e04848a7e48910f93384cb366de3f6befc5a73c49476b82c8b"
+    },
+    {
+      "path": "d3d_shot_000000000b.parquet",
+      "bytes": 361513,
+      "sha256": "14a348559bebc28c3f69318366bb3c7d7cade260056a0850be6348e181f52f0a"
+    },
+    {
+      "path": "d3d_shot_000000000c.parquet",
+      "bytes": 361753,
+      "sha256": "a0044155ab0846e6d86c45876adfa90a6b7b628ac74dabe50ce004abb22429a0"
+    },
+    {
+      "path": "d3d_shot_000000000d.parquet",
+      "bytes": 361716,
+      "sha256": "b9cdee8109c97dc5772807306b9864817f3af2e27f3e58d74cd659d321868bbf"
+    },
+    {
+      "path": "d3d_shot_000000000e.parquet",
+      "bytes": 361489,
+      "sha256": "a4f89abad87e687d6072ce27a091847e0a873317b61d7fa88ea14f3aa0006368"
+    },
+    {
+      "path": "d3d_shot_000000000f.parquet",
+      "bytes": 361682,
+      "sha256": "a5d41a8af5ac8e660d730405d68c02dfc4336c0e34a6bff80539b2813254d1ac"
+    },
+    {
+      "path": "d3d_shot_0000000010.parquet",
+      "bytes": 361512,
+      "sha256": "85a4dfd55e7ce2b5b928b2b15df3b36141b13be2f63f4abeaa252f8e5221d7d6"
+    },
+    {
+      "path": "d3d_shot_0000000011.parquet",
+      "bytes": 361566,
+      "sha256": "848e3b6a2b2c1bc0626291f944ddea8c91e1a26de9eb9b51da7336db51bdeb89"
+    },
+    {
+      "path": "d3d_shot_0000000012.parquet",
+      "bytes": 361897,
+      "sha256": "dbb2eb82808778c4986c38761eefce17e89bbc1b302081f3de96f848d9a101cf"
+    },
+    {
+      "path": "d3d_shot_0000000013.parquet",
+      "bytes": 361704,
+      "sha256": "5e8f2eb4b6b9a8d3245c22db672100b7be81b3935f3aae92a5bc5aa6ff8a7c10"
+    },
+    {
+      "path": "d3d_shot_0000000014.parquet",
+      "bytes": 361535,
+      "sha256": "35d3f8f4948f7cfecbc1f8371d3356514ea68e33ef5a68b98c0de6021d6422ec"
+    },
+    {
+      "path": "d3d_shot_0000000015.parquet",
+      "bytes": 361678,
+      "sha256": "8e6ccab7ffd5f42a8212f3cb66e1fbf69421ad26ee01bd1c3125ff809c5959af"
+    },
+    {
+      "path": "d3d_shot_0000000016.parquet",
+      "bytes": 361768,
+      "sha256": "3673dde40aef1580eb6c1b9d9041d482fd6818ff65deffe8285fac99e87be138"
+    }
+  ],
+  "dataset": null,
+  "source_sha256": "2df2de5d7f1743da3ef093a200490c84af0fea29681f46f7e13e2e8f9b7a0ab7",
+  "splits_sha256": "61867b5fbf15cbef3add17da48f5fb4f763b1d55a9de67da2a788a16e38193ce",
+  "environment": {
+    "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+    "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.5.1",
+      "scipy": "1.17.1",
+      "pandas": "3.0.4",
+      "pyarrow": "24.0.0",
+      "scikit-learn": "1.9.0",
+      "scikit-image": "0.26.0"
+    }
+  },
+  "stages": {
+    "cache": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.data.cache",
+        "--input-dir",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run-synthetic-data",
+        "--output-dir",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/cache",
+        "--workers",
+        "1",
+        "--uncompressed"
+      ],
+      "log": "logs/cache.01.log",
+      "started": "2026-10-16T17:45:38.274323+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:39.148687+00:00"
+    },
+    "pca": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.pca",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_pca.joblib",
+        "--workers",
+        "1",
+        "--components",
+        "4",
+        "--frames",
+        "128"
+      ],
+      "log": "logs/pca.01.log",
+      "started": "2026-10-16T17:45:39.166561+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:40.628166+00:00"
+    },
+    "source": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.source_rows",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_rows.npz",
+        "--workers",
+        "1",
+        "--estimators",
+        "4",
+        "--folds",
+        "5",
+        "--train-stride",
+        "4"
+      ],
+      "log": "logs/source.01.log",
+      "started": "2026-10-16T17:45:40.648747+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:42.413070+00:00"
+    },
+    "inputs": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.inputs",
+        "--oof",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_rows.npz",
+        "--cache-dir",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/cache",
+        "--output-dir",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/inputs"
+      ],
+      "log": "logs/inputs.01.log",
+      "started": "2026-10-16T17:45:42.431397+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:42.687229+00:00"
+    },
+    "targets": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.targets",
+        "--oof",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_rows.npz",
+        "--base-artifact",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/source_pca.joblib",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/target_normalized.npy",
+        "--pca-output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/pca_basis.npz"
+      ],
+      "log": "logs/targets.01.log",
+      "started": "2026-10-16T17:45:42.704914+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:44.144959+00:00"
+    },
+    "topology": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.topology",
+        "--all-train-stride",
+        "4",
+        "--workers",
+        "1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/topology.npz"
+      ],
+      "log": "logs/topology.01.log",
+      "started": "2026-10-16T17:45:44.179385+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:44.908270+00:00"
+    },
+    "contours": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.contours",
+        "--reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/topology.npz",
+        "--angles",
+        "16",
+        "--contour-points",
+        "16",
+        "--workers",
+        "1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/contours.npz"
+      ],
+      "log": "logs/contours.01.log",
+      "started": "2026-10-16T17:45:44.926400+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:45.924367+00:00"
+    },
+    "carrier-0": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.carriers",
+        "--fold",
+        "0",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold0",
+        "--components",
+        "4",
+        "--estimators",
+        "4",
+        "--workers",
+        "1"
+      ],
+      "log": "logs/carrier-0.01.log",
+      "started": "2026-10-16T17:45:45.958450+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:47.592574+00:00"
+    },
+    "scalar-0": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold0",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/scalar_fold0",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0"
+      ],
+      "log": "logs/scalar-0.01.log",
+      "started": "2026-10-16T17:45:47.625788+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:52.741629+00:00"
+    },
+    "expand-0": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.expanded",
+        "--fold",
+        "0",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold0",
+        "--selection-shots",
+        "1"
+      ],
+      "log": "logs/expand-0.01.log",
+      "started": "2026-10-16T17:45:52.760041+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:54.396098+00:00"
+    },
+    "field-0": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold0",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/dct_fold0",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0",
+        "--loss-version",
+        "symmetric",
+        "--observation-encoder",
+        "spatial_attention",
+        "--scalar-reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold0/scalar_reference.pt"
+      ],
+      "log": "logs/field-0.01.log",
+      "started": "2026-10-16T17:45:54.414970+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:45:59.488133+00:00"
+    },
+    "carrier-1": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.carriers",
+        "--fold",
+        "1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold1",
+        "--components",
+        "4",
+        "--estimators",
+        "4",
+        "--workers",
+        "1"
+      ],
+      "log": "logs/carrier-1.01.log",
+      "started": "2026-10-16T17:45:59.516117+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:01.147430+00:00"
+    },
+    "scalar-1": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/scalar_fold1",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0"
+      ],
+      "log": "logs/scalar-1.01.log",
+      "started": "2026-10-16T17:46:01.165689+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:06.178252+00:00"
+    },
+    "expand-1": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.expanded",
+        "--fold",
+        "1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold1",
+        "--selection-shots",
+        "1"
+      ],
+      "log": "logs/expand-1.01.log",
+      "started": "2026-10-16T17:46:06.196764+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:07.849685+00:00"
+    },
+    "field-1": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold1",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/dct_fold1",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0",
+        "--loss-version",
+        "symmetric",
+        "--observation-encoder",
+        "spatial_attention",
+        "--scalar-reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold1/scalar_reference.pt"
+      ],
+      "log": "logs/field-1.01.log",
+      "started": "2026-10-16T17:46:07.883527+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:13.006427+00:00"
+    },
+    "carrier-2": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.carriers",
+        "--fold",
+        "2",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold2",
+        "--components",
+        "4",
+        "--estimators",
+        "4",
+        "--workers",
+        "1"
+      ],
+      "log": "logs/carrier-2.01.log",
+      "started": "2026-10-16T17:46:13.025845+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:14.679271+00:00"
+    },
+    "scalar-2": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold2",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/scalar_fold2",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0"
+      ],
+      "log": "logs/scalar-2.01.log",
+      "started": "2026-10-16T17:46:14.698173+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:19.734220+00:00"
+    },
+    "expand-2": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.expanded",
+        "--fold",
+        "2",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold2",
+        "--selection-shots",
+        "1"
+      ],
+      "log": "logs/expand-2.01.log",
+      "started": "2026-10-16T17:46:19.752258+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:21.463399+00:00"
+    },
+    "field-2": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold2",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/dct_fold2",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0",
+        "--loss-version",
+        "symmetric",
+        "--observation-encoder",
+        "spatial_attention",
+        "--scalar-reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold2/scalar_reference.pt"
+      ],
+      "log": "logs/field-2.01.log",
+      "started": "2026-10-16T17:46:21.481768+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:26.609242+00:00"
+    },
+    "carrier-3": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.carriers",
+        "--fold",
+        "3",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold3",
+        "--components",
+        "4",
+        "--estimators",
+        "4",
+        "--workers",
+        "1"
+      ],
+      "log": "logs/carrier-3.01.log",
+      "started": "2026-10-16T17:46:26.627959+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:28.256029+00:00"
+    },
+    "scalar-3": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold3",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/scalar_fold3",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0"
+      ],
+      "log": "logs/scalar-3.01.log",
+      "started": "2026-10-16T17:46:28.274673+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:33.440112+00:00"
+    },
+    "expand-3": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.expanded",
+        "--fold",
+        "3",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold3",
+        "--selection-shots",
+        "1"
+      ],
+      "log": "logs/expand-3.01.log",
+      "started": "2026-10-16T17:46:33.458476+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:35.102957+00:00"
+    },
+    "field-3": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold3",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/dct_fold3",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0",
+        "--loss-version",
+        "symmetric",
+        "--observation-encoder",
+        "spatial_attention",
+        "--scalar-reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold3/scalar_reference.pt"
+      ],
+      "log": "logs/field-3.01.log",
+      "started": "2026-10-16T17:46:35.122157+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:40.361974+00:00"
+    },
+    "carrier-4": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.carriers",
+        "--fold",
+        "4",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold4",
+        "--components",
+        "4",
+        "--estimators",
+        "4",
+        "--workers",
+        "1"
+      ],
+      "log": "logs/carrier-4.01.log",
+      "started": "2026-10-16T17:46:40.380897+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:42.035555+00:00"
+    },
+    "scalar-4": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/base_fold4",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/scalar_fold4",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0"
+      ],
+      "log": "logs/scalar-4.01.log",
+      "started": "2026-10-16T17:46:42.054364+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:47.128859+00:00"
+    },
+    "expand-4": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.expanded",
+        "--fold",
+        "4",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold4",
+        "--selection-shots",
+        "1"
+      ],
+      "log": "logs/expand-4.01.log",
+      "started": "2026-10-16T17:46:47.149073+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:48.770958+00:00"
+    },
+    "field-4": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.training.fit",
+        "--data",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold4",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/dct_fold4",
+        "--decoder",
+        "dct",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "128",
+        "--width",
+        "32",
+        "--channels",
+        "8",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1",
+        "--selection-shots",
+        "1",
+        "--exact-every",
+        "1",
+        "--geometry-warmup",
+        "0",
+        "--loss-version",
+        "symmetric",
+        "--observation-encoder",
+        "spatial_attention",
+        "--scalar-reference",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/data_fold4/scalar_reference.pt"
+      ],
+      "log": "logs/field-4.01.log",
+      "started": "2026-10-16T17:46:48.789575+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:53.878785+00:00"
+    },
+    "evaluate": {
+      "status": "complete",
+      "attempt": 1,
+      "command": [
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python",
+        "-m",
+        "fec1.evaluation",
+        "--root",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts",
+        "--output",
+        "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/evaluation",
+        "--device",
+        "cpu",
+        "--score-workers",
+        "1"
+      ],
+      "log": "logs/evaluate.01.log",
+      "started": "2026-10-16T17:46:54.165001+00:00",
+      "environment": {
+        "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+        "platform": "Linux-4.18.0-553.137.1.el8_10.x86_64-x86_64-with-glibc2.28",
+        "packages": {
+          "numpy": "2.4.6",
+          "torch": "2.5.1",
+          "scipy": "1.17.1",
+          "pandas": "3.0.4",
+          "pyarrow": "24.0.0",
+          "scikit-learn": "1.9.0",
+          "scikit-image": "0.26.0"
+        }
+      },
+      "exit_code": 0,
+      "finished": "2026-10-16T17:46:59.603249+00:00"
+    }
+  }
+}

@@ -1,35 +1,52 @@
-# Reproduction validation
+# Validation
 
-The standalone workflow passes **56 unit/regression tests**. An additional
-integration test runs the complete synthetic workflow in an independent copy
-containing only `fec1/` and `config/`, without retained artifacts, data, history
-or Git metadata. It exercises preparation, all five carrier fits, all ten
-neural fits, held-shot evaluation, public-format prediction, independent
-rescoring and resume. Run it with `python -m pytest -q -m integration`.
+## Standalone workflow: 2026-10-16
 
-The historical retained-weight replays below describe earlier package revisions
-and remain recorded as evidence for the original model. They are separate from
-training a new model from raw data.
+Slurm job **6421846** passed on CPU node `il1227` at reviewed commit
+`af844c3d64e62218f56758fcb277ab659d5aebb6`. It completed in **1:39** with exit
+code **0:0**, using four requested CPUs and 16 GiB. Peak RSS was 981,732 KiB.
+All 59 protected source/config/identity files matched before and after execution,
+and the Git tree was clean at both checks.
 
-The previous package layout passed **47 tests** in the existing Python 3.11
-environment. The original source layout passed 31 tests in the historical replay
-below. The current suite also checks package isolation, documented module entry
-points, retained mathematical definitions, source frame counts and a synthetic
-perfect-prediction replay through the exact scorer.
-It covers the frozen source checksums, all-member provenance and calibration,
-whole-shot role isolation, complete OOF shot coverage, base-fit label isolation,
-zero initialization, missing tokens, calibration, scalar freezing, finite
-gradients, symmetric geometry, four-phase deployment context, target-column
-projection, artifact import/copy behavior, the historical PCA initialization,
-and artifact/archive corruption detection.
+| Check | Result |
+| --- | --- |
+| Unit and regression suite | 56 passed in 3.56 seconds |
+| Complete fresh-checkout integration | 1 passed in 91.32 seconds |
+| Independent copy | Only `fec1/` and `config/`; no retained artifacts, data, research history or Git metadata |
+| Raw test data | 23 newly generated synthetic parquet shots: 20 train, 3 development |
+| Preparation | All seven stages completed, producing 40 training rows |
+| Training | Five carriers and ten neural fits from scratch; one optimizer update per neural fit |
+| Generated deployment model | All ten newly generated files hashed and verified |
+| Evaluation and prediction | Complete held-shot metrics and five-member public-format prediction completed |
+| Independent scoring | Exactly matched the development score reported by evaluation |
+| Resume | Skipped completed stages; every deployment file retained its modification time |
+| Real dataset acquisition | All 7,041 upstream training identities matched the committed split; one 11 MB unlabelled public file downloaded and SHA-256 verified |
 
-A bounded allocated-node replay is specified in `scripts/replay.sbatch`.
-It records the reviewed Git commit and runtime, checks source and clean-tree
-preconditions, runs the suite, hashes all ten artifacts, preprocesses the first
-sorted public parquet shot, predicts every frame with all five members and
-compares the arrays against the retained public submission. Its postflight
-checks source identity and Git cleanliness again. Logs and arrays are ignored
-by Git; permanent evidence is retained under `repro/validation/`.
+This is a software integration check on reduced synthetic models. It does not
+estimate challenge performance. The complete 7,041-shot real-data fit has **not**
+been rerun here, and the public score has not been recomputed.
+
+The run record, model manifest (hashes only), exact commands, environment,
+raw stage logs, synthetic evaluation/rescoring results and download probe are
+preserved under `repro/validation/scratch_20261016/`. Generated binary artifacts
+remain ignored in `outputs/`; none are required by a fresh clone.
+
+The first integration attempt, job 6421824 at `eaaa83f`, passed all 56 unit
+tests and all preparation/training/evaluation stages, then failed because the
+synthetic fixture omitted `coil_input_column`. The fix adds the field, checks
+the schema before fitting, and preserves partial smoke predictions before a
+retry. The failed attempt's logs and outcome remain recorded. This was an
+implementation failure in a software fixture, not a scientific model result.
+
+Run the quick suite with `python -m pytest -q`; run the full synthetic check with
+`python -m pytest -q -m integration`. `scripts/validate.sbatch` runs both with a
+clean pinned-commit preflight and postflight.
+
+## Historical retained-weight checks
+
+The earlier replay records below preserve evidence for the original trained
+model and previous layouts. They do not require a new user to possess those
+weights to run the standalone training workflow.
 
 ## Reorganized package replay
 

@@ -1,0 +1,50 @@
+{
+  "predictions": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/evaluation/development_predictions.npz",
+  "shots": 3,
+  "frames": 24,
+  "flux_r2": 0.9994568007116361,
+  "q95_r2": -13.105538534591197,
+  "betaN_r2": -14.372790455118302,
+  "score": {
+    "S": 0.648503,
+    "r2_psi": 0.999457,
+    "r2_qb": -13.739164,
+    "dlcfs": 0.011979,
+    "consistency": 0.0,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999457,
+    "r2_psi_per_shot_mean": 0.999456,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 3,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": -13.105539,
+      "betaN": -14.37279
+    },
+    "r2_cons_each": {
+      "R_axis": -1.366467,
+      "Z_axis": -5.242693,
+      "kappa": -26.175238,
+      "tri_top": -1.432487,
+      "tri_bot": -1.985871,
+      "volume": -2.127547,
+      "li": -1.027979
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "data_policy": "synthetic_smoke_only",
+  "frozen_audit_used": false
+}

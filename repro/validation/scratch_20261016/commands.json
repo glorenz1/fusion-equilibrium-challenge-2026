@@ -1,0 +1,9 @@
+{
+  "working_directory": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026",
+  "submit": "sbatch --parsable --account=acf-utk0011 --partition=short --qos=short --export=ALL,FEC1_PYTHON=/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python,FEC1_REVIEWED_COMMIT=af844c3d64e62218f56758fcb277ab659d5aebb6 scripts/validate.sbatch",
+  "tests": [
+    "python -m pytest -q",
+    "python -m pytest -q -m integration"
+  ],
+  "note": "No long fit or protected-label evaluation. All training in the integration run used separately generated synthetic raw parquet files."
+}

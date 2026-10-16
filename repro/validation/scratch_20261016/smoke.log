@@ -1,0 +1,120 @@
+cache: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/cache.01.log)
+pca: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/pca.01.log)
+source: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/source.01.log)
+inputs: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/inputs.01.log)
+targets: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/targets.01.log)
+topology: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/topology.01.log)
+contours: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/contours.01.log)
+carrier-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/carrier-0.01.log)
+scalar-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/scalar-0.01.log)
+expand-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/expand-0.01.log)
+field-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/field-0.01.log)
+carrier-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/carrier-1.01.log)
+scalar-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/scalar-1.01.log)
+expand-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/expand-1.01.log)
+field-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/field-1.01.log)
+carrier-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/carrier-2.01.log)
+scalar-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/scalar-2.01.log)
+expand-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/expand-2.01.log)
+field-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/field-2.01.log)
+carrier-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/carrier-3.01.log)
+scalar-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/scalar-3.01.log)
+expand-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/expand-3.01.log)
+field-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/field-3.01.log)
+carrier-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/carrier-4.01.log)
+scalar-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/scalar-4.01.log)
+expand-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/expand-4.01.log)
+field-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/field-4.01.log)
+Model ready: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/model.json
+evaluate: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/logs/evaluate.01.log)
+{"selected_family": "dct", "pooled_oof_score": {"S": 0.895173, "r2_psi": 0.999917, "r2_qb": 0.960738, "dlcfs": 0.004388, "consistency": 0.507732, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999917, "r2_psi_per_shot_mean": 0.999918, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 20, "n_shots_missing": 0, "r2_each": {"q95": 0.9606, "betaN": 0.960875}, "r2_cons_each": {"R_axis": 0.857061, "Z_axis": 0.817055, "kappa": 0.769813, "tri_top": -0.08628, "tri_bot": -0.33343, "volume": 0.841576, "li": 0.268619}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "development_score": {"S": 0.648503, "r2_psi": 0.999457, "r2_qb": -13.739164, "dlcfs": 0.011979, "consistency": 0.0, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999457, "r2_psi_per_shot_mean": 0.999456, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 3, "n_shots_missing": 0, "r2_each": {"q95": -13.105539, "betaN": -14.37279}, "r2_cons_each": {"R_axis": -1.366467, "Z_axis": -5.242693, "kappa": -26.175238, "tri_top": -1.432487, "tri_bot": -1.985871, "volume": -2.127547, "li": -1.027979}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "frozen_audit_used": false, "published": false, "profile": "synthetic_smoke", "public_score_recomputed": false, "interpretation": "synthetic software check only"}
+{"stage": "prepare", "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet", "frames": 8}
+{"stage": "predict", "fold": 0, "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet"}
+{"stage": "predict", "fold": 1, "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet"}
+{"stage": "predict", "fold": 2, "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet"}
+{"stage": "predict", "fold": 3, "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet"}
+{"stage": "predict", "fold": 4, "shots": 1, "total": 1, "last": "d3d_shot_0000000000.parquet"}
+{"stage": "complete", "archive": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/public-smoke/diii_d_public_test.npz", "shots": 1, "frames": 8, "bytes": 124472}
+building official context shots=3 frames=24
+{
+  "predictions": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/evaluation/development_predictions.npz",
+  "shots": 3,
+  "frames": 24,
+  "flux_r2": 0.9994568007116361,
+  "q95_r2": -13.105538534591197,
+  "betaN_r2": -14.372790455118302,
+  "score": {
+    "S": 0.648503,
+    "r2_psi": 0.999457,
+    "r2_qb": -13.739164,
+    "dlcfs": 0.011979,
+    "consistency": 0.0,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999457,
+    "r2_psi_per_shot_mean": 0.999456,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 3,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": -13.105539,
+      "betaN": -14.37279
+    },
+    "r2_cons_each": {
+      "R_axis": -1.366467,
+      "Z_axis": -5.242693,
+      "kappa": -26.175238,
+      "tri_top": -1.432487,
+      "tri_bot": -1.985871,
+      "volume": -2.127547,
+      "li": -1.027979
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "data_policy": "synthetic_smoke_only",
+  "frozen_audit_used": false
+}
+Synthetic smoke completed: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run. These scores measure software execution only.
+cache: already complete
+pca: already complete
+source: already complete
+inputs: already complete
+targets: already complete
+topology: already complete
+contours: already complete
+carrier-0: already complete
+scalar-0: already complete
+expand-0: already complete
+field-0: already complete
+carrier-1: already complete
+scalar-1: already complete
+expand-1: already complete
+field-1: already complete
+carrier-2: already complete
+scalar-2: already complete
+expand-2: already complete
+field-2: already complete
+carrier-3: already complete
+scalar-3: already complete
+expand-3: already complete
+field-3: already complete
+carrier-4: already complete
+scalar-4: already complete
+expand-4: already complete
+field-4: already complete
+Model ready: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/model.json
+evaluate: already complete
+{"selected_family": "dct", "pooled_oof_score": {"S": 0.895173, "r2_psi": 0.999917, "r2_qb": 0.960738, "dlcfs": 0.004388, "consistency": 0.507732, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999917, "r2_psi_per_shot_mean": 0.999918, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 20, "n_shots_missing": 0, "r2_each": {"q95": 0.9606, "betaN": 0.960875}, "r2_cons_each": {"R_axis": 0.857061, "Z_axis": 0.817055, "kappa": 0.769813, "tri_top": -0.08628, "tri_bot": -0.33343, "volume": 0.841576, "li": 0.268619}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "development_score": {"S": 0.648503, "r2_psi": 0.999457, "r2_qb": -13.739164, "dlcfs": 0.011979, "consistency": 0.0, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999457, "r2_psi_per_shot_mean": 0.999456, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 3, "n_shots_missing": 0, "r2_each": {"q95": -13.105539, "betaN": -14.37279}, "r2_cons_each": {"R_axis": -1.366467, "Z_axis": -5.242693, "kappa": -26.175238, "tri_top": -1.432487, "tri_bot": -1.985871, "volume": -2.127547, "li": -1.027979}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "frozen_audit_used": false, "published": false, "profile": "synthetic_smoke", "public_score_recomputed": false, "interpretation": "synthetic software check only"}
+Synthetic smoke completed: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run. These scores measure software execution only.

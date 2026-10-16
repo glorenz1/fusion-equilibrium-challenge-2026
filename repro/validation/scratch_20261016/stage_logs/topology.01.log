@@ -1,0 +1,26 @@
+exact train topology shots=20 frames=40; frozen-audit shot files remain unopened
+exact train topology 1/20 shots
+exact train topology 20/20 shots
+{
+  "output": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/artifacts/topology.npz",
+  "output_sha256": "95ebfb8d8e8ed4a70202bde4042715296cd562233f439a3f4c9cc81501784a7b",
+  "shots": 20,
+  "frames": 40,
+  "finite_fraction": {
+    "R_axis": 1.0,
+    "Z_axis": 1.0,
+    "kappa": 1.0,
+    "tri_top": 1.0,
+    "tri_bot": 1.0,
+    "volume": 1.0,
+    "li": 1.0
+  },
+  "fully_finite_frames": 40,
+  "split": "train",
+  "frame_stride": 4,
+  "metadata_source": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421846/test_fresh_checkout_trains_pre0/run/splits.json",
+  "metadata_sha256": "61867b5fbf15cbef3add17da48f5fb4f763b1d55a9de67da2a788a16e38193ce",
+  "data_policy": "synthetic_smoke_only",
+  "development_used": false,
+  "frozen_audit_used": false
+}

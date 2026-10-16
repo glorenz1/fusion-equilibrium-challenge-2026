@@ -1,0 +1,126 @@
+{"passed": true, "files": 59}
+........................................................                 [100%]
+56 passed, 1 deselected in 167.51s (0:02:47)
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ test_fresh_checkout_trains_predicts_and_scores_without_retained_artifacts ___
+
+tmp_path = PosixPath('/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0')
+
+    @pytest.mark.integration
+    def test_fresh_checkout_trains_predicts_and_scores_without_retained_artifacts(tmp_path):
+        checkout = tmp_path / "checkout"
+        checkout.mkdir()
+        # Deliberately omit repro/, scripts/, artifacts/, data/ and the original checkout's Git history.
+        for name in ("fec1", "config"):
+            shutil.copytree(ROOT / name, checkout / name, ignore=shutil.ignore_patterns("__pycache__"))
+        run = tmp_path / "run"
+        command = [sys.executable, "-B", "-m", "fec1", "smoke", "--run", str(run), "--workers", "1"]
+        log = tmp_path / "smoke.log"
+        with log.open("w") as output:
+            completed = subprocess.run(
+                command, cwd=checkout, stdout=output, stderr=subprocess.STDOUT, timeout=1800
+            )
+>       assert completed.returncode == 0, log.read_text()[-18000:]
+E       AssertionError: cache: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/cache.01.log)
+E         pca: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/pca.01.log)
+E         source: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/source.01.log)
+E         inputs: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/inputs.01.log)
+E         targets: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/targets.01.log)
+E         topology: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/topology.01.log)
+E         contours: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/contours.01.log)
+E         carrier-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/carrier-0.01.log)
+E         scalar-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/scalar-0.01.log)
+E         expand-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/expand-0.01.log)
+E         field-0: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/field-0.01.log)
+E         carrier-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/carrier-1.01.log)
+E         scalar-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/scalar-1.01.log)
+E         expand-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/expand-1.01.log)
+E         field-1: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/field-1.01.log)
+E         carrier-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/carrier-2.01.log)
+E         scalar-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/scalar-2.01.log)
+E         expand-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/expand-2.01.log)
+E         field-2: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/field-2.01.log)
+E         carrier-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/carrier-3.01.log)
+E         scalar-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/scalar-3.01.log)
+E         expand-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/expand-3.01.log)
+E         field-3: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/field-3.01.log)
+E         carrier-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/carrier-4.01.log)
+E         scalar-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/scalar-4.01.log)
+E         expand-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/expand-4.01.log)
+E         field-4: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/field-4.01.log)
+E         Model ready: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/model.json
+E         evaluate: running (log: /lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/logs/evaluate.01.log)
+E         {"selected_family": "dct", "pooled_oof_score": {"S": 0.895173, "r2_psi": 0.999917, "r2_qb": 0.960738, "dlcfs": 0.004388, "consistency": 0.507732, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999917, "r2_psi_per_shot_mean": 0.999918, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 20, "n_shots_missing": 0, "r2_each": {"q95": 0.9606, "betaN": 0.960875}, "r2_cons_each": {"R_axis": 0.857061, "Z_axis": 0.817055, "kappa": 0.769813, "tri_top": -0.08628, "tri_bot": -0.33343, "volume": 0.841576, "li": 0.268619}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "development_score": {"S": 0.648503, "r2_psi": 0.999457, "r2_qb": -13.739164, "dlcfs": 0.011979, "consistency": 0.0, "psi_sign": 1, "psi_sign_flipped": false, "psi_sign_probe_disagrees": false, "r2_psi_unflipped": 0.999457, "r2_psi_per_shot_mean": 0.999456, "lcfs_fail_frac": 0.0, "ref_lcfs_dropped": 0, "psi_nonfinite_frac": 0.0, "cons_fail_frac": 0.0, "n_shots": 3, "n_shots_missing": 0, "r2_each": {"q95": -13.105539, "betaN": -14.37279}, "r2_cons_each": {"R_axis": -1.366467, "Z_axis": -5.242693, "kappa": -26.175238, "tri_top": -1.432487, "tri_bot": -1.985871, "volume": -2.127547, "li": -1.027979}, "cons_fail_each": {"R_axis": 0.0, "Z_axis": 0.0, "kappa": 0.0, "tri_top": 0.0, "tri_bot": 0.0, "volume": 0.0, "li": 0.0}}, "frozen_audit_used": false, "published": false, "profile": "synthetic_smoke", "public_score_recomputed": false, "interpretation": "synthetic software check only"}
+E         concurrent.futures.process._RemoteTraceback: 
+E         """
+E         Traceback (most recent call last):
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/process.py", line 256, in _process_worker
+E             r = call_item.fn(*call_item.args, **call_item.kwargs)
+E                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/process.py", line 205, in _process_chunk
+E             return [fn(*args) for args in chunk]
+E                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/process.py", line 205, in <listcomp>
+E             return [fn(*args) for args in chunk]
+E                     ^^^^^^^^^
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/inference.py", line 64, in prepare_one
+E             prepared = preprocess_row(_read_public(path), config, include_targets=False)
+E                                       ^^^^^^^^^^^^^^^^^^
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/inference.py", line 42, in _read_public
+E             columns = safe_input_columns(tuple(pq.ParquetFile(path).schema_arrow.names))
+E                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/data/projection.py", line 61, in safe_input_columns
+E             raise RuntimeError(f"raw parquet is missing required inputs: {sorted(missing)}")
+E         RuntimeError: raw parquet is missing required inputs: ['coil_input_column']
+E         """
+E         
+E         The above exception was the direct cause of the following exception:
+E         
+E         Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/inference.py", line 301, in <module>
+E             raise SystemExit(main())
+E                              ^^^^^^
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/inference.py", line 275, in main
+E             prepare(paths, cache, args.workers)
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/inference.py", line 94, in prepare
+E             for index, (name, count) in enumerate(pool.map(prepare_one, tasks), 1):
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/process.py", line 606, in _chain_from_iterable_of_lists
+E             for element in iterable:
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+E             yield _result_or_cancel(fs.pop())
+E                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+E             return fut.result(timeout)
+E                    ^^^^^^^^^^^^^^^^^^^
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+E             return self.__get_result()
+E                    ^^^^^^^^^^^^^^^^^^^
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+E             raise self._exception
+E         RuntimeError: raw parquet is missing required inputs: ['coil_input_column']
+E         Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/__main__.py", line 3, in <module>
+E             raise SystemExit(main())
+E                              ^^^^^^
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/cli.py", line 207, in main
+E             smoke(args.run, args.workers, args.resume)
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/smoke.py", line 72, in smoke
+E             pipeline.predict(run, raw, output, "cpu", workers, max_shots=1)
+E           File "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/checkout/fec1/pipeline.py", line 504, in predict
+E             subprocess.run(command, cwd=ROOT, env=subprocess_environment(run, workers), check=True)
+E           File "/sw/isaac/applications/anaconda3/2023.09/rhel8_cascadelake_binary/anaconda3-2023.09/lib/python3.11/subprocess.py", line 571, in run
+E             raise CalledProcessError(retcode, process.args,
+E         subprocess.CalledProcessError: Command '['/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python', '-m', 'fec1.inference', '--inputs', '/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run-synthetic-data', '--output', '/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/public-smoke', '--selected-root', '/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/artifacts', '--base-root', '/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/fusion-equilibrium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run/artifacts', '--device', 'cpu', '--workers', '1', '--batch-size', '128', '--max-shots', '1']' returned non-zero exit status 1.
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/.venv/bin/python', '-B', ...rium-challenge-2026/outputs/scratch-test-6421824/test_fresh_checkout_trains_pre0/run', '--workers', '1'], returncode=1).returncode
+
+tests/test_scratch_workflow.py:172: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_scratch_workflow.py::test_fresh_checkout_trains_predicts_and_scores_without_retained_artifacts
+1 failed, 56 deselected in 151.07s (0:02:31)

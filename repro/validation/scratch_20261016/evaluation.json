@@ -1,0 +1,88 @@
+{
+  "selected_family": "dct",
+  "pooled_oof_score": {
+    "S": 0.895173,
+    "r2_psi": 0.999917,
+    "r2_qb": 0.960738,
+    "dlcfs": 0.004388,
+    "consistency": 0.507732,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999917,
+    "r2_psi_per_shot_mean": 0.999918,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 20,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.9606,
+      "betaN": 0.960875
+    },
+    "r2_cons_each": {
+      "R_axis": 0.857061,
+      "Z_axis": 0.817055,
+      "kappa": 0.769813,
+      "tri_top": -0.08628,
+      "tri_bot": -0.33343,
+      "volume": 0.841576,
+      "li": 0.268619
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "development_score": {
+    "S": 0.648503,
+    "r2_psi": 0.999457,
+    "r2_qb": -13.739164,
+    "dlcfs": 0.011979,
+    "consistency": 0.0,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999457,
+    "r2_psi_per_shot_mean": 0.999456,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 3,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": -13.105539,
+      "betaN": -14.37279
+    },
+    "r2_cons_each": {
+      "R_axis": -1.366467,
+      "Z_axis": -5.242693,
+      "kappa": -26.175238,
+      "tri_top": -1.432487,
+      "tri_bot": -1.985871,
+      "volume": -2.127547,
+      "li": -1.027979
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "frozen_audit_used": false,
+  "published": false,
+  "profile": "synthetic_smoke",
+  "public_score_recomputed": false,
+  "interpretation": "synthetic software check only"
+}
