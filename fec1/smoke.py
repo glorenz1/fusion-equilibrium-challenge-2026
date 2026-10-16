@@ -1,10 +1,12 @@
 """Generate a tiny synthetic dataset and exercise the full training workflow."""
 from pathlib import Path
 import json
+import shutil
 import subprocess
 import sys
 
 from fec1.paths import ROOT
+from fec1.data.projection import safe_input_columns
 
 
 def make_data(directory):
@@ -31,6 +33,9 @@ def make_data(directory):
         flux = -0.15 * (1 - normalized)
         row = dict(
             source="DIII-D",
+            coil_input_column=[],
+            coil_R=[],
+            coil_Z=[],
             efit_times=times.tolist(),
             efit_grid_R=r.tolist(),
             efit_grid_Z=z.tolist(),
@@ -48,6 +53,7 @@ def make_data(directory):
             magnetics_bcoil=(100 + 0.1 * shot + 0.02 * np.arange(8)).tolist(),
             magnetics_ECOILA=(10 + 0.1 * shot + 0.02 * np.arange(8)).tolist(),
         )
+        safe_input_columns(tuple(row))
         pd.DataFrame([row]).to_parquet(directory / f"{name}.parquet", index=False)
         records.append(
             dict(shot=name, split="train" if shot < 20 else "development", source_frame_count=8)
@@ -68,7 +74,15 @@ def smoke(run, workers=1, resume=False):
     pipeline.train(run, "cpu", workers, resume)
     pipeline.evaluate(run, "cpu", workers, resume)
     output = run / "public-smoke"
-    if not output.exists():
+    complete = (output / "diii_d_public_test.npz").is_file() and (
+        output / "predictions.json"
+    ).is_file()
+    if output.exists() and not complete:
+        failed = run / "failed"
+        failed.mkdir(exist_ok=True)
+        destination = failed / f"public-smoke-{len(list(failed.glob('public-smoke-*')))}"
+        shutil.move(str(output), str(destination))
+    if not complete:
         pipeline.predict(run, raw, output, "cpu", workers, max_shots=1)
     score = run / "rescored.json"
     if not score.exists():

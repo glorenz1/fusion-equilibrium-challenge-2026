@@ -42,7 +42,7 @@
     "fec1/scoring/vendor/lcfs.py": "11722a262824434c524b7cda74cfcff3af52a49eff44aa89f7dd6aa5c54890a5",
     "fec1/scoring/vendor/metrics.py": "2e271b43854213652ec1e20d933f2e19a1a83361c239eb614f7329cd88fc0b5a",
     "fec1/scoring/vendor/o_point.py": "da1e7cdcac69c752f7fdf700eeb0fb22da36249f72f9e6ef6b194185359a3ed4",
-    "fec1/smoke.py": "812712081fcb2ef4b282ae47f3da67f75bb877013d83f277ba82c96b89893dc4",
+    "fec1/smoke.py": "e21b43774c7d4f5c387e0c764959a820f22fe3680d27bfd675b7a3478473fc63",
     "fec1/training/__init__.py": "2633140ddbbef28c818de64a39f7cf58a699685fbe65ee970e75d4b5b48edc90",
     "fec1/training/alignment.py": "0bfc20670582b373ab7ad2bae2da9fa93c3793ffa0d74d60b629fb44fa6200a1",
     "fec1/training/carriers.py": "43ef8790181cd267447a3e123feca7bfe78a7f44b74a838200a9584a16241102",
