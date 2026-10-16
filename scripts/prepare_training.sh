@@ -8,9 +8,8 @@ art=my_experiments/artifacts
 mkdir -p "$art"
 "$py" train_neuralgs.py prepare --input-dir data/diii_d_train \
   --output-dir "$cache" --frames-per-shot 0 --workers 16 --uncompressed
-"$py" my_experiments/fit_fec1_full_frame_pca.py --workers 8 \
-  --artifact "$art/fec1_full_frame_pca64_extra_trees.joblib" \
-  --output my_experiments/candidates/fec1_full_frame_pca64
+"$py" scripts/prepare_pca.py --workers 8 \
+  --output "$art/fec1_full_frame_pca64_extra_trees.joblib"
 "$py" my_experiments/generate_fec1_train_oof_base.py --folds 5 --workers 8 \
   --train-stride 4 --estimators 96 --min-samples-leaf 4 --max-features 0.7 \
   --output "$art/fec1_train_stride4_oof_base.npz"

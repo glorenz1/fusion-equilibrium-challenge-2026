@@ -66,11 +66,17 @@ The complete pipeline, in dependency order, is:
    my_experiments/neuralgs_real_d3d_full_frame_cache --frames-per-shot 0
    --workers 16 --uncompressed`. The frozen configuration is committed beside
    that cache location. Data must retain the original input filenames.
-2. Run `my_experiments/fit_fec1_full_frame_pca.py` to create the train-only
-   `fec1_full_frame_pca64_extra_trees.joblib`, then
+2. Run `scripts/prepare_pca.py --output
+   my_experiments/artifacts/fec1_full_frame_pca64_extra_trees.joblib` to create
+   the initial train-only PCA cache, then
    `my_experiments/generate_fec1_train_oof_base.py --folds 5 --workers 8
    --train-stride 4 --estimators 96 --min-samples-leaf 4 --max-features 0.7
    --output my_experiments/artifacts/fec1_train_stride4_oof_base.npz`.
+   The helper preserves the original PCA sampling, ordering, seeds and fit
+   arguments while omitting the old unrelated full-frame tree fit and its
+   post-fit dependency on development part files. The source-row builders
+   consume only this initial PCA; nested deployment carriers refit their own
+   PCA and trees. No deployed prediction depends on the omitted models.
 3. Materialize spatial inputs with `prepare_fec1_topology_native_inputs.py`,
    normalized targets with `prepare_fec1_score_aligned_targets.py`, exact
    topology with `extract_fec1_train_exact_topology.py --all-train-stride 4`,

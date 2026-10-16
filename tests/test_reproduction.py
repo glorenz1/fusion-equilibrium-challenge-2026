@@ -85,3 +85,38 @@ def test_public_reader_excludes_target_columns():
              "efit_psirz", "efit_q95", "efit_betaN", "equilibrium")
     safe = safe_input_columns(names)
     assert not set(safe) & {"efit_psirz", "efit_q95", "efit_betaN", "equilibrium"}
+
+
+@pytest.mark.parametrize("copy", [False, True])
+def test_artifact_import_verifies_then_installs_without_overwrite(tmp_path, monkeypatch, copy):
+    source = tmp_path / "retained"
+    source.mkdir()
+    original = source / "original.pt"
+    original.write_bytes(b"checkpoint")
+    record = dict(path="dct_fold0/checkpoint.pt", source="original.pt",
+                  bytes=10, sha256=fec1.digest(original))
+    monkeypatch.setattr(fec1, "manifest", lambda: {"artifacts": [record]})
+    destination = tmp_path / "installed"
+    fec1.import_artifacts(source, destination, copy=copy)
+    installed = destination / record["path"]
+    assert installed.is_symlink() is (not copy)
+    assert installed.read_bytes() == b"checkpoint"
+    with pytest.raises(FileExistsError):
+        fec1.import_artifacts(source, destination, copy=copy)
+    original.write_bytes(b"corruption")
+    with pytest.raises(ValueError):
+        fec1.import_artifacts(source, tmp_path / "bad", copy=copy)
+    assert not (tmp_path / "bad").exists()
+
+
+def test_initial_pca_helper_preserves_historical_sampling_and_fit():
+    from scripts.prepare_pca import fit_pca
+    from sklearn.decomposition import PCA
+    rng = np.random.default_rng(19)
+    sample = rng.normal(size=(80, 5, 5)).astype(np.float32)
+    selected = np.random.default_rng(260901).choice(len(sample), 40, replace=False)
+    expected = PCA(n_components=4, svd_solver="randomized", iterated_power=3,
+                   random_state=260902).fit(sample[selected].reshape(40, -1))
+    actual = fit_pca(sample, components=4, frames=40)
+    np.testing.assert_array_equal(actual.components_, expected.components_)
+    np.testing.assert_array_equal(actual.mean_, expected.mean_)
