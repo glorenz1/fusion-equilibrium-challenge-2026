@@ -8,6 +8,7 @@ a compact archive.  Development and frozen-audit shot files are never opened.
 """
 
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 
 from fec1.paths import CACHE
 
@@ -48,7 +49,7 @@ def main() -> int:
 
     with np.load(args.oof, allow_pickle=False) as saved:
         for key, expected in (
-            ("data_policy", "real_diii_d_only"),
+            ("data_policy", DATA_POLICY),
             ("same_shot_targets_used", False),
             ("development_used", False),
             ("frozen_audit_used", False),
@@ -59,8 +60,10 @@ def main() -> int:
         frames = np.asarray(saved["frame_index"], dtype=np.int64)
         shape_width = int(np.asarray(saved["target_shape"]).shape[1])
     unique = np.unique(names)
-    if len(unique) != 5677:
-        raise RuntimeError(f"expected 5,677 immutable train shots, found {len(unique)}")
+    from fec1.data.features import _split_records
+
+    if set(unique) != set(_split_records()[0]):
+        raise RuntimeError(f"unexpected immutable training-shot identities; found {len(unique)}")
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     dtype = np.float16 if args.dtype == "float16" else np.float32
@@ -99,7 +102,7 @@ def main() -> int:
 
     artifact = joblib.load(args.base_artifact)
     for key, expected in (
-        ("data_policy", "real_diii_d_only"),
+        ("data_policy", DATA_POLICY),
         ("development_used_for_fit", False),
         ("frozen_audit_used", False),
     ):
@@ -116,7 +119,7 @@ def main() -> int:
         explained_variance_ratio=np.asarray(pca.explained_variance_ratio_, dtype=np.float32),
         grid_r=grid_r,
         grid_z=grid_z,
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         development_used=np.asarray(False),
         frozen_audit_used=np.asarray(False),
     )
@@ -136,7 +139,7 @@ def main() -> int:
         "pca_explained_variance": float(
             np.asarray(pca.explained_variance_ratio_, dtype=np.float64).sum()
         ),
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "development_used": False,
         "frozen_audit_used": False,
         "elapsed_seconds": time.monotonic() - started,

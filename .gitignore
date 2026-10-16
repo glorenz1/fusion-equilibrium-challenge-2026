@@ -13,3 +13,5 @@ dist/
 /logs/
 *.log
 !/repro/validation/**/*.log
+
+/runs/

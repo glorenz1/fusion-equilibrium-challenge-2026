@@ -6,6 +6,7 @@ and all development predictions have been written. This script never publishes
 a submission or changes the existing frozen baseline.
 """
 from __future__ import annotations
+from fec1.paths import DATA_POLICY, SYNTHETIC
 
 from fec1.paths import CACHE
 
@@ -51,7 +52,7 @@ def pooled_score(root, family, folds, output, workers=1):
     for fold in range(folds):
         directory = root / f"{family}_fold{fold}"
         report = json.loads((directory / "result.json").read_text())
-        if report["smoke_only"] or not report["nested_shot_crossfit"]:
+        if (report["smoke_only"] and not SYNTHETIC) or not report["nested_shot_crossfit"]:
             raise RuntimeError("smoke or non-crossfit results cannot enter evaluation")
         if report["development_used"] or report["frozen_audit_used"]:
             raise RuntimeError("evaluation labels entered training")
@@ -130,7 +131,7 @@ def predict_development(
             root / f"{family}_fold{fold}/checkpoint.pt", map_location="cpu", weights_only=False
         )
         if (
-            checkpoint["smoke_only"]
+            (checkpoint["smoke_only"] and not SYNTHETIC)
             or not checkpoint["nested_shot_crossfit"]
             or checkpoint["development_used"]
             or checkpoint["frozen_audit_used"]
@@ -220,7 +221,7 @@ def predict_development(
         psirz=field,
         q95=scalar[:, 0],
         betaN=scalar[:, 1],
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         frozen_audit_used=np.asarray(split_name == "frozen_audit"),
         evaluation_split=np.asarray(split_name),
         prediction_variant=np.asarray("nested_train_crossfit_ensemble"),

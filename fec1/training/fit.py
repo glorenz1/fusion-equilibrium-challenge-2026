@@ -1,5 +1,6 @@
 """Train a correction on inner OOF errors; score unseen outer shots once."""
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 
 from fec1.paths import CACHE
 from fec1.paths import ROOT
@@ -165,7 +166,29 @@ def objective(
     fixed_scalars=False,
     base_field=None,
     frozen_strengths=None,
+    base_scalar=None,
 ):
+    if frozen_strengths is not None:
+        if base_field is None:
+            raise ValueError("frozen calibration requires the same batch's base field")
+        if base_scalar is None and not fixed_scalars:
+            raise ValueError("calibrated scalar supervision requires base_scalar")
+        calibrated_field, calibrated_scalar = calibrated_prediction_torch(
+            base_field,
+            torch.zeros_like(output["scalar"]) if base_scalar is None else base_scalar,
+            output["field"],
+            output["scalar"],
+            frozen_strengths,
+        )
+        calibrated_coord, calibrated_shape = coordinates(calibrated_field)
+        output = {
+            **output,
+            "field": calibrated_field,
+            "scalar": calibrated_scalar,
+            "coordinate": calibrated_coord,
+            "shape": calibrated_shape,
+            "coefficient": (calibrated_shape - output["base_shape"]).flatten(1) @ model.basis.T,
+        }
     target_coord, target_shape = coordinates(target)
     shape_error = (output["shape"] - target_shape) / model.shape_scale
     shape_loss = shape_error.square().mean()
@@ -194,17 +217,6 @@ def objective(
         target_n, topology, radius, angles, grid_r, grid_z = geometry
         count = len(target_n)
         geometry_shape = output["shape"][:count]
-        if frozen_strengths is not None:
-            if base_field is None:
-                raise ValueError("calibrated geometry requires the same batch's base field")
-            calibrated_field, _ = calibrated_prediction_torch(
-                base_field[:count],
-                torch.zeros_like(output["scalar"][:count]),
-                output["field"][:count],
-                output["scalar"][:count],
-                frozen_strengths,
-            )
-            geometry_shape = coordinates(calibrated_field)[1]
         if loss_version == "legacy":
             predicted_n, useful = teacher_normalized_flux(geometry_shape, target_n)
             parts = direct_raster_geometry_losses(
@@ -586,8 +598,9 @@ def main():
                 args.loss_version,
                 args.geometry_components,
                 fixed_scalar_checkpoint is not None,
-                base_field=inputs[1] if args.geometry_on_calibrated_field else None,
-                frozen_strengths=frozen_strengths if args.geometry_on_calibrated_field else None,
+                base_field=inputs[1] if frozen_strengths is not None else None,
+                base_scalar=inputs[2] if frozen_strengths is not None else None,
+                frozen_strengths=frozen_strengths,
             )
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0, error_if_nonfinite=True)
@@ -657,7 +670,7 @@ def main():
             "scalar_reference_sha256": scalar_reference_sha256,
             "development_used": False,
             "frozen_audit_used": False,
-            "data_policy": "real_diii_d_only",
+            "data_policy": DATA_POLICY,
             "smoke_only": data.report["smoke_only"],
         }
         save_checkpoint_atomic(checkpoint, args.output / "checkpoint.pt")

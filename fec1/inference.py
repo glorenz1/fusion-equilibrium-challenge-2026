@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from fec1.paths import ROOT
+from fec1.paths import ROOT, SYNTHETIC
 
 import argparse
 from concurrent.futures import ProcessPoolExecutor
@@ -30,6 +30,7 @@ from fec1.data.features import _features
 from fec1.carrier import diagnostic_context, predict_base
 from fec1.data.config import PreprocessingConfig
 from fec1.data.records import preprocess_row
+from fec1.provenance import sha256, source_identity, write_json
 
 SELECTED = ROOT / "artifacts/incumbent"
 BASES = ROOT / "artifacts/incumbent"
@@ -49,9 +50,14 @@ def prepare_one(task: tuple[str, str, dict]) -> tuple[str, int]:
     source, destination, config_dict = task
     path = Path(source)
     out = Path(destination)
+    provenance = json.dumps(dict(input_sha256=sha256(path), config=config_dict), sort_keys=True)
     if out.is_file():
         with np.load(out, allow_pickle=False) as cached:
-            if cached["shot_name"].item() == path.stem:
+            if (
+                cached["shot_name"].item() == path.stem
+                and "provenance" in cached
+                and cached["provenance"].item() == provenance
+            ):
                 return path.name, len(cached["features"])
         raise RuntimeError(f"stale public input cache: {out}")
     config = PreprocessingConfig.from_dict(config_dict)
@@ -59,6 +65,7 @@ def prepare_one(task: tuple[str, str, dict]) -> tuple[str, int]:
     feature = _features(prepared)
     arrays = {
         "shot_name": np.asarray(path.stem),
+        "provenance": np.asarray(provenance),
         "features": feature,
         "token_values": np.nan_to_num(
             prepared["token_values"], nan=0.0, posinf=0.0, neginf=0.0
@@ -81,7 +88,7 @@ def prepare_one(task: tuple[str, str, dict]) -> tuple[str, int]:
 
 def prepare(paths: list[Path], cache: Path, workers: int) -> None:
     metadata = json.loads(CONFIG.read_text())
-    config = metadata["config"]
+    config = {**metadata["config"], "implementation_sha256": source_identity(ROOT)}
     tasks = [(str(p), str(cache / f"{p.stem}.npz"), config) for p in paths]
     with ProcessPoolExecutor(max_workers=workers) as pool:
         for index, (name, count) in enumerate(pool.map(prepare_one, tasks), 1):
@@ -114,7 +121,7 @@ def _load_model(fold: int, device: torch.device, selected_root: Path):
         selected_root / f"dct_fold{fold}/checkpoint.pt", map_location="cpu", weights_only=False
     )
     if (
-        checkpoint.get("smoke_only")
+        (checkpoint.get("smoke_only") and not SYNTHETIC)
         or not checkpoint.get("nested_shot_crossfit")
         or checkpoint.get("development_used")
         or checkpoint.get("frozen_audit_used")
@@ -255,6 +262,8 @@ def main() -> int:
     parser.add_argument("--base-root", type=Path, default=BASES)
     parser.add_argument("--inputs", type=Path, default=PUBLIC)
     args = parser.parse_args()
+    if args.workers < 1 or args.batch_size < 1 or args.max_shots < 0:
+        parser.error("workers/batch-size must be positive and max-shots nonnegative")
     paths = sorted(args.inputs.glob("*.parquet"))
     if args.max_shots:
         paths = paths[: args.max_shots]
@@ -274,6 +283,16 @@ def main() -> int:
             workers=args.workers,
             selected_root=args.selected_root,
             base_root=args.base_root,
+        )
+        write_json(
+            args.output / "predictions.json",
+            dict(
+                shot_order=[p.name for p in paths],
+                raw_files=[dict(path=p.name, sha256=sha256(p)) for p in paths],
+                profile="synthetic_smoke" if SYNTHETIC else "full",
+                source_sha256=source_identity(ROOT),
+                public_score_recomputed=False,
+            ),
         )
     return 0
 

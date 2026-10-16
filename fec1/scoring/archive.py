@@ -2,6 +2,7 @@
 """Score an aligned FEC1 prediction archive against development cache targets."""
 
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 
 from fec1.paths import CACHE
 
@@ -19,6 +20,7 @@ import numpy as np
 
 
 from fec1.data.features import _read
+from fec1.paths import MANIFEST
 
 
 from fec1.scoring.vendor.common import N_CONS, N_SCALARS, PSI_SIGNS, SCALARS  # noqa: E402
@@ -314,6 +316,33 @@ def _r2(target: np.ndarray, prediction: np.ndarray) -> float:
     return float(1.0 - np.square(y - p).sum(dtype=np.float64) / max(total, 1.0e-30))
 
 
+def validate_development_predictions(prediction, records):
+    """Require complete, finite held-shot predictions before opening labels."""
+    counts = {r["shot"]: r["source_frame_count"] for r in records if r["split"] == "development"}
+    names = prediction["shot_name"].astype(str)
+    n = len(names)
+    if not n or set(names) != set(counts):
+        raise ValueError(
+            "score requires every development shot and excludes train/frozen-audit shots"
+        )
+    for key in ("sample_index", "frame_index"):
+        if prediction[key].shape != (n,) or not np.issubdtype(prediction[key].dtype, np.integer):
+            raise ValueError(f"invalid integer row identity: {key}")
+    if not np.array_equal(np.sort(prediction["sample_index"]), np.arange(n)):
+        raise ValueError("sample_index must cover all rows exactly once")
+    for key, shape in (("psirz", (n, 65, 65)), ("q95", (n,)), ("betaN", (n,))):
+        if (
+            prediction[key].shape != shape
+            or prediction[key].dtype != np.float32
+            or not np.isfinite(prediction[key]).all()
+        ):
+            raise ValueError(f"invalid prediction array: {key}")
+    for shot, count in counts.items():
+        frames = prediction["frame_index"][names == shot]
+        if not np.array_equal(np.sort(frames), np.arange(count)):
+            raise ValueError(f"missing, duplicate or invalid development frames: {shot}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--predictions", type=Path, required=True)
@@ -327,6 +356,8 @@ def main() -> int:
     )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if args.workers < 1 or args.max_shots < 0:
+        parser.error("workers must be positive and max-shots nonnegative")
 
     with np.load(args.predictions, allow_pickle=False) as saved:
         prediction = {
@@ -335,6 +366,9 @@ def main() -> int:
         }
         if "frozen_audit_used" in saved and saved["frozen_audit_used"].item():
             raise RuntimeError("prediction archive used frozen audit")
+        if "data_policy" in saved and saved["data_policy"].item() != DATA_POLICY:
+            raise ValueError("prediction data policy differs from this run")
+    validate_development_predictions(prediction, json.loads(MANIFEST.read_text())["records"])
     order = np.argsort(prediction["sample_index"].astype(np.int64))
     prediction = {key: value[order] for key, value in prediction.items()}
     names = prediction["shot_name"].astype(str)
@@ -395,7 +429,7 @@ def main() -> int:
         "q95_r2": _r2(target_q95, values["q95"]),
         "betaN_r2": _r2(target_beta_n, values["betaN"]),
         "score": score,
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "frozen_audit_used": False,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

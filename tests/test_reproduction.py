@@ -58,13 +58,18 @@ def test_checksum_check_rejects_corruption_and_missing_file(tmp_path):
 def test_archive_comparison_rejects_changed_arrays_and_nonfinite_values(tmp_path):
     a, b = tmp_path / "a.npz", tmp_path / "b.npz"
     x = np.arange(12, dtype=np.float32)
-    np.savez(a, shot_0000_q95=x)
-    np.savez(b, shot_0000_q95=x, shot_0001_q95=x)
+    arrays = dict(
+        shot_0000_q95=x, shot_0000_betaN=x, shot_0000_psirz=np.zeros((12, 65, 65), dtype=np.float32)
+    )
+    np.savez(a, **arrays)
+    np.savez(
+        b, **arrays, shot_0001_q95=x, shot_0001_betaN=x, shot_0001_psirz=arrays["shot_0000_psirz"]
+    )
     assert fec1.compare_archives(a, b)["passed"]
-    np.savez(a, shot_0000_q95=x + 1)
+    np.savez(a, **{**arrays, "shot_0000_q95": x + 1})
     with pytest.raises(AssertionError):
         fec1.compare_archives(a, b)
-    np.savez(a, shot_0000_q95=x * np.nan)
+    np.savez(a, **{**arrays, "shot_0000_q95": x * np.nan})
     with pytest.raises(ValueError, match="nonfinite"):
         fec1.compare_archives(a, b)
 

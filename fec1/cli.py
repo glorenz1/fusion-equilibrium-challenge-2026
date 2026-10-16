@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portable commands for the frozen FEC1 DIII-D 0.9931 ensemble."""
+"""Download data, train the FEC1 ensemble from scratch, evaluate and predict."""
 from __future__ import annotations
 
 import argparse
@@ -7,6 +7,8 @@ import hashlib
 import json
 import shutil
 import sys
+import re
+import subprocess
 from pathlib import Path
 
 from fec1.paths import ROOT
@@ -94,9 +96,28 @@ def compare_archives(actual, expected, *, atol=2e-6, rtol=2e-5):
     with np.load(actual, allow_pickle=False) as a, np.load(expected, allow_pickle=False) as b:
         if not a.files or not set(a.files).issubset(b.files):
             raise ValueError("empty or incompatible prediction archive")
+        shots = set()
+        for key in a.files:
+            match = re.fullmatch(r"shot_(\d{4})_(psirz|q95|betaN)", key)
+            if match is None:
+                raise ValueError(f"unexpected prediction key: {key}")
+            shots.add(int(match[1]))
+        required = {
+            f"shot_{shot:04d}_{name}"
+            for shot in range(len(shots))
+            for name in ("psirz", "q95", "betaN")
+        }
+        if set(a.files) != required:
+            raise ValueError(
+                "archive must contain complete psirz/q95/betaN arrays for the first N shots"
+            )
         for key in a.files:
             x, y = a[key], b[key]
             if x.shape != y.shape or x.dtype != np.float32:
+                raise ValueError(f"invalid output schema: {key}")
+            count = len(a[key.rsplit("_", 1)[0] + "_q95"])
+            required_shape = (count, 65, 65) if key.endswith("_psirz") else (count,)
+            if x.shape != required_shape or count == 0:
                 raise ValueError(f"invalid output schema: {key}")
             if not np.isfinite(x).all() or not np.isfinite(y).all():
                 raise ValueError(f"nonfinite output: {key}")
@@ -114,6 +135,31 @@ def compare_archives(actual, expected, *, atol=2e-6, rtol=2e-5):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    fetch = commands.add_parser("download", help="download verified official raw parquet data")
+    fetch.add_argument("--output", type=Path, default=ROOT / "data")
+    fetch.add_argument("--split", action="append", choices=("diii_d_train", "diii_d_public_test"))
+    fetch.add_argument("--revision")
+    fetch.add_argument("--workers", type=int, default=4)
+    prep = commands.add_parser("prepare", help="build all training inputs from raw labelled shots")
+    prep.add_argument("--data", type=Path, required=True)
+    prep.add_argument("--run", type=Path, required=True)
+    prep.add_argument("--workers", type=int, default=4)
+    prep.add_argument("--resume", action="store_true")
+    for name in ("train", "evaluate"):
+        command = commands.add_parser(name)
+        command.add_argument("--run", type=Path, required=True)
+        command.add_argument("--device", default="cuda")
+        command.add_argument("--workers", type=int, default=4)
+        command.add_argument("--resume", action="store_true")
+    score = commands.add_parser("score", help="score complete local development predictions")
+    score.add_argument("--run", type=Path, required=True)
+    score.add_argument("--predictions", type=Path)
+    score.add_argument("--output", type=Path, required=True)
+    score.add_argument("--workers", type=int, default=4)
+    smoke = commands.add_parser("smoke", help="exercise the complete workflow on synthetic data")
+    smoke.add_argument("--run", type=Path, required=True)
+    smoke.add_argument("--workers", type=int, default=1)
+    smoke.add_argument("--resume", action="store_true")
     commands.add_parser("verify-source")
     verify = commands.add_parser("verify-artifacts")
     verify.add_argument("--models", type=Path, default=ROOT / "artifacts/incumbent")
@@ -129,6 +175,7 @@ def main():
         "--copy", action="store_true", help="make independent copies instead of local symlinks"
     )
     infer = commands.add_parser("predict")
+    infer.add_argument("--run", type=Path, help="run containing a model trained from scratch")
     infer.add_argument("--inputs", type=Path, required=True)
     infer.add_argument("--output", type=Path, required=True)
     infer.add_argument("--models", type=Path, default=ROOT / "artifacts/incumbent")
@@ -141,7 +188,53 @@ def main():
     compare.add_argument("expected", type=Path)
     compare.add_argument("--report", type=Path)
     args = parser.parse_args()
-    if args.command == "verify-source":
+    if hasattr(args, "workers") and args.workers < 1:
+        parser.error("workers must be positive")
+    if args.command == "download":
+        from fec1.download import download
+
+        download(args.output, args.split or ["diii_d_train"], args.workers, args.revision)
+    elif args.command in ("prepare", "train", "evaluate"):
+        from fec1 import pipeline
+
+        if args.command == "prepare":
+            pipeline.prepare(args.run, args.data, args.workers, args.resume)
+        else:
+            getattr(pipeline, args.command)(args.run, args.device, args.workers, args.resume)
+    elif args.command == "smoke":
+        from fec1.smoke import smoke
+
+        smoke(args.run, args.workers, args.resume)
+    elif args.command == "score":
+        from fec1 import pipeline
+        from fec1.provenance import verify_records
+
+        pipeline.load_run(args.run)
+        if args.output.exists():
+            raise FileExistsError("use a new score output path")
+        manifest = json.loads((args.run / "splits.json").read_text())
+        development = {r["shot"] for r in manifest["records"] if r["split"] == "development"}
+        cache = args.run / "cache"
+        contents = json.loads((cache / "config.json").read_text())["content"]
+        verify_records(cache, [r for r in contents if Path(r["path"]).stem in development])
+        predictions = args.predictions or args.run / "evaluation/development_predictions.npz"
+        subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "fec1.scoring.archive",
+                "--predictions",
+                str(predictions.resolve()),
+                "--output",
+                str(args.output.resolve()),
+                "--workers",
+                str(args.workers),
+            ],
+            cwd=ROOT,
+            env=pipeline.subprocess_environment(args.run, args.workers),
+            check=True,
+        )
+    elif args.command == "verify-source":
         print(json.dumps({"passed": True, "files": verify_source()}))
     elif args.command == "verify-artifacts":
         verify_files(args.models, manifest()["artifacts"])
@@ -151,6 +244,18 @@ def main():
     elif args.command == "predict":
         if args.workers < 1 or args.batch_size < 1 or args.max_shots < 0:
             parser.error("workers/batch-size must be positive and max-shots nonnegative")
+        if args.run:
+            from fec1 import pipeline
+
+            return pipeline.predict(
+                args.run,
+                args.inputs,
+                args.output,
+                args.device,
+                args.workers,
+                args.batch_size,
+                args.max_shots,
+            )
         return predict(args)
     elif args.command == "compare":
         result = compare_archives(args.actual, args.expected)

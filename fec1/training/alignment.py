@@ -1,5 +1,6 @@
 """Align frozen training-only topology and contour cache rows."""
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 from pathlib import Path
 import numpy as np
 from fec1.scoring.vendor.common import CONS_SCALARS as CONSISTENCY_NAMES
@@ -12,7 +13,7 @@ def _align_topology(
 ) -> np.ndarray:
     with np.load(path, allow_pickle=False) as saved:
         for key, expected in (
-            ("data_policy", "real_diii_d_only"),
+            ("data_policy", DATA_POLICY),
             ("development_used", False),
             ("frozen_audit_used", False),
         ):
@@ -47,7 +48,7 @@ def _align_contours(
     """Align train-only exact LCFS radii to the OOF row order."""
     with np.load(path, allow_pickle=False) as saved:
         for key, expected in (
-            ("data_policy", "real_diii_d_only"),
+            ("data_policy", DATA_POLICY),
             ("frozen_audit_used", False),
         ):
             if key not in saved.files or saved[key].item() != expected:

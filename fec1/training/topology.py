@@ -6,7 +6,8 @@ belong to the train split.  Development and frozen-audit shot files are therefor
 opened by this program.
 """
 from __future__ import annotations
-from fec1.paths import ROOT
+from fec1.paths import DATA_POLICY
+from fec1.paths import CACHE, MANIFEST
 import argparse
 from concurrent.futures import ProcessPoolExecutor
 import hashlib
@@ -15,9 +16,6 @@ from pathlib import Path
 import numpy as np
 from fec1.scoring.vendor.common import CONS_SCALARS
 from fec1.scoring.topology import derive_flux_topology
-
-CACHE = ROOT / "data/cache"
-MANIFEST = ROOT / "repro/splits/shots.json"
 
 
 def _sha256(path: Path) -> str:
@@ -123,7 +121,7 @@ def main() -> int:
         split=np.full(len(target), output_split, dtype="U12"),
         target=target[order],
         names=np.asarray(CONS_SCALARS),
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         mast_data_used=np.asarray(False),
         development_used=np.asarray(output_split == "development"),
         frozen_audit_used=np.asarray(False),
@@ -145,7 +143,7 @@ def main() -> int:
         "frame_stride": requested_stride if requested_stride > 0 else 0,
         "metadata_source": str(metadata_source.resolve()),
         "metadata_sha256": _sha256(metadata_source),
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "development_used": output_split == "development",
         "frozen_audit_used": False,
     }

@@ -9,10 +9,11 @@ for fitting a second-stage residual model without in-sample base errors.
 """
 
 from __future__ import annotations
+from fec1.paths import DATA_POLICY, SYNTHETIC
 
 from fec1.paths import CACHE
 
-from fec1.paths import ROOT
+from fec1.paths import ARTIFACTS
 
 import argparse
 from concurrent.futures import ProcessPoolExecutor
@@ -28,7 +29,7 @@ import numpy as np
 from fec1.data.features import _coordinates, _features, _r2, _read, _split_records, _trees
 
 
-BASE_ARTIFACT = ROOT / "artifacts/training/source_pca.joblib"
+BASE_ARTIFACT = ARTIFACTS / "source_pca.joblib"
 _WORKER_PCA = None
 
 
@@ -106,7 +107,9 @@ def main() -> int:
     started = time.monotonic()
 
     train_shots, development_shots, frozen_shots = _split_records()
-    if len(train_shots) != 5677 or len(development_shots) != 689 or len(frozen_shots) != 675:
+    if not SYNTHETIC and (
+        len(train_shots) != 5677 or len(development_shots) != 689 or len(frozen_shots) != 675
+    ):
         raise RuntimeError("immutable DIII-D split counts changed")
     paths = [args.cache_dir / f"{shot}.npz" for shot in train_shots]
     missing = [path for path in paths if not path.is_file()]
@@ -187,6 +190,8 @@ def main() -> int:
             args.max_features,
             args.seed + 100 * fold + 3,
         )
+        for model in (shape_model, coordinate_model, scalar_model):
+            model.set_params(n_jobs=args.workers)
         shape_model.fit(features[fit], target_shape[fit])
         coordinate_model.fit(features[fit], target_coordinate[fit])
         scalar_model.fit(features[fit], target_scalar[fit])
@@ -229,7 +234,7 @@ def main() -> int:
         base_scalar=base_scalar.astype(np.float32),
         train_stride=np.asarray(args.train_stride, dtype=np.int32),
         pca_components=np.asarray(pca_components, dtype=np.int32),
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         same_shot_targets_used=np.asarray(False),
         development_used=np.asarray(False),
         frozen_audit_used=np.asarray(False),
@@ -237,7 +242,7 @@ def main() -> int:
     report = {
         "output": str(args.output.resolve()),
         "base_artifact": str(args.base_artifact.resolve()),
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "train_shots": len(train_shots),
         "train_rows": int(len(features)),
         "train_stride": args.train_stride,

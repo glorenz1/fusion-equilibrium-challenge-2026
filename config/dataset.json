@@ -1,0 +1,8 @@
+{
+  "repo_id": "Sophelio/fusion-equilibrium-challenge",
+  "revision": "1e280905b85f2a6fdde7e06fca8cf3a1edf447cb",
+  "url": "https://huggingface.co/datasets/Sophelio/fusion-equilibrium-challenge",
+  "documentation": "https://fusion-equilibrium-challenge.sophelio.io/data/",
+  "license": "CC-BY-4.0",
+  "splits": {"diii_d_train": 7041, "diii_d_public_test": 874}
+}

@@ -2,6 +2,7 @@
 """Extract compact polar LCFS signatures from exact FEC1 target flux."""
 
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 
 from fec1.paths import CACHE
 
@@ -248,7 +249,7 @@ def main() -> int:
         radius=radius,
         angles=angles.astype(np.float32),
         reconstruction_distance_m=distance,
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         mast_data_used=np.asarray(False),
         frozen_audit_used=np.asarray(False),
         label_source=np.asarray("exact scorer LCFS from target flux"),

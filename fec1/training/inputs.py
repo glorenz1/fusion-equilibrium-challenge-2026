@@ -2,6 +2,7 @@
 """Materialize exact train-only grids and spatial tokens for FEC1 training."""
 
 from __future__ import annotations
+from fec1.paths import DATA_POLICY
 
 
 import argparse
@@ -47,7 +48,7 @@ def main() -> int:
 
     with np.load(args.oof, allow_pickle=False) as saved:
         for key, expected in (
-            ("data_policy", "real_diii_d_only"),
+            ("data_policy", DATA_POLICY),
             ("same_shot_targets_used", False),
             ("development_used", False),
             ("frozen_audit_used", False),
@@ -136,7 +137,7 @@ def main() -> int:
         shot_name=names.astype("U19"),
         frame_index=frames.astype(np.int32),
         train_stride=np.asarray(train_stride, dtype=np.int32),
-        data_policy=np.asarray("real_diii_d_only"),
+        data_policy=np.asarray(DATA_POLICY),
         input_only_except_train_targets=np.asarray(True),
         development_used=np.asarray(False),
         frozen_audit_used=np.asarray(False),
@@ -152,7 +153,7 @@ def main() -> int:
         "token_mean": token_mean.tolist(),
         "token_scale": token_scale.tolist(),
         "arrays": {name: str((args.output_dir / f"{name}.npy").resolve()) for name in ARRAY_SPECS},
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "development_used": False,
         "frozen_audit_used": False,
         "elapsed_seconds": time.monotonic() - started,

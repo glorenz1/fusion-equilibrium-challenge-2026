@@ -1,5 +1,6 @@
 """Fit nested, shot-disjoint FEC1 carriers."""
 from __future__ import annotations
+from fec1.paths import DATA_POLICY, SYNTHETIC
 import argparse, gc, json, time
 from pathlib import Path
 import joblib
@@ -113,6 +114,7 @@ def main():
             workers=args.workers,
             seed=args.seed + 100 * args.fold + 10 * inner,
         )
+        artifact["data_policy"] = DATA_POLICY
         for start in range(0, len(predicted_rows), 1024):
             rows = predicted_rows[start : start + 1024]
             field, scalar = predict_base(artifact, features[rows])
@@ -147,8 +149,8 @@ def main():
         "shared_target_pca_used": False,
         "development_used": False,
         "frozen_audit_used": False,
-        "data_policy": "real_diii_d_only",
-        "smoke_only": bool(args.max_shots),
+        "data_policy": DATA_POLICY,
+        "smoke_only": bool(args.max_shots) or SYNTHETIC,
         "elapsed_seconds": time.monotonic() - started,
     }
     (args.output / "ready.json").write_text(json.dumps(report, indent=2) + "\n")

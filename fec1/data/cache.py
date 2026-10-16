@@ -1,11 +1,13 @@
 """Prepare real DIII-D shot caches without loading any neural solver."""
 from __future__ import annotations
+from fec1.paths import DATA_POLICY, SYNTHETIC
 import argparse, hashlib, json, time
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 import pandas as pd
 from fec1.data.config import PreprocessingConfig
 from fec1.data.records import evenly_spaced_frame_indices, save_prepared_shot
+from fec1.paths import CONFIG, MANIFEST
 
 
 def sha256_file(path: Path) -> str:
@@ -24,12 +26,15 @@ def sha256_names(paths: list[Path]) -> str:
     return digest.hexdigest()
 
 
-def _prepare_one_shot(task: tuple[str, str, dict, int, bool]) -> tuple[str, int]:
+def _prepare_one_shot(task: tuple[str, str, dict, int, bool]) -> tuple[str, int, str, str]:
     path_text, destination_text, config_values, frames_per_shot, compressed = task
     path = Path(path_text)
     destination = Path(destination_text)
     config = PreprocessingConfig.from_dict(config_values)
-    row = pd.read_parquet(path).iloc[0].to_dict()
+    frame = pd.read_parquet(path)
+    if len(frame) != 1:
+        raise ValueError(f"expected exactly one shot in {path}")
+    row = frame.iloc[0].to_dict()
     if str(row.get("source", "DIII-D")) != "DIII-D":
         raise ValueError(
             f"refusing non-DIII-D training row {path}: FEC1 training must remain DIII-D-only"
@@ -42,7 +47,7 @@ def _prepare_one_shot(task: tuple[str, str, dict, int, bool]) -> tuple[str, int]
         frame_indices=selected,
         compressed=compressed,
     )
-    return destination.name, len(selected)
+    return destination.name, len(selected), sha256_file(path), sha256_file(destination)
 
 
 def prepare_local_shards(
@@ -82,8 +87,27 @@ def prepare_local_shards(
         executor = ProcessPoolExecutor(max_workers=workers)
         results = executor.map(_prepare_one_shot, tasks, chunksize=1)
     frame_count = 0
+    identities = []
+    expected = {
+        r["shot"]: r["source_frame_count"] for r in json.loads(MANIFEST.read_text())["records"]
+    }
     try:
-        for index, (name, n_frames) in enumerate(results, start=1):
+        for index, (name, n_frames, raw_hash, cache_hash) in enumerate(results, start=1):
+            if (
+                frames_per_shot == 0
+                and Path(name).stem in expected
+                and n_frames != expected[Path(name).stem]
+            ):
+                raise ValueError(f"released frame count changed: {name}")
+            identities.append(
+                dict(
+                    path=name,
+                    raw_sha256=raw_hash,
+                    sha256=cache_hash,
+                    bytes=(output_dir / name).stat().st_size,
+                    frames=n_frames,
+                )
+            )
             frame_count += n_frames
             if index == 1 or index % 100 == 0 or index == len(selected):
                 print(
@@ -95,10 +119,10 @@ def prepare_local_shards(
         if executor is not None:
             executor.shutdown(cancel_futures=True)
     manifest = {
-        "data_policy": "real_diii_d_only",
+        "data_policy": DATA_POLICY,
         "source_machines": ["DIII-D"],
         "mast_data_used": False,
-        "synthetic_data_used": False,
+        "synthetic_data_used": SYNTHETIC,
         "raw_input_dir": str(Path(input_dir).resolve()),
         "raw_input_filenames_sha256": sha256_names(selected),
         "config": config.to_dict(),
@@ -111,6 +135,7 @@ def prepare_local_shards(
             "elapsed_seconds": time.monotonic() - started,
         },
         "files": [path.name for path in written],
+        "content": identities,
     }
     (output_dir / "config.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return written
@@ -127,7 +152,7 @@ def main():
     prepare_local_shards(
         args.input_dir,
         args.output_dir,
-        PreprocessingConfig(),
+        PreprocessingConfig.from_dict(json.loads(CONFIG.read_text())["config"]),
         frames_per_shot=args.frames_per_shot,
         workers=args.workers,
         compressed=not args.uncompressed,

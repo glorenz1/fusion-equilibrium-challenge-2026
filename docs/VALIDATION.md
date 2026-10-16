@@ -1,6 +1,17 @@
 # Reproduction validation
 
-The reorganized package passes **47 tests** in the existing Python 3.11
+The standalone workflow passes **56 unit/regression tests**. An additional
+integration test runs the complete synthetic workflow in an independent copy
+containing only `fec1/` and `config/`, without retained artifacts, data, history
+or Git metadata. It exercises preparation, all five carrier fits, all ten
+neural fits, held-shot evaluation, public-format prediction, independent
+rescoring and resume. Run it with `python -m pytest -q -m integration`.
+
+The historical retained-weight replays below describe earlier package revisions
+and remain recorded as evidence for the original model. They are separate from
+training a new model from raw data.
+
+The previous package layout passed **47 tests** in the existing Python 3.11
 environment. The original source layout passed 31 tests in the historical replay
 below. The current suite also checks package isolation, documented module entry
 points, retained mathematical definitions, source frame counts and a synthetic

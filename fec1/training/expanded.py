@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from fec1.paths import ROOT
+from fec1.paths import ARTIFACTS, SYNTHETIC
 
 import argparse
 import hashlib
@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-SOURCE_ROOT = ROOT / "artifacts/training"
+SOURCE_ROOT = ARTIFACTS
 
 
 def sha(path: Path) -> str:
@@ -35,7 +35,7 @@ def run(output: Path, fold: int, seed: int, selection_shots: int) -> dict:
     original = json.loads((source / "ready.json").read_text())
     if (
         original["fold"] != fold
-        or original["smoke_only"]
+        or (original["smoke_only"] and not SYNTHETIC)
         or not original["nested_shot_crossfit"]
         or original["development_used"]
         or original["frozen_audit_used"]
