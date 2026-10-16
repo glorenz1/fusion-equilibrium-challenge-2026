@@ -10,7 +10,8 @@ A separately retained neural scalar predictor supplies q95 and betaN.
 Before ensembling, apply each member's saved shape, coordinate and scalar
 strengths. Renormalize the calibrated shape. Average the five calibrated fields
 and scalars with equal weight 0.2 in the original fold order. Scalar strengths
-are [1,1] and shape strength is 0.75; coordinate strengths differ by fold.
+are [1,1]; shape strength is 0.75 for folds 0–3 and 1.0 for fold 4.
+Coordinate strengths differ by fold.
 The exact values and epochs are in `repro/artifacts.json`.
 
 All-frame deployment preserves four interleaved stride-4 sequences. Compute
@@ -32,18 +33,17 @@ upload tokens, private leaderboard labels or raw challenge data belong in Git.
 Create a portable archive after importing or linking the retained artifacts:
 
 ```bash
-tar -czhf artifacts/fec1-incumbent.tar.gz -C artifacts incumbent
+tar -chf artifacts/fec1-incumbent.tar -C artifacts incumbent
 ```
 
-`-h` dereferences local symlinks and `-z` compresses the original bytes without
-changing predictions. Compression takes time and does not reduce the memory
-needed to load the models. The archive stays in the ignored artifact directory.
-Transfer it through your chosen artifact store, alongside `repro/artifacts.json`.
-On a new checkout:
+`-h` dereferences local symlinks. This archive is uncompressed and stays in the
+ignored artifact directory. Transfer it through your chosen artifact store,
+alongside `repro/artifacts.json`. Alternatively, copy the `incumbent/` directory
+directly, preserving its paths and dereferencing symlinks. On a new checkout:
 
 ```bash
 mkdir -p artifacts
-tar -xzf /path/to/fec1-incumbent.tar.gz -C artifacts
+tar -xf /path/to/fec1-incumbent.tar -C artifacts
 .venv/bin/python fec1.py verify-artifacts
 ```
 

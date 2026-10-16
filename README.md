@@ -38,6 +38,15 @@ reports. The approximately 35 GB of binary artifacts are kept in a separate,
 ignored directory. A Git push alone does **not** distribute these weights.
 No public artifact download URL is currently configured.
 
+Running the retained pretrained ensemble requires these exact ten artifacts;
+training is not needed once they are installed. A fresh Git clone alone cannot
+run that ensemble. To retrain instead, obtain the official labelled parquet
+data, retain the committed shot splits, and follow the full preparation and
+training recipe. Retained weights are not required for training from scratch,
+but all carrier and scalar-reference stages must be rebuilt before the final
+field fits. A new fit is not guaranteed to reproduce the exact checkpoints or
+the historical public score.
+
 From the existing starter checkout, import the exact ten files listed in
 [`repro/artifacts.json`](repro/artifacts.json):
 
