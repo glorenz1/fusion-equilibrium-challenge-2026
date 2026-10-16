@@ -1,0 +1,136 @@
+{
+  "decoder": "dct",
+  "fold": 0,
+  "selected_epoch": 36,
+  "selection_score": 0.99256,
+  "correction_strengths": {
+    "coordinate": [
+      0.6866830425210533,
+      0.7289850858694326
+    ],
+    "scalar": [
+      1.0,
+      1.0
+    ],
+    "shape": 0.75
+  },
+  "loss_version": "symmetric",
+  "geometry_components": "both",
+  "scalar_reference_sha256": "dd8fb1f6d3ca53b78bdf90851c058294704d9df4fce604fd42708fac7ac0c77c",
+  "base_score_uses_fixed_scalars": true,
+  "training_arguments": {
+    "data": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold0",
+    "output": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold0",
+    "decoder": "dct",
+    "epochs": 36,
+    "batch_size": 128,
+    "width": 384,
+    "channels": 24,
+    "geometry_weight": 0.003,
+    "loss_version": "symmetric",
+    "geometry_components": "both",
+    "scalar_reference": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold0/scalar_reference.pt",
+    "reference_cache_directory": null,
+    "score_workers": 4,
+    "observation_encoder": "spatial_attention",
+    "geometry_batch": 16,
+    "geometry_warmup": 4,
+    "exact_every": 6,
+    "selection_shots": 64,
+    "patience_checks": 3,
+    "seed": 260905,
+    "device": "cuda",
+    "memory_map": false
+  },
+  "outer_score": {
+    "S": 0.991728,
+    "r2_psi": 0.999197,
+    "r2_qb": 0.99249,
+    "dlcfs": 0.012357,
+    "consistency": 0.972658,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999197,
+    "r2_psi_per_shot_mean": 0.998801,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 1136,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.993306,
+      "betaN": 0.991674
+    },
+    "r2_cons_each": {
+      "R_axis": 0.972222,
+      "Z_axis": 0.975977,
+      "kappa": 0.953279,
+      "tri_top": 0.989329,
+      "tri_bot": 0.986421,
+      "volume": 0.97852,
+      "li": 0.952858
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "outer_base_score": {
+    "S": 0.984494,
+    "r2_psi": 0.997928,
+    "r2_qb": 0.99249,
+    "dlcfs": 0.016234,
+    "consistency": 0.941918,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.997928,
+    "r2_psi_per_shot_mean": 0.997459,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 1136,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.993306,
+      "betaN": 0.991674
+    },
+    "r2_cons_each": {
+      "R_axis": 0.940966,
+      "Z_axis": 0.954489,
+      "kappa": 0.913491,
+      "tri_top": 0.976414,
+      "tri_bot": 0.969362,
+      "volume": 0.929847,
+      "li": 0.908859
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "outer_gain": 0.007234000000000074,
+  "minimum_score": 0.996,
+  "target_score": 0.999,
+  "meets_minimum_on_this_fold": false,
+  "promotion_passed": false,
+  "promotion_reason": "requires complete pooled OOF and full development evaluation",
+  "nested_shot_crossfit": true,
+  "development_used": false,
+  "frozen_audit_used": false,
+  "smoke_only": false,
+  "elapsed_seconds": 2633.057104791049
+}

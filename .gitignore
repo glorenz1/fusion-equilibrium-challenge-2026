@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated model, data and inference assets are distributed separately.
+/artifacts/
+/data/
+/outputs/
+/logs/
+/my_experiments/candidates/
+/my_experiments/artifacts/
+/my_experiments/neuralgs_real_d3d_full_frame_cache/*.npz

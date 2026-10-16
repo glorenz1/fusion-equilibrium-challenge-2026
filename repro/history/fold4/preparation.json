@@ -1,0 +1,9 @@
+{
+  "source_shots": 5677,
+  "original_training_shots": 4088,
+  "expanded_training_shots": 4478,
+  "selection_shots": 64,
+  "outer_shots": 1135,
+  "source_scalar_sha256": "97d1549f964f6cb88b3f5f92988153603b7bdf23596712dc00ca9ff3b5bf9896",
+  "prepared_scalar_sha256": "1bd3a85956daf0aef7de1ef826b7bc27a68166c9b682b1c894f1c151f41aa03a"
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "source_commit": "625e6f3c0e67b70f7f9c28526e8e3972b7457b9f",
+  "artifacts": [
+    {
+      "path": "dct_fold0/checkpoint.pt",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold0/checkpoint.pt",
+      "bytes": 30322294,
+      "sha256": "0a387d166661c617f5ed65e3790e7bf28cb92c3620adb561a52d18d6d8b92fc4"
+    },
+    {
+      "path": "base_fold0/base.joblib",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold0/base.joblib",
+      "bytes": 7369656010,
+      "sha256": "4adfd61d8410b7610401a90f1df596abf55a0398b5ea0605aac375f6ae58455b"
+    },
+    {
+      "path": "dct_fold1/checkpoint.pt",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold1/checkpoint.pt",
+      "bytes": 30322294,
+      "sha256": "364068c602490ea38a577975706dae9358e6ab9eca90f399b4d33b5aafa97534"
+    },
+    {
+      "path": "base_fold1/base.joblib",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold1/base.joblib",
+      "bytes": 7351890666,
+      "sha256": "954a86c8cf82a869c83d92104caf4793e129173599a7ce0d5824f5e0bae6a0ab"
+    },
+    {
+      "path": "dct_fold2/checkpoint.pt",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold2/checkpoint.pt",
+      "bytes": 30322294,
+      "sha256": "9bacfe4a9f65e6bbfc8b91e63c88d79d9539ca84d9a6028be75de8353f747c47"
+    },
+    {
+      "path": "base_fold2/base.joblib",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold2/base.joblib",
+      "bytes": 7363270330,
+      "sha256": "aff222f918d302dea1be7c86fd85db6ac6171ef35082a70ca8bb6deb5aa906ac"
+    },
+    {
+      "path": "dct_fold3/checkpoint.pt",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold3/checkpoint.pt",
+      "bytes": 30322294,
+      "sha256": "89b61ab3f11d38916bad2c8e149f8dd97aff93d2f698688b63916634b00c0331"
+    },
+    {
+      "path": "base_fold3/base.joblib",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold3/base.joblib",
+      "bytes": 7328267130,
+      "sha256": "3b3ca8edc6e2efb4dff5ef7657920aa3f26053c9add939ee43a448cf41efeb5a"
+    },
+    {
+      "path": "dct_fold4/checkpoint.pt",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/train_fold4/checkpoint.pt",
+      "bytes": 30322294,
+      "sha256": "e1b22dd39c245e915806586e38ec0e557a5499e5bf29e3577cb8703a8aa0cf41"
+    },
+    {
+      "path": "base_fold4/base.joblib",
+      "source": "my_experiments/candidates/fec1_dct24_more_train_20260929/data_fold4/base.joblib",
+      "bytes": 7325533434,
+      "sha256": "d709e513cb389c3bf686128845e127ef9672e7e0bf8daa918267ab1c533d696e"
+    }
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "selected_epoch": 36,
+      "correction_strengths": {
+        "coordinate": [
+          0.6866830425210533,
+          0.7289850858694326
+        ],
+        "scalar": [
+          1.0,
+          1.0
+        ],
+        "shape": 0.75
+      }
+    },
+    {
+      "fold": 1,
+      "selected_epoch": 30,
+      "correction_strengths": {
+        "coordinate": [
+          0.7344544502504909,
+          0.8885618383888875
+        ],
+        "scalar": [
+          1.0,
+          1.0
+        ],
+        "shape": 0.75
+      }
+    },
+    {
+      "fold": 2,
+      "selected_epoch": 30,
+      "correction_strengths": {
+        "coordinate": [
+          0.8855126645768507,
+          0.8885037183960878
+        ],
+        "scalar": [
+          1.0,
+          1.0
+        ],
+        "shape": 0.75
+      }
+    },
+    {
+      "fold": 3,
+      "selected_epoch": 36,
+      "correction_strengths": {
+        "coordinate": [
+          1.000760859452402,
+          0.9243263593998756
+        ],
+        "scalar": [
+          1.0,
+          1.0
+        ],
+        "shape": 0.75
+      }
+    },
+    {
+      "fold": 4,
+      "selected_epoch": 36,
+      "correction_strengths": {
+        "coordinate": [
+          0.757468538198956,
+          0.9006107732564653
+        ],
+        "scalar": [
+          1.0,
+          1.0
+        ],
+        "shape": 1.0
+      }
+    }
+  ],
+  "public_reference": {
+    "S": 0.9931,
+    "date": "2026-09-29",
+    "source": "research/CURRENT_INCUMBENT.md; reported Codabench result; hidden labels unavailable"
+  },
+  "pooled_oof": {
+    "S": 0.990843,
+    "shots": 5677
+  }
+}

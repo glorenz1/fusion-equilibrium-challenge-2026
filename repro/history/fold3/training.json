@@ -1,0 +1,2515 @@
+[
+  {
+    "epoch": 0,
+    "selection_score": {
+      "S": 0.985491,
+      "r2_psi": 0.997449,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.016117,
+      "consistency": 0.946831,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.997449,
+      "r2_psi_per_shot_mean": 0.997693,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.948688,
+        "Z_axis": 0.963589,
+        "kappa": 0.929808,
+        "tri_top": 0.976329,
+        "tri_bot": 0.971494,
+        "volume": 0.948302,
+        "li": 0.889606
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    }
+  },
+  {
+    "epoch": 1,
+    "training": {
+      "shape": 0.6629018008070721,
+      "coefficient": 0.7989480432833747,
+      "gradient": 0.02302131267453654,
+      "coordinate": 0.7230221550462466,
+      "scalar": 0.17989407216114855,
+      "loss": 1.1100630102664426
+    },
+    "geometry_weight": 0.0,
+    "elapsed_seconds": 24.863902046345174
+  },
+  {
+    "epoch": 2,
+    "training": {
+      "shape": 0.44942034591723673,
+      "coefficient": 0.6082934470143526,
+      "gradient": 0.01734990300460664,
+      "coordinate": 0.571353102390317,
+      "scalar": 0.17989407320839176,
+      "loss": 0.8002637193112174
+    },
+    "geometry_weight": 0.0,
+    "elapsed_seconds": 44.533728344365954
+  },
+  {
+    "epoch": 3,
+    "training": {
+      "shape": 0.36740595696709577,
+      "coefficient": 0.5127871847200398,
+      "gradient": 0.014913004305788872,
+      "coordinate": 0.5056645291176254,
+      "scalar": 0.17989407638124302,
+      "loss": 0.6752451899752832
+    },
+    "geometry_weight": 0.0,
+    "elapsed_seconds": 64.07847911212593
+  },
+  {
+    "epoch": 4,
+    "training": {
+      "shape": 0.3156795301302377,
+      "coefficient": 0.45425238264146245,
+      "gradient": 0.013296841300148306,
+      "coordinate": 0.4585230759796625,
+      "scalar": 0.1798940761747629,
+      "loss": 0.5936905172467207
+    },
+    "geometry_weight": 0.0,
+    "elapsed_seconds": 83.56599628832191
+  },
+  {
+    "epoch": 5,
+    "training": {
+      "shape": 0.2851676852323037,
+      "coefficient": 0.4166455488205186,
+      "gradient": 0.012270535442321208,
+      "coordinate": 0.42371733097464287,
+      "scalar": 0.17989407503936167,
+      "geometry": 0.7299964043461675,
+      "direct_axis": 3.662001869902111e-05,
+      "direct_lcfs": 0.49051566855091133,
+      "direct_geometry": 0.0734748259267661,
+      "direct_li": 0.006107952684325386,
+      "loss": 0.5423060355059371
+    },
+    "geometry_weight": 0.00075,
+    "elapsed_seconds": 128.73035347322002
+  },
+  {
+    "epoch": 6,
+    "training": {
+      "shape": 0.258974928159499,
+      "coefficient": 0.3874492918171732,
+      "gradient": 0.01141283213544035,
+      "coordinate": 0.39585838791116335,
+      "scalar": 0.17989407209160366,
+      "geometry": 0.6797658114779591,
+      "direct_axis": 2.6681634124372448e-05,
+      "direct_lcfs": 0.4611686494754938,
+      "direct_geometry": 0.06715433118617013,
+      "direct_li": 0.005533512021135896,
+      "loss": 0.49952190795404905
+    },
+    "geometry_weight": 0.0015,
+    "elapsed_seconds": 173.42268597800285,
+    "selection_score": {
+      "S": 0.99002,
+      "r2_psi": 0.998996,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.014109,
+      "consistency": 0.964219,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.998996,
+      "r2_psi_per_shot_mean": 0.998507,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.964617,
+        "Z_axis": 0.968896,
+        "kappa": 0.940231,
+        "tri_top": 0.980843,
+        "tri_bot": 0.981502,
+        "volume": 0.969968,
+        "li": 0.943476
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            0.7922679513082996,
+            0.7482914126828173
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.986291,
+          "r2_psi": 0.998905,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016118,
+          "consistency": 0.946829,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.998905,
+          "r2_psi_per_shot_mean": 0.998352,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.929808,
+            "tri_top": 0.97633,
+            "tri_bot": 0.971481,
+            "volume": 0.948302,
+            "li": 0.889605
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.7922679513082996,
+            0.7482914126828173
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.9883,
+          "r2_psi": 0.998952,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.015057,
+          "consistency": 0.956212,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.998952,
+          "r2_psi_per_shot_mean": 0.99843,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.956844,
+            "Z_axis": 0.968696,
+            "kappa": 0.939544,
+            "tri_top": 0.977859,
+            "tri_bot": 0.977291,
+            "volume": 0.96102,
+            "li": 0.912233
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.7922679513082996,
+            0.7482914126828173
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.98963,
+          "r2_psi": 0.998983,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014282,
+          "consistency": 0.962395,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.998983,
+          "r2_psi_per_shot_mean": 0.998482,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.962178,
+            "Z_axis": 0.970426,
+            "kappa": 0.944384,
+            "tri_top": 0.979248,
+            "tri_bot": 0.981021,
+            "volume": 0.968194,
+            "li": 0.931316
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.7922679513082996,
+            0.7482914126828173
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.99002,
+          "r2_psi": 0.998996,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014109,
+          "consistency": 0.964219,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.998996,
+          "r2_psi_per_shot_mean": 0.998507,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.964617,
+            "Z_axis": 0.968896,
+            "kappa": 0.940231,
+            "tri_top": 0.980843,
+            "tri_bot": 0.981502,
+            "volume": 0.969968,
+            "li": 0.943476
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.7922679513082996,
+            0.7482914126828173
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.989277,
+          "r2_psi": 0.998994,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014851,
+          "consistency": 0.960882,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.998994,
+          "r2_psi_per_shot_mean": 0.998507,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.964073,
+            "Z_axis": 0.96436,
+            "kappa": 0.921936,
+            "tri_top": 0.980999,
+            "tri_bot": 0.979954,
+            "volume": 0.966267,
+            "li": 0.948585
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "epoch": 7,
+    "training": {
+      "shape": 0.24099899105179035,
+      "coefficient": 0.36624146160313603,
+      "gradient": 0.0107999814318888,
+      "coordinate": 0.372275711731882,
+      "scalar": 0.17989407421481773,
+      "geometry": 0.671926138666073,
+      "direct_axis": 5.492589778711844e-05,
+      "direct_lcfs": 0.458385516039795,
+      "direct_geometry": 0.06555873565501788,
+      "direct_li": 0.005255299377005488,
+      "loss": 0.46797282213202895
+    },
+    "geometry_weight": 0.0022500000000000003,
+    "elapsed_seconds": 295.1908222953789
+  },
+  {
+    "epoch": 8,
+    "training": {
+      "shape": 0.22570759969252263,
+      "coefficient": 0.34779101206153,
+      "gradient": 0.010261894188629229,
+      "coordinate": 0.3513744257638335,
+      "scalar": 0.17989407483910588,
+      "geometry": 0.6445821318550831,
+      "direct_axis": 2.6808504508092998e-05,
+      "direct_lcfs": 0.43865690639500315,
+      "direct_geometry": 0.06340108668728686,
+      "direct_li": 0.005061932033967558,
+      "loss": 0.44067313384979695
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 340.53620490804315
+  },
+  {
+    "epoch": 9,
+    "training": {
+      "shape": 0.21340285329007783,
+      "coefficient": 0.3336379703753649,
+      "gradient": 0.009832827138689932,
+      "coordinate": 0.3348379292813219,
+      "scalar": 0.17989407281512196,
+      "geometry": 0.6162724870912227,
+      "direct_axis": 2.214482104996833e-05,
+      "direct_lcfs": 0.41763785772272705,
+      "direct_geometry": 0.06126813330786566,
+      "direct_li": 0.004795777648813159,
+      "loss": 0.4184926394180913
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 385.57804838521406
+  },
+  {
+    "epoch": 10,
+    "training": {
+      "shape": 0.2009577763398253,
+      "coefficient": 0.32086657074221153,
+      "gradient": 0.009421007878756878,
+      "coordinate": 0.3179434809170126,
+      "scalar": 0.17989407440612606,
+      "geometry": 0.6060880883611388,
+      "direct_axis": 2.6127279081197292e-05,
+      "direct_lcfs": 0.4144374073709931,
+      "direct_geometry": 0.05906097363109908,
+      "direct_li": 0.0046484052251707,
+      "loss": 0.39618968974216373
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 430.1503652781248
+  },
+  {
+    "epoch": 11,
+    "training": {
+      "shape": 0.19195172200421637,
+      "coefficient": 0.31054220754656175,
+      "gradient": 0.009111085221353949,
+      "coordinate": 0.3068634910671077,
+      "scalar": 0.17989407475809985,
+      "geometry": 0.5793514901557567,
+      "direct_axis": 1.7681482064866648e-05,
+      "direct_lcfs": 0.3975852914533675,
+      "direct_geometry": 0.05612320947062391,
+      "direct_li": 0.0043476468047849975,
+      "loss": 0.38045351450400117
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 475.1466065030545
+  },
+  {
+    "epoch": 12,
+    "training": {
+      "shape": 0.18378337588000865,
+      "coefficient": 0.3010562224998547,
+      "gradient": 0.008827720998870307,
+      "coordinate": 0.2924432159952023,
+      "scalar": 0.17989407184227144,
+      "geometry": 0.5880790505537634,
+      "direct_axis": 2.7960874056264916e-05,
+      "direct_lcfs": 0.4030462380014377,
+      "direct_geometry": 0.057217794820764584,
+      "direct_li": 0.004273403588946528,
+      "loss": 0.36408177465072344
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 519.058043659199,
+    "selection_score": {
+      "S": 0.989946,
+      "r2_psi": 0.9992,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.014419,
+      "consistency": 0.963444,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.9992,
+      "r2_psi_per_shot_mean": 0.998908,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.96588,
+        "Z_axis": 0.969376,
+        "kappa": 0.942775,
+        "tri_top": 0.977665,
+        "tri_bot": 0.978541,
+        "volume": 0.970879,
+        "li": 0.938995
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            0.9354453814769498,
+            0.8445313132372124
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.986401,
+          "r2_psi": 0.999104,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016118,
+          "consistency": 0.946831,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999104,
+          "r2_psi_per_shot_mean": 0.998741,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.92981,
+            "tri_top": 0.976331,
+            "tri_bot": 0.971489,
+            "volume": 0.948302,
+            "li": 0.889608
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9354453814769498,
+            0.8445313132372124
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.988442,
+          "r2_psi": 0.999154,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.015103,
+          "consistency": 0.95639,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999154,
+          "r2_psi_per_shot_mean": 0.998826,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.95743,
+            "Z_axis": 0.969442,
+            "kappa": 0.938988,
+            "tri_top": 0.977333,
+            "tri_bot": 0.976852,
+            "volume": 0.961215,
+            "li": 0.91347
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9354453814769498,
+            0.8445313132372124
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.989612,
+          "r2_psi": 0.999187,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.01453,
+          "consistency": 0.961866,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999187,
+          "r2_psi_per_shot_mean": 0.998882,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.963218,
+            "Z_axis": 0.971551,
+            "kappa": 0.943689,
+            "tri_top": 0.977548,
+            "tri_bot": 0.979156,
+            "volume": 0.968632,
+            "li": 0.929271
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9354453814769498,
+            0.8445313132372124
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.989946,
+          "r2_psi": 0.9992,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014419,
+          "consistency": 0.963444,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.9992,
+          "r2_psi_per_shot_mean": 0.998908,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.96588,
+            "Z_axis": 0.969376,
+            "kappa": 0.942775,
+            "tri_top": 0.977665,
+            "tri_bot": 0.978541,
+            "volume": 0.970879,
+            "li": 0.938995
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9354453814769498,
+            0.8445313132372124
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.989427,
+          "r2_psi": 0.999195,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014951,
+          "consistency": 0.961129,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999195,
+          "r2_psi_per_shot_mean": 0.998904,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.965431,
+            "Z_axis": 0.96289,
+            "kappa": 0.937809,
+            "tri_top": 0.977723,
+            "tri_bot": 0.976363,
+            "volume": 0.968283,
+            "li": 0.939402
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "epoch": 13,
+    "training": {
+      "shape": 0.17589432671456073,
+      "coefficient": 0.29305926363558416,
+      "gradient": 0.008565048587032121,
+      "coordinate": 0.2799015329842844,
+      "scalar": 0.17989407720201644,
+      "geometry": 0.579505728226844,
+      "direct_axis": 2.9517323740964814e-05,
+      "direct_lcfs": 0.39931867899235624,
+      "direct_geometry": 0.0555726642095193,
+      "direct_li": 0.004292903592072946,
+      "loss": 0.3490307990282249
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 638.1836835062131
+  },
+  {
+    "epoch": 14,
+    "training": {
+      "shape": 0.1680694097406497,
+      "coefficient": 0.2847904585142258,
+      "gradient": 0.008299796914396446,
+      "coordinate": 0.2701627080385163,
+      "scalar": 0.1798940754393346,
+      "geometry": 0.5704744573334254,
+      "direct_axis": 3.984974491616235e-05,
+      "direct_lcfs": 0.3923130809378833,
+      "direct_geometry": 0.055100308154430525,
+      "direct_li": 0.0040211521598091625,
+      "loss": 0.3354161820634781
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 680.8335665431805
+  },
+  {
+    "epoch": 15,
+    "training": {
+      "shape": 0.16180332720516458,
+      "coefficient": 0.2779801297515684,
+      "gradient": 0.008074229131158468,
+      "coordinate": 0.25966746464398854,
+      "scalar": 0.17989407234440716,
+      "geometry": 0.550093908698009,
+      "direct_axis": 1.9919168935087063e-05,
+      "direct_lcfs": 0.37795832004466606,
+      "direct_geometry": 0.05328395240543465,
+      "direct_li": 0.003961782781265619,
+      "loss": 0.32310391156082735
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 724.2656342112459
+  },
+  {
+    "epoch": 16,
+    "training": {
+      "shape": 0.15580108475516202,
+      "coefficient": 0.27166503084109145,
+      "gradient": 0.007882800733537563,
+      "coordinate": 0.2484491309999193,
+      "scalar": 0.17989407254167047,
+      "geometry": 0.5495095334433662,
+      "direct_axis": 3.15671411692244e-05,
+      "direct_lcfs": 0.37938658707108686,
+      "direct_geometry": 0.05246526016577433,
+      "direct_li": 0.004031941360852219,
+      "loss": 0.31081138234285227
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 766.5997703950852
+  },
+  {
+    "epoch": 17,
+    "training": {
+      "shape": 0.15044169974473695,
+      "coefficient": 0.26556981581990213,
+      "gradient": 0.007691241177125343,
+      "coordinate": 0.24083162659677612,
+      "scalar": 0.17989407645617436,
+      "geometry": 0.5372869326274315,
+      "direct_axis": 2.9027567372639236e-05,
+      "direct_lcfs": 0.37096215197535726,
+      "direct_geometry": 0.05137225220287792,
+      "direct_li": 0.0038758240746856036,
+      "loss": 0.3009491664613481
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 808.8251643599942
+  },
+  {
+    "epoch": 18,
+    "training": {
+      "shape": 0.14494570824899408,
+      "coefficient": 0.2600275636603154,
+      "gradient": 0.007509260695861833,
+      "coordinate": 0.23102137476328158,
+      "scalar": 0.17989407401731503,
+      "geometry": 0.5362777841112318,
+      "direct_axis": 2.4583085351079003e-05,
+      "direct_lcfs": 0.36898397638500735,
+      "direct_geometry": 0.05176379740861101,
+      "direct_li": 0.003836917925414861,
+      "loss": 0.2899453007295542
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 851.510873651132,
+    "selection_score": {
+      "S": 0.990597,
+      "r2_psi": 0.999258,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.013522,
+      "consistency": 0.96609,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999258,
+      "r2_psi_per_shot_mean": 0.998867,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.967968,
+        "Z_axis": 0.971491,
+        "kappa": 0.943215,
+        "tri_top": 0.98056,
+        "tri_bot": 0.983521,
+        "volume": 0.976071,
+        "li": 0.939801
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            1.0038569860797202,
+            0.8896555586395035
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.986425,
+          "r2_psi": 0.999148,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016117,
+          "consistency": 0.94683,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999148,
+          "r2_psi_per_shot_mean": 0.998693,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.92981,
+            "tri_top": 0.976331,
+            "tri_bot": 0.97149,
+            "volume": 0.948302,
+            "li": 0.8896
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.0038569860797202,
+            0.8896555586395035
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.988739,
+          "r2_psi": 0.999203,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014917,
+          "consistency": 0.957647,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999203,
+          "r2_psi_per_shot_mean": 0.998781,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.958892,
+            "Z_axis": 0.969819,
+            "kappa": 0.940984,
+            "tri_top": 0.978229,
+            "tri_bot": 0.978021,
+            "volume": 0.963599,
+            "li": 0.913989
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.0038569860797202,
+            0.8896555586395035
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.990157,
+          "r2_psi": 0.99924,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013966,
+          "consistency": 0.964164,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.99924,
+          "r2_psi_per_shot_mean": 0.998839,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.965341,
+            "Z_axis": 0.972514,
+            "kappa": 0.945373,
+            "tri_top": 0.979012,
+            "tri_bot": 0.981804,
+            "volume": 0.972768,
+            "li": 0.932335
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.0038569860797202,
+            0.8896555586395035
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.990597,
+          "r2_psi": 0.999258,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013522,
+          "consistency": 0.96609,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999258,
+          "r2_psi_per_shot_mean": 0.998867,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.967968,
+            "Z_axis": 0.971491,
+            "kappa": 0.943215,
+            "tri_top": 0.98056,
+            "tri_bot": 0.983521,
+            "volume": 0.976071,
+            "li": 0.939801
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.0038569860797202,
+            0.8896555586395035
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.989775,
+          "r2_psi": 0.999257,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013899,
+          "consistency": 0.962168,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999257,
+          "r2_psi_per_shot_mean": 0.998865,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.96668,
+            "Z_axis": 0.966586,
+            "kappa": 0.931745,
+            "tri_top": 0.979858,
+            "tri_bot": 0.982506,
+            "volume": 0.973799,
+            "li": 0.934005
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "epoch": 19,
+    "training": {
+      "shape": 0.14079639943185016,
+      "coefficient": 0.25540379348311815,
+      "gradient": 0.0073448433799497516,
+      "coordinate": 0.22318722802935068,
+      "scalar": 0.17989407221537204,
+      "geometry": 0.5282273581604089,
+      "direct_axis": 3.755182738732929e-05,
+      "direct_lcfs": 0.3670839189346914,
+      "direct_geometry": 0.04993222097123604,
+      "direct_li": 0.0035319134531267907,
+      "loss": 0.2813512854421307
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 976.4285788810812
+  },
+  {
+    "epoch": 20,
+    "training": {
+      "shape": 0.1362484556635095,
+      "coefficient": 0.25076181253528884,
+      "gradient": 0.007209285268412329,
+      "coordinate": 0.21461908617480752,
+      "scalar": 0.17989407161065463,
+      "geometry": 0.5244720475501826,
+      "direct_axis": 3.4836656340196707e-05,
+      "direct_lcfs": 0.36441871943233195,
+      "direct_geometry": 0.04962107834681407,
+      "direct_li": 0.0034977866255714095,
+      "loss": 0.2720099173416867
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1024.5209294483066
+  },
+  {
+    "epoch": 21,
+    "training": {
+      "shape": 0.13218013920743796,
+      "coefficient": 0.2460626849786918,
+      "gradient": 0.007058991498208936,
+      "coordinate": 0.20803554874572736,
+      "scalar": 0.1798940759190268,
+      "geometry": 0.5018905156853161,
+      "direct_axis": 1.917353116932812e-05,
+      "direct_lcfs": 0.34665161183579557,
+      "direct_geometry": 0.04832810235430809,
+      "direct_li": 0.003290375431972617,
+      "loss": 0.2640746019528132
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1070.9712960473262
+  },
+  {
+    "epoch": 22,
+    "training": {
+      "shape": 0.12836785735619524,
+      "coefficient": 0.2421178203157669,
+      "gradient": 0.0069123270918618656,
+      "coordinate": 0.20007840352186287,
+      "scalar": 0.17989407411463,
+      "geometry": 0.5067424665165179,
+      "direct_axis": 1.9946032742682323e-05,
+      "direct_lcfs": 0.3496099435551466,
+      "direct_geometry": 0.048924078889062056,
+      "direct_li": 0.003320455126828019,
+      "loss": 0.2558671505747921
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1117.1459446949884
+  },
+  {
+    "epoch": 23,
+    "training": {
+      "shape": 0.1251625951926351,
+      "coefficient": 0.23865101956375262,
+      "gradient": 0.00680940158838055,
+      "coordinate": 0.19454908022600823,
+      "scalar": 0.17989407663676965,
+      "geometry": 0.49131645308050026,
+      "direct_axis": 2.2104597022383635e-05,
+      "direct_lcfs": 0.3400476891096028,
+      "direct_geometry": 0.04692792820568058,
+      "direct_li": 0.0033476289304349752,
+      "loss": 0.24947853726023017
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1163.1212207232602
+  },
+  {
+    "epoch": 24,
+    "training": {
+      "shape": 0.1221058942563519,
+      "coefficient": 0.23521231977460466,
+      "gradient": 0.0067024082964914885,
+      "coordinate": 0.1885588297362151,
+      "scalar": 0.17989407273827546,
+      "geometry": 0.5101525193199601,
+      "direct_axis": 3.054664194701574e-05,
+      "direct_lcfs": 0.35299648359802266,
+      "direct_geometry": 0.04892997996192843,
+      "direct_li": 0.003251720863306356,
+      "loss": 0.2431126011839096
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1211.0077306530438,
+    "selection_score": {
+      "S": 0.990877,
+      "r2_psi": 0.999291,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.013678,
+      "consistency": 0.967479,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999291,
+      "r2_psi_per_shot_mean": 0.998861,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.96985,
+        "Z_axis": 0.971124,
+        "kappa": 0.945822,
+        "tri_top": 0.980764,
+        "tri_bot": 0.984557,
+        "volume": 0.976631,
+        "li": 0.943605
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            0.9760113315061999,
+            0.9018109896916022
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.98644,
+          "r2_psi": 0.999174,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016117,
+          "consistency": 0.946831,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999174,
+          "r2_psi_per_shot_mean": 0.998678,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.929815,
+            "tri_top": 0.976331,
+            "tri_bot": 0.971492,
+            "volume": 0.948302,
+            "li": 0.889598
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9760113315061999,
+            0.9018109896916022
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.988818,
+          "r2_psi": 0.999233,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014892,
+          "consistency": 0.957949,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999233,
+          "r2_psi_per_shot_mean": 0.99877,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.959521,
+            "Z_axis": 0.969974,
+            "kappa": 0.940935,
+            "tri_top": 0.977703,
+            "tri_bot": 0.978103,
+            "volume": 0.963654,
+            "li": 0.915752
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9760113315061999,
+            0.9018109896916022
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.990218,
+          "r2_psi": 0.999272,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014134,
+          "consistency": 0.964466,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999272,
+          "r2_psi_per_shot_mean": 0.998831,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.966618,
+            "Z_axis": 0.972755,
+            "kappa": 0.944503,
+            "tri_top": 0.978541,
+            "tri_bot": 0.981269,
+            "volume": 0.972918,
+            "li": 0.934659
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9760113315061999,
+            0.9018109896916022
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.990877,
+          "r2_psi": 0.999291,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013678,
+          "consistency": 0.967479,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999291,
+          "r2_psi_per_shot_mean": 0.998861,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.96985,
+            "Z_axis": 0.971124,
+            "kappa": 0.945822,
+            "tri_top": 0.980764,
+            "tri_bot": 0.984557,
+            "volume": 0.976631,
+            "li": 0.943605
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9760113315061999,
+            0.9018109896916022
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.990201,
+          "r2_psi": 0.999291,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014033,
+          "consistency": 0.964274,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999291,
+          "r2_psi_per_shot_mean": 0.99886,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.969186,
+            "Z_axis": 0.964415,
+            "kappa": 0.935749,
+            "tri_top": 0.980505,
+            "tri_bot": 0.984342,
+            "volume": 0.974759,
+            "li": 0.940965
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "epoch": 25,
+    "training": {
+      "shape": 0.11879460374992737,
+      "coefficient": 0.23212371362045753,
+      "gradient": 0.006583156436303201,
+      "coordinate": 0.18321182822191293,
+      "scalar": 0.17989407198028395,
+      "geometry": 0.4898616116318612,
+      "direct_axis": 2.4648135985895808e-05,
+      "direct_lcfs": 0.33987432336701723,
+      "direct_geometry": 0.04668760065653865,
+      "direct_li": 0.003143841219253243,
+      "loss": 0.23672826352922116
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1330.4947497542016
+  },
+  {
+    "epoch": 26,
+    "training": {
+      "shape": 0.11620811456610845,
+      "coefficient": 0.22933752336072616,
+      "gradient": 0.006492109493392714,
+      "coordinate": 0.177871843938036,
+      "scalar": 0.17989407647580494,
+      "geometry": 0.48753851412317234,
+      "direct_axis": 2.6433515337543613e-05,
+      "direct_lcfs": 0.33824205050428113,
+      "direct_geometry": 0.04640889843286838,
+      "direct_li": 0.0031803656066355847,
+      "loss": 0.2311634323149023
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1377.642343414016
+  },
+  {
+    "epoch": 27,
+    "training": {
+      "shape": 0.1136966692550902,
+      "coefficient": 0.2267772839879659,
+      "gradient": 0.006408580127158444,
+      "coordinate": 0.173344295670756,
+      "scalar": 0.17989407760210907,
+      "geometry": 0.4800251364623679,
+      "direct_axis": 1.958133278180586e-05,
+      "direct_lcfs": 0.3346945470154057,
+      "direct_geometry": 0.045217439402646366,
+      "direct_li": 0.0030955481952125072,
+      "loss": 0.22608876634481898
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1424.5839505931363
+  },
+  {
+    "epoch": 28,
+    "training": {
+      "shape": 0.11131357213227737,
+      "coefficient": 0.22434061113983622,
+      "gradient": 0.006323981661537642,
+      "coordinate": 0.16917007232970804,
+      "scalar": 0.17989407257291182,
+      "geometry": 0.4838055317272554,
+      "direct_axis": 4.761936915470506e-05,
+      "direct_lcfs": 0.3363537368948006,
+      "direct_geometry": 0.04574764722407579,
+      "direct_li": 0.0030854887496866903,
+      "loss": 0.22136508156337448
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1470.8355199242942
+  },
+  {
+    "epoch": 29,
+    "training": {
+      "shape": 0.10949865528043726,
+      "coefficient": 0.22259349882246468,
+      "gradient": 0.006259200195597738,
+      "coordinate": 0.16520100667549498,
+      "scalar": 0.17989407276239472,
+      "geometry": 0.46575687955684447,
+      "direct_axis": 1.952596513202204e-05,
+      "direct_lcfs": 0.32415566334925405,
+      "direct_geometry": 0.044089854600004336,
+      "direct_li": 0.002980377787400405,
+      "loss": 0.21732057891767245
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1520.0917560383677
+  },
+  {
+    "epoch": 30,
+    "training": {
+      "shape": 0.1076272160593115,
+      "coefficient": 0.22059331618715103,
+      "gradient": 0.006190331901483011,
+      "coordinate": 0.1618908928698609,
+      "scalar": 0.17989407203821808,
+      "geometry": 0.448289690146764,
+      "direct_axis": 1.2051580553658887e-05,
+      "direct_lcfs": 0.31191797490849194,
+      "direct_geometry": 0.042582030110012395,
+      "direct_li": 0.0027948643849239345,
+      "loss": 0.2135244463182256
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1571.5295749693178,
+    "selection_score": {
+      "S": 0.991136,
+      "r2_psi": 0.999334,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.013555,
+      "consistency": 0.968593,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999334,
+      "r2_psi_per_shot_mean": 0.999009,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.970922,
+        "Z_axis": 0.970188,
+        "kappa": 0.948685,
+        "tri_top": 0.981694,
+        "tri_bot": 0.984291,
+        "volume": 0.976953,
+        "li": 0.94742
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            0.9713667850789764,
+            0.8994934917047327
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.986461,
+          "r2_psi": 0.999214,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016118,
+          "consistency": 0.946831,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999214,
+          "r2_psi_per_shot_mean": 0.998826,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.92981,
+            "tri_top": 0.976331,
+            "tri_bot": 0.971496,
+            "volume": 0.948302,
+            "li": 0.889605
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9713667850789764,
+            0.8994934917047327
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.988903,
+          "r2_psi": 0.999274,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014898,
+          "consistency": 0.958263,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999274,
+          "r2_psi_per_shot_mean": 0.99892,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.960137,
+            "Z_axis": 0.96982,
+            "kappa": 0.939927,
+            "tri_top": 0.977837,
+            "tri_bot": 0.978835,
+            "volume": 0.964105,
+            "li": 0.917177
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9713667850789764,
+            0.8994934917047327
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.99042,
+          "r2_psi": 0.999314,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014121,
+          "consistency": 0.965353,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999314,
+          "r2_psi_per_shot_mean": 0.998981,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.967564,
+            "Z_axis": 0.972291,
+            "kappa": 0.944151,
+            "tri_top": 0.979195,
+            "tri_bot": 0.982552,
+            "volume": 0.973513,
+            "li": 0.938205
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9713667850789764,
+            0.8994934917047327
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.991136,
+          "r2_psi": 0.999334,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013555,
+          "consistency": 0.968593,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999334,
+          "r2_psi_per_shot_mean": 0.999009,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.970922,
+            "Z_axis": 0.970188,
+            "kappa": 0.948685,
+            "tri_top": 0.981694,
+            "tri_bot": 0.984291,
+            "volume": 0.976953,
+            "li": 0.94742
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            0.9713667850789764,
+            0.8994934917047327
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.990594,
+          "r2_psi": 0.999333,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013792,
+          "consistency": 0.966004,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999333,
+          "r2_psi_per_shot_mean": 0.999004,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.970234,
+            "Z_axis": 0.963145,
+            "kappa": 0.943235,
+            "tri_top": 0.982183,
+            "tri_bot": 0.984567,
+            "volume": 0.97498,
+            "li": 0.943687
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  },
+  {
+    "epoch": 31,
+    "training": {
+      "shape": 0.10630483144111579,
+      "coefficient": 0.21909357195062767,
+      "gradient": 0.006144717865333706,
+      "coordinate": 0.15900149245384967,
+      "scalar": 0.17989407230801877,
+      "geometry": 0.4562492298001075,
+      "direct_axis": 1.591040402356706e-05,
+      "direct_lcfs": 0.3184450082271734,
+      "direct_geometry": 0.04299401811345553,
+      "direct_li": 0.0028346531229154312,
+      "loss": 0.21061986185428533
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1691.3291342849843
+  },
+  {
+    "epoch": 32,
+    "training": {
+      "shape": 0.10494930412729261,
+      "coefficient": 0.21778366352083012,
+      "gradient": 0.00609674470906193,
+      "coordinate": 0.15663702248785324,
+      "scalar": 0.17989407298706903,
+      "geometry": 0.46174887244853585,
+      "direct_axis": 2.0536458836549648e-05,
+      "direct_lcfs": 0.32121457544960713,
+      "direct_geometry": 0.043829567006010754,
+      "direct_li": 0.002878289140164291,
+      "loss": 0.2079556145078653
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1738.4563791202381
+  },
+  {
+    "epoch": 33,
+    "training": {
+      "shape": 0.10387443746506284,
+      "coefficient": 0.21679300537998134,
+      "gradient": 0.006060116523789032,
+      "coordinate": 0.1545045697084291,
+      "scalar": 0.17989407464812673,
+      "geometry": 0.44822814249896803,
+      "direct_axis": 2.4311739446937507e-05,
+      "direct_lcfs": 0.3140868538564894,
+      "direct_geometry": 0.04184874011384646,
+      "direct_li": 0.002702944619577707,
+      "loss": 0.205665737035133
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1785.092770949006
+  },
+  {
+    "epoch": 34,
+    "training": {
+      "shape": 0.10302928128847948,
+      "coefficient": 0.21601499233501603,
+      "gradient": 0.006031276765202902,
+      "coordinate": 0.15300318761561313,
+      "scalar": 0.17989407304691832,
+      "geometry": 0.44485056208757345,
+      "direct_axis": 1.4012973301558827e-05,
+      "direct_lcfs": 0.3098087242610683,
+      "direct_geometry": 0.04211844213146568,
+      "direct_li": 0.0028020838523204494,
+      "loss": 0.2039747456926358
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1836.8623010050505
+  },
+  {
+    "epoch": 35,
+    "training": {
+      "shape": 0.10233230453403906,
+      "coefficient": 0.21532902161571102,
+      "gradient": 0.00600811846415788,
+      "coordinate": 0.15178162855596344,
+      "scalar": 0.1798940735860409,
+      "geometry": 0.4542751499186796,
+      "direct_axis": 1.8354890793652784e-05,
+      "direct_lcfs": 0.316621286330367,
+      "direct_geometry": 0.04294024942437643,
+      "direct_li": 0.0028220060490022876,
+      "loss": 0.20262087572491294
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1883.5817761761136
+  },
+  {
+    "epoch": 36,
+    "training": {
+      "shape": 0.10181375540884093,
+      "coefficient": 0.21472556317699748,
+      "gradient": 0.005986758597678102,
+      "coordinate": 0.15061474732959418,
+      "scalar": 0.1798940750491171,
+      "geometry": 0.46555708958483855,
+      "direct_axis": 2.794436407566209e-05,
+      "direct_lcfs": 0.32399533244808526,
+      "direct_geometry": 0.044149265410733704,
+      "direct_li": 0.0028516911120825554,
+      "loss": 0.20148704695643568
+    },
+    "geometry_weight": 0.003,
+    "elapsed_seconds": 1929.8467716570012,
+    "selection_score": {
+      "S": 0.991182,
+      "r2_psi": 0.99934,
+      "r2_qb": 0.994262,
+      "dlcfs": 0.013305,
+      "consistency": 0.968681,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.99934,
+      "r2_psi_per_shot_mean": 0.998994,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 64,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.993831,
+        "betaN": 0.994693
+      },
+      "r2_cons_each": {
+        "R_axis": 0.970881,
+        "Z_axis": 0.970372,
+        "kappa": 0.948601,
+        "tri_top": 0.98175,
+        "tri_bot": 0.984863,
+        "volume": 0.976799,
+        "li": 0.947497
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      }
+    },
+    "calibration_trials": [
+      {
+        "strengths": {
+          "coordinate": [
+            1.000760859452402,
+            0.9243263593998756
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.0
+        },
+        "score": {
+          "S": 0.986464,
+          "r2_psi": 0.999219,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.016118,
+          "consistency": 0.94683,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999219,
+          "r2_psi_per_shot_mean": 0.998811,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.948688,
+            "Z_axis": 0.963589,
+            "kappa": 0.929806,
+            "tri_top": 0.976334,
+            "tri_bot": 0.971482,
+            "volume": 0.948302,
+            "li": 0.889612
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.000760859452402,
+            0.9243263593998756
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.25
+        },
+        "score": {
+          "S": 0.98884,
+          "r2_psi": 0.999279,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.014871,
+          "consistency": 0.95792,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999279,
+          "r2_psi_per_shot_mean": 0.998904,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.960035,
+            "Z_axis": 0.969775,
+            "kappa": 0.93958,
+            "tri_top": 0.977643,
+            "tri_bot": 0.978867,
+            "volume": 0.963705,
+            "li": 0.915836
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.000760859452402,
+            0.9243263593998756
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.5
+        },
+        "score": {
+          "S": 0.990445,
+          "r2_psi": 0.999319,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013939,
+          "consistency": 0.96537,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.999319,
+          "r2_psi_per_shot_mean": 0.998965,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.967471,
+            "Z_axis": 0.972264,
+            "kappa": 0.945199,
+            "tri_top": 0.979584,
+            "tri_bot": 0.982937,
+            "volume": 0.973112,
+            "li": 0.937019
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.000760859452402,
+            0.9243263593998756
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 0.75
+        },
+        "score": {
+          "S": 0.991182,
+          "r2_psi": 0.99934,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013305,
+          "consistency": 0.968681,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.99934,
+          "r2_psi_per_shot_mean": 0.998994,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.970881,
+            "Z_axis": 0.970372,
+            "kappa": 0.948601,
+            "tri_top": 0.98175,
+            "tri_bot": 0.984863,
+            "volume": 0.976799,
+            "li": 0.947497
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      },
+      {
+        "strengths": {
+          "coordinate": [
+            1.000760859452402,
+            0.9243263593998756
+          ],
+          "scalar": [
+            1.0,
+            1.0
+          ],
+          "shape": 1.0
+        },
+        "score": {
+          "S": 0.990634,
+          "r2_psi": 0.99934,
+          "r2_qb": 0.994262,
+          "dlcfs": 0.013468,
+          "consistency": 0.966022,
+          "psi_sign": 1,
+          "psi_sign_flipped": false,
+          "psi_sign_probe_disagrees": false,
+          "r2_psi_unflipped": 0.99934,
+          "r2_psi_per_shot_mean": 0.99899,
+          "lcfs_fail_frac": 0.0,
+          "ref_lcfs_dropped": 0,
+          "psi_nonfinite_frac": 0.0,
+          "cons_fail_frac": 0.0,
+          "n_shots": 64,
+          "n_shots_missing": 0,
+          "r2_each": {
+            "q95": 0.993831,
+            "betaN": 0.994693
+          },
+          "r2_cons_each": {
+            "R_axis": 0.970232,
+            "Z_axis": 0.963548,
+            "kappa": 0.94081,
+            "tri_top": 0.982294,
+            "tri_bot": 0.984916,
+            "volume": 0.97516,
+            "li": 0.945192
+          },
+          "cons_fail_each": {
+            "R_axis": 0.0,
+            "Z_axis": 0.0,
+            "kappa": 0.0,
+            "tri_top": 0.0,
+            "tri_bot": 0.0,
+            "volume": 0.0,
+            "li": 0.0
+          }
+        }
+      }
+    ]
+  }
+]

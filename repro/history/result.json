@@ -1,0 +1,143 @@
+{
+  "selected_family": "dct",
+  "development_score": {
+    "S": 0.993469,
+    "r2_psi": 0.999472,
+    "r2_qb": 0.995693,
+    "dlcfs": 0.011338,
+    "consistency": 0.977699,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999472,
+    "r2_psi_per_shot_mean": 0.999106,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 689,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.994768,
+      "betaN": 0.996619
+    },
+    "r2_cons_each": {
+      "R_axis": 0.975359,
+      "Z_axis": 0.985146,
+      "kappa": 0.95738,
+      "tri_top": 0.989735,
+      "tri_bot": 0.986216,
+      "volume": 0.983365,
+      "li": 0.966694
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "baseline_name": "g003",
+  "baseline_report": "/lustre/isaac24/scratch/glorenz/fusion-equilibrium-challenge-starter/my_experiments/candidates/fec1_geometry_aligned_096/fec1_geometry_aligned_g003_blend.json",
+  "pooled_oof_score": {
+    "S": 0.990843,
+    "r2_psi": 0.999156,
+    "r2_qb": 0.989019,
+    "dlcfs": 0.012771,
+    "consistency": 0.971159,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999156,
+    "r2_psi_per_shot_mean": 0.998736,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 1e-06,
+    "n_shots": 5677,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.992536,
+      "betaN": 0.985501
+    },
+    "r2_cons_each": {
+      "R_axis": 0.970253,
+      "Z_axis": 0.976553,
+      "kappa": 0.948227,
+      "tri_top": 0.988556,
+      "tri_bot": 0.984414,
+      "volume": 0.976903,
+      "li": 0.953203
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 6e-06
+    }
+  },
+  "frozen_baseline_score": {
+    "S": 0.992817,
+    "r2_psi": 0.999312,
+    "r2_qb": 0.995817,
+    "dlcfs": 0.011975,
+    "consistency": 0.975102,
+    "psi_sign": 1,
+    "psi_sign_flipped": false,
+    "psi_sign_probe_disagrees": false,
+    "r2_psi_unflipped": 0.999312,
+    "r2_psi_per_shot_mean": 0.998922,
+    "lcfs_fail_frac": 0.0,
+    "ref_lcfs_dropped": 0,
+    "psi_nonfinite_frac": 0.0,
+    "cons_fail_frac": 0.0,
+    "n_shots": 689,
+    "n_shots_missing": 0,
+    "r2_each": {
+      "q95": 0.99523,
+      "betaN": 0.996404
+    },
+    "r2_cons_each": {
+      "R_axis": 0.973539,
+      "Z_axis": 0.984808,
+      "kappa": 0.954061,
+      "tri_top": 0.988359,
+      "tri_bot": 0.984708,
+      "volume": 0.978632,
+      "li": 0.961606
+    },
+    "cons_fail_each": {
+      "R_axis": 0.0,
+      "Z_axis": 0.0,
+      "kappa": 0.0,
+      "tri_top": 0.0,
+      "tri_bot": 0.0,
+      "volume": 0.0,
+      "li": 0.0
+    }
+  },
+  "promotion": {
+    "passed": false,
+    "checks": {
+      "pooled_oof_at_least_minimum": false,
+      "development_at_least_minimum": false,
+      "beats_frozen_baseline": true,
+      "preserves_flux_r2": true,
+      "improves_lcfs": true,
+      "improves_consistency": true
+    }
+  },
+  "target_reached_on_development": false,
+  "paired_baseline": null,
+  "minimum_score": 0.996,
+  "target_score": 0.999,
+  "frozen_audit_used": false,
+  "published": false,
+  "next_step": "retain_baseline_and_diagnose_remaining_error"
+}
