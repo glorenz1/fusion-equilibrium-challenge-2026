@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Sophelio and the Fusion Equilibrium Challenge authors
+Copyright (c) 2026 glorenz1
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,9 +22,8 @@ SOFTWARE.
 
 ---
 
-NOTE ON SCOPE: This MIT license covers the STARTER-KIT CODE in this repository
-(the Python scripts and documentation). It does NOT cover the challenge dataset
-hosted on Hugging Face, which is provided under its own terms and derives from
-DIII-D and MAST experimental data produced under U.S. Department of Energy
-awards (see the Disclaimer in README.md). Refer to the dataset card and the
-official competition rules for data-use terms.
+SCOPE: This license covers the original code and documentation contributed to
+this independent Challenge 1 submission reproducibility package. Copyright and
+license notices for reused third-party materials are retained in
+THIRD_PARTY_NOTICES.md. The challenge dataset is licensed separately; see
+docs/DATA.md.

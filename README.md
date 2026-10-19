@@ -148,3 +148,11 @@ weights passed a prediction-parity check. A full real-data retraining has not
 yet been verified; a fresh fit is not guaranteed to reproduce the exact weights
 or historical public score. See [validation evidence](docs/VALIDATION.md),
 [historical records](repro/) and [repository layout](docs/LAYOUT.md).
+
+## License and authorship
+
+This independent submission is authored and maintained by
+[glorenz1](https://github.com/glorenz1). Sophelio is not responsible for this
+submission. Original code and documentation use the [MIT license](LICENSE);
+upstream attributions are in [third-party notices](THIRD_PARTY_NOTICES.md).
+The [challenge dataset](docs/DATA.md) is licensed separately under CC BY 4.0.
