@@ -10,6 +10,78 @@ previous artifacts, parent checkout or external research protocol is required.**
 Every carrier, scalar-reference model and field-correction network is fitted by
 the workflow below. Generated models stay in your local run directory.
 
+## What is Challenge 1?
+
+Challenge 1 reconstructs plasma equilibria on the **DIII-D tokamak**, learning
+from labelled DIII-D discharges and predicting unseen discharges from the same
+machine. Inputs include coil currents, plasma current, Thomson-scattering
+electron temperature and density measurements, and machine geometry. Magnetic
+probe and flux-loop measurements are unavailable. For each requested time, the
+model predicts a **65 x 65 poloidal magnetic-flux map**, the edge safety factor
+**q95**, and normalized plasma pressure **betaN**. See the
+[official data description](https://fusion-equilibrium-challenge.sophelio.io/data/).
+
+The composite score combines flux accuracy (55%), q95/betaN accuracy (15%),
+plasma-boundary alignment (10%), and consistency of quantities derived from the
+predicted flux map (20%). The scorer extracts the boundary, magnetic axis and
+other geometric quantities from the map itself. See the
+[official evaluation rules](https://fusion-equilibrium-challenge.sophelio.io/rules/).
+
+## How the model works
+
+The model averages **five fold members**, each combining a tree-based initial
+prediction with a neural correction:
+
+1. **Prepare the observations.** Align inputs to the requested times, render
+   analytic vacuum flux from coil currents and geometry, and build engineered
+   features with within-shot temporal context. Thomson measurements become up
+   to 192 tokens carrying their values and R/Z positions.
+2. **Predict an initial equilibrium.** Each member's carrier contains a PCA
+   basis and three ExtraTrees regressors. They predict 64 normalized-flux PCA
+   coefficients, the field's mean and log RMS, and initial q95/betaN values.
+   Inverse PCA and the predicted mean/scale reconstruct the initial flux map.
+3. **Correct the flux map.** A spatial-attention network combines the context,
+   initial predictions and Thomson tokens. It predicts 575 nonconstant
+   coefficients in a 24 x 24 discrete cosine transform (DCT) basis, plus
+   mean/log-RMS corrections. These update the normalized field shape and its
+   offset and scale. A separate pooled-token scalar-reference network supplies
+   q95/betaN and remains frozen during this field-correction training.
+4. **Calibrate and average.** Apply each member's selected correction strengths,
+   then average its flux and scalar predictions with equal weights of 0.2.
+
+```mermaid
+flowchart TD
+    A["Coil currents, plasma current, Thomson measurements and geometry"]
+    A --> B["Time alignment, vacuum-flux rendering and feature construction"]
+    B --> C["Engineered features and within-shot context"]
+    B --> T["Thomson tokens with R/Z positions"]
+    subgraph F["One fold member - five members total"]
+        C --> D["PCA64 / ExtraTrees carrier"]
+        D --> P["Initial flux map and q95/betaN"]
+        C --> N["Spatial-attention DCT24 field correction"]
+        T --> N
+        P --> N
+        N --> G["Reconstruct and calibrate flux map"]
+        P --> G
+        C --> S["Frozen pooled-token scalar-reference network"]
+        T --> S
+        P --> S
+        S --> Q["Calibrated q95 and betaN"]
+    end
+    G --> E["Equal average across five fold members"]
+    Q --> E
+    E --> O["Final 65 x 65 flux map, q95 and betaN"]
+```
+
+Training uses nested splits by whole discharge: carrier predictions supplied
+to correction-training rows exclude that discharge's targets. Inner selection
+shots choose checkpoints and calibration; outer-fold shots provide held-out
+evaluation. The training objectives combine field shape, gradients, offset/scale
+and geometry terms. See [the full recipe](docs/REPRODUCTION.md) for the exact
+settings and selection procedure.
+
+## Compute requirements
+
 Use Python 3.11 on Linux. The full recipe is substantial: the historical neural
 fits used a V100S GPU and 96 GiB RAM. Plan for at least 300 GB of free disk space
 for raw data, caches, intermediate arrays and generated models. Runtime depends
