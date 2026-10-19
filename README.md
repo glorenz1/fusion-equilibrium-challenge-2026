@@ -1,6 +1,9 @@
-# FEC1: train the DIII-D ensemble from scratch
+# Fusion Equilibrium Challenge (NeurIPS 2026): Challenge 1 submission reproducibility
 
-This repository trains, evaluates and runs the five-fold PCA/ExtraTrees + DCT24
+This repository is the **submission reproducibility package for Challenge 1 of
+the Fusion Equilibrium Challenge (NeurIPS 2026)**.
+
+It trains, evaluates and runs the five-fold PCA/ExtraTrees + DCT24
 spatial-attention model used for the historical **FEC1 public S = 0.9931** result.
 Start with raw challenge data: **no pretrained weights, carriers, cached arrays,
 previous artifacts, parent checkout or external research protocol is required.**
